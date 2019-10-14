@@ -44,7 +44,7 @@
                     <li><a href="#" class="icon fa-instagram"></a></li>
                 </ul>
                 <ul class="copyright">
-                    <li>&copy; Untitled</li>
+                    <li>&copy; IBIG</li>
                     <li>Design: <a href="http://templated.co">TEMPLATED</a></li>
                     <li>Images: <a href="http://unsplash.com">Unsplash</a></li>
                 </ul>
