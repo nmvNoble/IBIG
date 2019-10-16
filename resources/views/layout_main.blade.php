@@ -15,8 +15,8 @@
 
         <!-- Header -->
         <header id="header" class="alt">
-            <h1><a href="/users/9099">User </a><strong><a href="/" >IBIG</a></strong></h1>
-            <nav id="nav">
+            <h1><a href="/users/9099/owned">User </a><strong><a href="/" >IBIG</a></strong></h1>
+            <nav id="nav" style="float: right;">
                 <ul>
                     <li class={{Request::path() === '/' ? 'current_page_item' : ''}}>
                         <a href="/" accesskey="1" title="">Home</a>

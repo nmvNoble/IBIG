@@ -3,7 +3,7 @@
 <!-- Banner -->
 @section('banner')
     <section id="banner">
-        <h2>GDI ENV & U MFn' NAV A</h2>
+        <h2>Welcome to IBIG</h2>
         <p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
         <ul class="actions">
             <li><a href="#" class="button special big">Get Started</a></li>

@@ -45,7 +45,7 @@
                                         <p>They need this much more!</p>
                                     </header>-->
                                     <ul class="actions">
-                                        <li><a href="#" class="button special" >Get in Touch</a></li>
+                                        <li><a href="/projects/{{$project->id}}" class="button special" >Get in Touch</a></li>
                                     </ul>
                                 </div>
                             </div>

@@ -23,7 +23,5 @@ Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 Route::put('/projects/{project}', 'ProjectsController@update');
 
 
-//Route::get('/users/{user}', 'UsersController@show');
-Route::get('/users/{user}', function () {
-    return view('users.show');
-});
+Route::get('/users/{user}/donatedTo', 'UsersController@showDonatedTo');
+Route::get('/users/{user}/owned', 'UsersController@showOwned');
