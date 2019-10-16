@@ -21,3 +21,9 @@ Route::get('/projects/create', 'ProjectsController@create');
 Route::get('/projects/{project}', 'ProjectsController@show');
 Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 Route::put('/projects/{project}', 'ProjectsController@update');
+
+
+//Route::get('/users/{user}', 'UsersController@show');
+Route::get('/users/{user}', function () {
+    return view('users.show');
+});

@@ -61,7 +61,7 @@
 						</div>
 						<div class="12u$">
 							<ul class="actions">
-								<li><input type="submit" value="Publish" class="button special" /></li>
+								<li><input type="submit" value="Update" class="button special" /></li>
 								<li><input type="reset" value="Reset" /></li>
 							</ul>
 						</div>

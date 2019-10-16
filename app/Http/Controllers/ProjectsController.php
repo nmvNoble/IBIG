@@ -115,7 +115,9 @@ class ProjectsController extends Controller
         $project->title = request('title');
         $project->goal = request('goal');
         $project->description = request('description');
-        $project->image = request('image');
+        if(!empty(request('image'))) {
+            $project->image = request('image');
+        }
 
         $project->save();
 

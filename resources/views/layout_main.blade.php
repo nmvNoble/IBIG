@@ -15,13 +15,13 @@
 
         <!-- Header -->
         <header id="header" class="alt">
-            <h1><strong><a href="/" >IBIG</a></strong></h1>
+            <h1><a href="/users/9099">User </a><strong><a href="/" >IBIG</a></strong></h1>
             <nav id="nav">
                 <ul>
                     <li class={{Request::path() === '/' ? 'current_page_item' : ''}}>
                         <a href="/" accesskey="1" title="">Home</a>
                     </li>
-                    <li class={{Request::is('projects/*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
+                    <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
                     <li class="inactive_page_item"><a href="\elements.html">Elements</a></li>
                 </ul>
             </nav>
