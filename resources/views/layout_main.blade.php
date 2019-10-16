@@ -9,7 +9,7 @@
         <title>IBIG</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
     </head>
     <body class="landing">
 
@@ -21,8 +21,8 @@
                     <li class={{Request::path() === '/' ? 'current_page_item' : ''}}>
                         <a href="/" accesskey="1" title="">Home</a>
                     </li>
-                    <li class={{Request::is('projects') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
-                    <li class="inactive_page_item"><a href="elements.html">Elements</a></li>
+                    <li class={{Request::is('projects/*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
+                    <li class="inactive_page_item"><a href="\elements.html">Elements</a></li>
                 </ul>
             </nav>
         </header>
