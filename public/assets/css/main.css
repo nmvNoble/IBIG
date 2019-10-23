@@ -1942,7 +1942,7 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #f32853;
+			background-color: #3DAA3D;/*f32853;*/
 			color: #ffffff !important;
 		}
 
@@ -1951,7 +1951,7 @@
 			input[type="button"].special:hover,
 			button.special:hover,
 			.button.special:hover {
-				background-color: #f44066;
+				background-color: #3DDD3D;/*f44066;*/
 			}
 
 			input[type="submit"].special:active,
@@ -1959,7 +1959,7 @@
 			input[type="button"].special:active,
 			button.special:active,
 			.button.special:active {
-				background-color: #f21040;
+				background-color: #3D663D; /*f21040;*/
 			}
 
 		@media screen and (max-width: 480px) {
@@ -2439,6 +2439,16 @@
 				width: 100%;
 			}
 
+		.image.center {
+			display: block;
+			margin: 0 auto;
+			vertical-align: middle;
+		}
+
+			.image.center img {
+				width: 100%;
+			}
+
 		.image.rounded {
 			border-radius: 100%;
 		}
@@ -2842,7 +2852,7 @@
 		}
 
 		.wrapper.style3 {
-			background-attachment: fixed;
+			/*background-attachment: fixed;*/
 			background-image: url("images/overlay.png"), url("../../images/banner.jpg");
 			background-position: center center;
 			background-size: cover;
@@ -2986,8 +2996,8 @@
 			}
 
 		#header.alt {
-			background-color: transparent;
-			background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+			background-color: #3DAA3D; /*transparent;*/
+			/*background-image: url("images/overlay.png"), url("../../images/banner.jpg");*/
 			border: 0;
 			box-shadow: none;
 			height: 5em;/*3.25em;*/
@@ -3025,9 +3035,9 @@
 
 			#header.alt .current_page_item
 			{
-				background: #59A136;
+				background: #3DDD3D; /*59A136;*/
 				border-radius: 60px;
-				color: #FFF;
+				/*color: #3D663D; /*FFF;*/
 			}
 
 			#header.alt .inactive_page_item
@@ -3060,6 +3070,7 @@
 		text-transform: uppercase;
 		width: 100%;
 		text-align: center;
+		align-self: center;
 	}
 
 		#userTab h1 {
@@ -3196,7 +3207,7 @@
 		@media screen and (max-width: 980px) {
 
 			#userTab {
-				display: none;
+				/*display: none;*/
 			}
 
 		}

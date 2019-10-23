@@ -35,40 +35,8 @@
 		        </nav>
 		    </header>
 		</div>
-		<div class="container">
-			<div class="projects-grid">
-			    <ul style="list-style: none;">
-			        @foreach ($projects as $project)
-			            <li>
-			                <div class="project">
-			                    <div class="image rounded" style="margin-left: -2%;"><img src="\images/{{$project->image}}.jpg" alt="" /></div>
-			                    <div class="content">
-			                        <header>
-			                            <h2><a href="/projects/{{$project->id}}">{{$project->title}}</a></h2>
-			                            <p>Project by: User #{{$project->creatorID}}</p>
-			                        </header>
-			                        <p>{{$project->description}}</p>
-			                    </div>
-			                    <div class="fund">
-			                        <div>
-			                            <header>
-			                                <h3 >Php {{$project->goal - $project->current}}</h3>
-			                                <p>They need that much more!</p>
-			                            </header>
-			                            <!--<header>
-			                                <h4 style="display: inline">{{$project->current}}</h4>
-			                                <p>They need this much more!</p>
-			                            </header>-->
-			                            <ul class="actions">
-			                                <li><a href="/projects/{{$project->id}}" class="button special" >Get in Touch</a></li>
-			                            </ul>
-			                        </div>
-			                    </div>
-			                </div>
-			            </li>
-			        @endforeach
-			    </ul>
-			</div>
+		<div class="container" style="padding-top: 3em">
+			@yield('tabContent')
 		</div>
 	</section>
-@endsection
+@stop

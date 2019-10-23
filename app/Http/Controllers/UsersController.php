@@ -80,8 +80,9 @@ class UsersController extends Controller
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
 
-        return view('users.showOwned', ['projects' => $projects]);
+        return view('users.showProjects', ['projects' => $projects]);
     }
+
     public function showDonatedTo()
     {
         //return view('users.showDonatedTo');
@@ -89,7 +90,19 @@ class UsersController extends Controller
         //return view('users.show', ['user' => $user]);
         $projects = Project::where('current', '>', 0)->get();
 
-        return view('users.showDonatedTo', ['projects' => $projects]);
+        return view('users.showProjects', ['projects' => $projects]);
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function showAboutUs()
+    {
+        return view('users.showAboutUs');
     }
 
     /**

@@ -15,7 +15,7 @@
 
         <!-- Header -->
         <header id="header" class="alt">
-            <h1><a href="/users/9099/owned">User </a><strong><a href="/" >IBIG</a></strong></h1>
+            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/" > @IBIG</a></strong></h1>
             <nav id="nav" style="float: right;">
                 <ul>
                     <li class={{Request::path() === '/' ? 'current_page_item' : ''}}>

@@ -71,12 +71,45 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showDescription($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
 
-        return view('projects.show', ['project' => $project]);
+        return view('projects.showDescription', ['project' => $project]);
+    }
+    public function showUpdates($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showUpdates', ['project' => $project]);
+    }
+    public function showComments($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showComments', ['project' => $project]);
+    }
+    public function showDonations($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showDonations', ['project' => $project]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function donate($id)
+    {
+        $project = Project::find($id);
+        return view('projects.donate', ['project' => $project]);
     }
 
     /**

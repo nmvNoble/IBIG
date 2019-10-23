@@ -29,7 +29,7 @@
                             <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$project->image}}.jpg" alt="" /></div>
                             <div class="content">
                                 <header>
-                                    <h2><a href="/projects/{{$project->id}}">{{$project->title}}</a></h2>
+                                    <h2><a href="/projects/{{$project->id}}/description">{{$project->title}}</a></h2>
                                     <p>Project by: User #{{$project->creatorID}}</p>
                                 </header>
                                 <p>{{$project->description}}</p>
@@ -45,7 +45,7 @@
                                         <p>They need this much more!</p>
                                     </header>-->
                                     <ul class="actions">
-                                        <li><a href="/projects/{{$project->id}}" class="button special" >Get in Touch</a></li>
+                                        <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
                                     </ul>
                                 </div>
                             </div>

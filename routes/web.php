@@ -18,10 +18,21 @@ Route::get('/', function () {
 Route::get('/projects', 'ProjectsController@index');
 Route::post('/projects', 'ProjectsController@store');
 Route::get('/projects/create', 'ProjectsController@create');
-Route::get('/projects/{project}', 'ProjectsController@show');
+
+Route::get('/projects/{project}/description', 'ProjectsController@showDescription');
+Route::get('/projects/{project}/updates', 'ProjectsController@showUpdates');
+Route::get('/projects/{project}/comments', 'ProjectsController@showComments');
+Route::get('/projects/{project}/donations', 'ProjectsController@showDonations');
+
 Route::get('/projects/{project}/edit', 'ProjectsController@edit');
+Route::get('/projects/{project}/donate', 'ProjectsController@donate');
 Route::put('/projects/{project}', 'ProjectsController@update');
 
+
+Route::get('/organizations/{organization}/aboutUs', 'OrganizationsController@showAboutUs');
+Route::get('/organizations/{organization}/affiliates', 'OrganizationsController@showAffiliates');
+Route::get('/organizations/{organization}/donatedTo', 'OrganizationsController@showDonatedTo');
+Route::get('/organizations/{organization}/owned', 'OrganizationsController@showOwned');
 
 Route::get('/users/{user}/donatedTo', 'UsersController@showDonatedTo');
 Route::get('/users/{user}/owned', 'UsersController@showOwned');
