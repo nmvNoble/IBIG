@@ -1,4 +1,4 @@
-@extends ('layout_user')
+@extends ('layout_main')
 
 <!-- Content -->
 @section('content')

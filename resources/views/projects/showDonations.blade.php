@@ -48,7 +48,7 @@
 					                    <div class="content">
 					                        <header>
 					                            <h2>Php 500</h2>
-					                            <p><a href="/users/9099/owned">Anonymus</a> 12/3/2019</p>
+					                            <p>Anonymus 12/3/2019</p>
 					                        </header>
 					                            <p>I hope you guys continue. I've seen you guys at work and I support.</p>
 					                    </div>
