@@ -53,16 +53,13 @@
 			                    </div>
 			                    <div class="fund">
 			                        <div>
-			                            <header>
-			                                <h3 >Php {{$project->goal - $project->current}}</h3>
-			                                <p>They need that much more!</p>
-			                            </header>
-			                            <!--<header>
-			                                <h4 style="display: inline">{{$project->current}}</h4>
-			                                <p>They need this much more!</p>
-			                            </header>-->
+	                                    <header>
+	                                        <h3>Php {{$project->goal - $project->current}}</h3>
+	                                        <p>left to go!</p>
+	                                        <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+	                                    </header>
 			                            <ul class="actions">
-			                                <li><a href="/projects/{{$project->id}}" class="button special" >Get in Touch</a></li>
+			                                <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
 			                            </ul>
 			                        </div>
 			                    </div>

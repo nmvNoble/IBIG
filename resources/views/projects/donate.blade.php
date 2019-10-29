@@ -17,7 +17,7 @@
 		<div class="container">
 			<header class="major special">
 				<h2>Php {{$project->goal - $project->current}} left to go!</h2>
-				<a href="\projects\{{$project->id}}" class="button big" style="display: inline; float: right;">Back</a>
+				<a href="\projects\{{$project->id}}\description" class="button big" style="display: inline; float: right;">Back</a>
 			</header>
 		<!-- Lists -->
 			<h3>Donation Details</h3>
