@@ -31,8 +31,12 @@
 						<li>Felis enim feugiat dolore viverra.</li>
 					</ul>
 
-					<h4>Alternate</h4>
-					<ul class="alt">
+					<script src="\assets\js\hide.js"></script>
+
+					<div class="toggle" style="background: pink; cursor: pointer;">
+						<h4>Alternate</h4>
+					</div>
+					<ul class="alt o-hide">
 						<li>Dolor pulvinar etiam magna etiam.</li>
 						<li>Sagittis adipiscing lorem eleifend.</li>
 						<li>Felis enim feugiat dolore viverra.</li>

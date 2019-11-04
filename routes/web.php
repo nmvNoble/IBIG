@@ -36,3 +36,18 @@ Route::get('/organizations/{organization}/owned', 'OrganizationsController@showO
 
 Route::get('/users/{user}/donatedTo', 'UsersController@showDonatedTo');
 Route::get('/users/{user}/owned', 'UsersController@showOwned');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

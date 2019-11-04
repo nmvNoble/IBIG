@@ -2122,6 +2122,15 @@
 		content: 'Php ' attr(value) '';
 	}
 
+	.o-hide {
+	  display: none;
+	  transition: all ease 0.8s;
+	}
+
+	.o-hide:hover {
+	  display: block;
+	}
+
 /* Feature */
 
 	.feature-grid {
