@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Project;
 use Illuminate\Http\Request;
+use Spatie\Searchable\Search;
 
 class ProjectsController extends Controller
 {
@@ -169,6 +171,25 @@ class ProjectsController extends Controller
 
         return redirect('/projects/' . $id);
     }
+
+    public function search(Request $request)
+    {
+        $searchResults = (new Search())
+            ->registerModel(Project::class, 'title')
+            ->perform($request->input('query'));
+
+
+        $query=$request->input('query');
+
+
+        $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->get();
+
+        //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
+
+        return view('search', compact('projects'));
+    }
+
+
 
     /**
      * Remove the specified resource from storage.
