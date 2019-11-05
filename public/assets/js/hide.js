@@ -1,15 +1,21 @@
 var count = 0;
 var oHide = document.querySelector(".o-hide");
-var toggle = document.querySelector(".toggle");
+var toggleOn = document.querySelector(".toggleOn");
+var toggleOff = document.querySelector(".toggleOff");
 
 
-toggle.addEventListener("mouseover", function(){
+toggleOn.addEventListener("mouseover", function(){
     count++;
     //oHide.innerHTML = '<p>' + count + '</p>';
-	toggle.style.background = "white";
+	toggleOn.style.background = "white";
 });
 
-toggle.addEventListener("click", function(){
+toggleOn.addEventListener("click", function(){
 	oHide.style.display = "block";
-	//alert("hide");
+	toggleOn.style.display = "none";
+});
+
+toggleOff.addEventListener("click", function(){
+	oHide.style.display = "none";
+	toggleOn.style.display = "block";
 });

@@ -31,16 +31,24 @@
 						<li>Felis enim feugiat dolore viverra.</li>
 					</ul>
 
-					<script src="\assets\js\hide.js"></script>
+					<!--<div class="tooltip toggleOn">
+						<img class="image icon tooltip" src="\images\icons/add-512.png"/>
+						<span class="tooltiptext">Alternate</span>
+					</div> -->
+					
+					
+					<span title="Alternate"><img class="image icon toggleOn" src="\images\icons/add-512.png"/></span>
 
-					<div class="toggle" style="background: pink; cursor: pointer;">
-						<h4>Alternate</h4>
+					
+					<div class="o-hide">
+						<img class="image icon toggleOff" src="\images\icons/remove-512.png"  />
+						<h4 class="tooltoptext" style="display: inline;">Alternate</h4>
+						<ul class="alt">
+							<li>Dolor pulvinar etiam magna etiam.</li>
+							<li>Sagittis adipiscing lorem eleifend.</li>
+							<li>Felis enim feugiat dolore viverra.</li>
+						</ul>
 					</div>
-					<ul class="alt o-hide">
-						<li>Dolor pulvinar etiam magna etiam.</li>
-						<li>Sagittis adipiscing lorem eleifend.</li>
-						<li>Felis enim feugiat dolore viverra.</li>
-					</ul>
 
 				</div>
 				<div class="6u$ 12u$(xsmall)"><!-- sidebar -->
