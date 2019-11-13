@@ -1,11 +1,11 @@
 /* Customization */
 
 
-/* Icon */
+/* Icon - Add & Remove */
 
-	.icon {
+	.customIcon {
 		max-height: 20px; 
-		width: auto; 
+		max-width: 20px; 
 		cursor: pointer;
 		display: inline;
 	}
@@ -70,6 +70,11 @@
 	}
 
 	.curOverGoalHide {
+	  display: block;
+	  transition: all ease 0.8s;
+	}
+
+	.projProgHide {
 	  display: block;
 	  transition: all ease 0.8s;
 	}

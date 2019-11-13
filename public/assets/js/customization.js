@@ -114,6 +114,30 @@ curOverGoalToggleOff.addEventListener("click", function(){
 });
 
 
+/* projProg */
+
+
+var projProgHide = document.querySelector(".projProgHide");
+var projProgToggleOn = document.querySelector(".projProgToggleOn");
+var projProgToggleOff = document.querySelector(".projProgToggleOff");
+
+
+projProgToggleOn.addEventListener("mouseover", function(){
+	projProgToggleOn.style.background = "white";
+});
+
+projProgToggleOn.addEventListener("click", function(){
+	projProgHide.style.display = "block";
+	projProgToggleOn.style.display = "none";
+});
+
+projProgToggleOff.addEventListener("click", function(){
+	alert(projProg);
+	projProgHide.style.display = "none";
+	projProgToggleOn.style.display = "block";
+});
+
+
 /*---------------------------------------------------------------------------*/
 
 

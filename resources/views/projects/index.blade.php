@@ -39,7 +39,14 @@
                                     <header>
                                         <h3>Php {{$project->goal - $project->current}}</h3>
                                         <p>left to go!</p>
-                                        <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+                                        <span title="Progress">
+                                            <img class="image customIcon projProgToggleOn" src="\images\icons/add-512.png"
+                                            style="display: none;" />
+                                        </span>
+                                        <div class="projProgHide">
+                                            <img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />
+                                            <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+                                        </div>
                                     </header>
                                     <ul class="actions">
                                         <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
