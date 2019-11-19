@@ -24,7 +24,7 @@
                         <a href="/" accesskey="1" title="">Home</a>
                     </li>
                     <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
-                    <li class="inactive_page_item"><a href="\elements.html">Elements</a></li>
+                    <!--<li class="inactive_page_item"><a href="\elements.html">Elements</a></li>-->
                 </ul>
             </nav>
         </header>
