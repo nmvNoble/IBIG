@@ -18,7 +18,7 @@ projDescTabToggleOff.addEventListener("click", function(){
 
 /* description */
 
-
+var projDescCount = 1;
 var projDescText = document.querySelector("#projDescText");
 var projDescTextToggleOn = document.querySelector(".projDescTextToggleOn");
 var projDescTextToggleOff = document.querySelector(".projDescTextToggleOff");
@@ -26,11 +26,13 @@ var projDescTextToggleOff = document.querySelector(".projDescTextToggleOff");
 projDescTextToggleOn.addEventListener("click", function(){
 	projDescText.style.display = "block";
 	projDescTextToggleOn.style.display = "none";
+	projDescCount = 1;
 });
 
 projDescTextToggleOff.addEventListener("click", function(){
 	projDescText.style.display = "none";
 	projDescTextToggleOn.style.display = "block";
+	projDescCount = 0;
 });
 
 
