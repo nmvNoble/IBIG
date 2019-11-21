@@ -44,7 +44,7 @@
                                             style="display: none;" />
                                         </span>
                                         <div class="projProgHide">
-                                            <img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />
+                                            <!--<img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />-->
                                             <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
                                         </div>
                                     </header>

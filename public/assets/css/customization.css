@@ -49,36 +49,7 @@
 
 /* Hidden */
 
-	.unorderedHide {
+	.hide {
 	  display: block;
 	  transition: all ease 0.8s;
 	}
-
-	.alternateHide {
-	  display: block;
-	  transition: all ease 0.8s;
-	}
-
-	.orderedHide {
-	  display: block;
-	  transition: all ease 0.8s;
-	}
-
-	.phpLeftHide {
-	  display: block;
-	  transition: all ease 0.8s;
-	}
-
-	.curOverGoalHide {
-	  display: block;
-	  transition: all ease 0.8s;
-	}
-
-	.projProgHide {
-	  display: block;
-	  transition: all ease 0.8s;
-	}
-
-	/*.unorderedHide:hover {
-	  display: block;
-	}*/

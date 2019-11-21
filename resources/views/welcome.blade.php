@@ -6,7 +6,7 @@
         <h2>Welcome to IBIG</h2>
         <p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
         <ul class="actions">
-            <li><a href="#" class="button special big">Get Started</a></li>
+            <li><a href="\projects" class="button special big">View Projects</a></li>
         </ul>
     </section>
 @endsection

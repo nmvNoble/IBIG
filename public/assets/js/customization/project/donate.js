@@ -2,7 +2,7 @@
 /* Unordered */
 
 
-var unorderedHide = document.querySelector(".unorderedHide");
+var unordered = document.querySelector("#unordered");
 var unorderedToggleOn = document.querySelector(".unorderedToggleOn");
 var unorderedToggleOff = document.querySelector(".unorderedToggleOff");
 
@@ -12,12 +12,12 @@ unorderedToggleOn.addEventListener("mouseover", function(){
 });
 
 unorderedToggleOn.addEventListener("click", function(){
-	unorderedHide.style.display = "block";
+	unordered.style.display = "block";
 	unorderedToggleOn.style.display = "none";
 });
 
 unorderedToggleOff.addEventListener("click", function(){
-	unorderedHide.style.display = "none";
+	unordered.style.display = "none";
 	unorderedToggleOn.style.display = "block";
 });
 
@@ -25,7 +25,7 @@ unorderedToggleOff.addEventListener("click", function(){
 /* alternate */
 
 
-var alternateHide = document.querySelector(".alternateHide");
+var alternate = document.querySelector("#alternate");
 var alternateToggleOn = document.querySelector(".alternateToggleOn");
 var alternateToggleOff = document.querySelector(".alternateToggleOff");
 
@@ -35,12 +35,12 @@ alternateToggleOn.addEventListener("mouseover", function(){
 });
 
 alternateToggleOn.addEventListener("click", function(){
-	alternateHide.style.display = "block";
+	alternate.style.display = "block";
 	alternateToggleOn.style.display = "none";
 });
 
 alternateToggleOff.addEventListener("click", function(){
-	alternateHide.style.display = "none";
+	alternate.style.display = "none";
 	alternateToggleOn.style.display = "block";
 });
 
@@ -48,7 +48,7 @@ alternateToggleOff.addEventListener("click", function(){
 /* ordered */
 
 
-var orderedHide = document.querySelector(".orderedHide");
+var ordered = document.querySelector("#ordered");
 var orderedToggleOn = document.querySelector(".orderedToggleOn");
 var orderedToggleOff = document.querySelector(".orderedToggleOff");
 
@@ -58,12 +58,12 @@ orderedToggleOn.addEventListener("mouseover", function(){
 });
 
 orderedToggleOn.addEventListener("click", function(){
-	orderedHide.style.display = "block";
+	ordered.style.display = "block";
 	orderedToggleOn.style.display = "none";
 });
 
 orderedToggleOff.addEventListener("click", function(){
-	orderedHide.style.display = "none";
+	ordered.style.display = "none";
 	orderedToggleOn.style.display = "block";
 });
 
@@ -71,7 +71,7 @@ orderedToggleOff.addEventListener("click", function(){
 /* phpLeft */
 
 
-var phpLeftHide = document.querySelector(".phpLeftHide");
+var phpLeft = document.querySelector("#phpLeft");
 var phpLeftToggleOn = document.querySelector(".phpLeftToggleOn");
 var phpLeftToggleOff = document.querySelector(".phpLeftToggleOff");
 
@@ -81,12 +81,12 @@ phpLeftToggleOn.addEventListener("mouseover", function(){
 });
 
 phpLeftToggleOn.addEventListener("click", function(){
-	phpLeftHide.style.display = "block";
+	phpLeft.style.display = "block";
 	phpLeftToggleOn.style.display = "none";
 });
 
 phpLeftToggleOff.addEventListener("click", function(){
-	phpLeftHide.style.display = "none";
+	phpLeft.style.display = "none";
 	phpLeftToggleOn.style.display = "block";
 });
 
@@ -94,7 +94,7 @@ phpLeftToggleOff.addEventListener("click", function(){
 /* curOverGoal */
 
 
-var curOverGoalHide = document.querySelector(".curOverGoalHide");
+var curOverGoal = document.querySelector("#curOverGoal");
 var curOverGoalToggleOn = document.querySelector(".curOverGoalToggleOn");
 var curOverGoalToggleOff = document.querySelector(".curOverGoalToggleOff");
 
@@ -104,20 +104,39 @@ curOverGoalToggleOn.addEventListener("mouseover", function(){
 });
 
 curOverGoalToggleOn.addEventListener("click", function(){
-	curOverGoalHide.style.display = "block";
+	curOverGoal.style.display = "block";
 	curOverGoalToggleOn.style.display = "none";
 });
 
 curOverGoalToggleOff.addEventListener("click", function(){
-	curOverGoalHide.style.display = "none";
+	curOverGoal.style.display = "none";
 	curOverGoalToggleOn.style.display = "block";
 });
 
 
-/* projProg */
+/* description */
 
 
-var projProgHide = document.querySelector(".projProgHide");
+	alert(projDesc);
+var projDesc = document.querySelector("#projDesc");
+var projDescToggleOn = document.querySelector(".projDescToggleOn");
+var projDescToggleOff = document.querySelector(".projDescToggleOff");
+
+projDescToggleOn.addEventListener("click", function(){
+	projDesc.style.display = "block";
+	projDescToggleOn.style.display = "none";
+});
+
+projDescToggleOff.addEventListener("click", function(){
+	projDesc.style.display = "none";
+	projDescToggleOn.style.display = "block";
+});
+
+
+/* projProg ================================== NOT WORKING!!! DO NOT PUT WORKING CODE UNDER THIS */
+
+
+var projProg = document.querySelector(".projProg");
 var projProgToggleOn = document.querySelector(".projProgToggleOn");
 var projProgToggleOff = document.querySelector(".projProgToggleOff");
 
@@ -127,13 +146,13 @@ projProgToggleOn.addEventListener("mouseover", function(){
 });
 
 projProgToggleOn.addEventListener("click", function(){
-	projProgHide.style.display = "block";
+	projProg.style.display = "block";
 	projProgToggleOn.style.display = "none";
 });
 
 projProgToggleOff.addEventListener("click", function(){
-	alert(projProg);
-	projProgHide.style.display = "none";
+	alert("projProg");
+	projProg.style.display = "none";
 	projProgToggleOn.style.display = "block";
 });
 
@@ -144,7 +163,7 @@ projProgToggleOff.addEventListener("click", function(){
 /* spare */
 
 
-var spareHide = document.querySelector(".spareHide");
+var spare = document.querySelector("#spare");
 var spareToggleOn = document.querySelector(".spareToggleOn");
 var spareToggleOff = document.querySelector(".spareToggleOff");
 
@@ -154,11 +173,11 @@ spareToggleOn.addEventListener("mouseover", function(){
 });
 
 spareToggleOn.addEventListener("click", function(){
-	spareHide.style.display = "block";
+	spare.style.display = "block";
 	spareToggleOn.style.display = "none";
 });
 
 spareToggleOff.addEventListener("click", function(){
-	spareHide.style.display = "none";
+	spare.style.display = "none";
 	spareToggleOn.style.display = "block";
 });
