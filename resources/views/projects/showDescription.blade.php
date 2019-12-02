@@ -30,10 +30,10 @@
 			        		</li>
 			        		
 			        	</span>
-			            	<li class={{Request::is('projects/*/description') ? 'current_page_item' : ''}} id="projDescTab">
-			            		<img class="image customIcon projDescTabToggleOff" src="\images\icons/remove-512.png"/>
-			            		<a href="\projects\{{$project->id}}\description">Description</a>
-			            	</li>
+		            	<li id="projDescTab" class={{Request::is('projects/*/description') ? 'current_page_item' : ''}}>
+		            		<img class="image customIcon projDescTabToggleOff" src="\images\icons/remove-512.png"/>
+		            		<a href="\projects\{{$project->id}}\description">Description</a>
+		            	</li>
 
 			            <li class={{Request::is('projects/*/updates') ? 'current_page_item' : ''}}>
 			            	<a href="\projects\{{$project->id}}\updates">Updates</a>

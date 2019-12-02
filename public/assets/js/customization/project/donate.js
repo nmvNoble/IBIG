@@ -5,6 +5,7 @@
 var unordered = document.querySelector("#unordered");
 var unorderedToggleOn = document.querySelector(".unorderedToggleOn");
 var unorderedToggleOff = document.querySelector(".unorderedToggleOff");
+var unorderedToggleValue = 1;
 
 
 unorderedToggleOn.addEventListener("mouseover", function(){
@@ -14,11 +15,13 @@ unorderedToggleOn.addEventListener("mouseover", function(){
 unorderedToggleOn.addEventListener("click", function(){
 	unordered.style.display = "block";
 	unorderedToggleOn.style.display = "none";
+	unorderedToggleValue = 1;
 });
 
 unorderedToggleOff.addEventListener("click", function(){
 	unordered.style.display = "none";
 	unorderedToggleOn.style.display = "block";
+	unorderedToggleValue = 0;
 });
 
 
@@ -28,6 +31,7 @@ unorderedToggleOff.addEventListener("click", function(){
 var alternate = document.querySelector("#alternate");
 var alternateToggleOn = document.querySelector(".alternateToggleOn");
 var alternateToggleOff = document.querySelector(".alternateToggleOff");
+var alternateToggleValue = 1;
 
 
 alternateToggleOn.addEventListener("mouseover", function(){
@@ -37,11 +41,13 @@ alternateToggleOn.addEventListener("mouseover", function(){
 alternateToggleOn.addEventListener("click", function(){
 	alternate.style.display = "block";
 	alternateToggleOn.style.display = "none";
+	alternateToggleValue = 1;
 });
 
 alternateToggleOff.addEventListener("click", function(){
 	alternate.style.display = "none";
 	alternateToggleOn.style.display = "block";
+	alternateToggleValue = 0;
 });
 
 
@@ -51,6 +57,7 @@ alternateToggleOff.addEventListener("click", function(){
 var ordered = document.querySelector("#ordered");
 var orderedToggleOn = document.querySelector(".orderedToggleOn");
 var orderedToggleOff = document.querySelector(".orderedToggleOff");
+var orderedToggleValue = 1;
 
 
 orderedToggleOn.addEventListener("mouseover", function(){
@@ -60,11 +67,13 @@ orderedToggleOn.addEventListener("mouseover", function(){
 orderedToggleOn.addEventListener("click", function(){
 	ordered.style.display = "block";
 	orderedToggleOn.style.display = "none";
+	orderedToggleValue = 1;
 });
 
 orderedToggleOff.addEventListener("click", function(){
 	ordered.style.display = "none";
 	orderedToggleOn.style.display = "block";
+	orderedToggleValue = 0;
 });
 
 
@@ -74,6 +83,7 @@ orderedToggleOff.addEventListener("click", function(){
 var phpLeft = document.querySelector("#phpLeft");
 var phpLeftToggleOn = document.querySelector(".phpLeftToggleOn");
 var phpLeftToggleOff = document.querySelector(".phpLeftToggleOff");
+var phpLeftToggleValue = 1;
 
 
 phpLeftToggleOn.addEventListener("mouseover", function(){
@@ -83,11 +93,13 @@ phpLeftToggleOn.addEventListener("mouseover", function(){
 phpLeftToggleOn.addEventListener("click", function(){
 	phpLeft.style.display = "block";
 	phpLeftToggleOn.style.display = "none";
+	phpLeftToggleValue = 1;
 });
 
 phpLeftToggleOff.addEventListener("click", function(){
 	phpLeft.style.display = "none";
 	phpLeftToggleOn.style.display = "block";
+	phpLeftToggleValue = 0;
 });
 
 
@@ -97,87 +109,20 @@ phpLeftToggleOff.addEventListener("click", function(){
 var curOverGoal = document.querySelector("#curOverGoal");
 var curOverGoalToggleOn = document.querySelector(".curOverGoalToggleOn");
 var curOverGoalToggleOff = document.querySelector(".curOverGoalToggleOff");
+var curOverGoalToggleValue = 1;
 
-
-curOverGoalToggleOn.addEventListener("mouseover", function(){
-	curOverGoalToggleOn.style.background = "white";
-});
 
 curOverGoalToggleOn.addEventListener("click", function(){
 	curOverGoal.style.display = "block";
 	curOverGoalToggleOn.style.display = "none";
+	curOverGoalToggleValue = 1;
 });
 
 curOverGoalToggleOff.addEventListener("click", function(){
 	curOverGoal.style.display = "none";
 	curOverGoalToggleOn.style.display = "block";
+	curOverGoalToggleValue = 0;
 });
 
 
-/* description */
 
-
-	alert(projDesc);
-var projDesc = document.querySelector("#projDesc");
-var projDescToggleOn = document.querySelector(".projDescToggleOn");
-var projDescToggleOff = document.querySelector(".projDescToggleOff");
-
-projDescToggleOn.addEventListener("click", function(){
-	projDesc.style.display = "block";
-	projDescToggleOn.style.display = "none";
-});
-
-projDescToggleOff.addEventListener("click", function(){
-	projDesc.style.display = "none";
-	projDescToggleOn.style.display = "block";
-});
-
-
-/* projProg ================================== NOT WORKING!!! DO NOT PUT WORKING CODE UNDER THIS */
-
-
-var projProg = document.querySelector(".projProg");
-var projProgToggleOn = document.querySelector(".projProgToggleOn");
-var projProgToggleOff = document.querySelector(".projProgToggleOff");
-
-
-projProgToggleOn.addEventListener("mouseover", function(){
-	projProgToggleOn.style.background = "white";
-});
-
-projProgToggleOn.addEventListener("click", function(){
-	projProg.style.display = "block";
-	projProgToggleOn.style.display = "none";
-});
-
-projProgToggleOff.addEventListener("click", function(){
-	alert("projProg");
-	projProg.style.display = "none";
-	projProgToggleOn.style.display = "block";
-});
-
-
-/*---------------------------------------------------------------------------*/
-
-
-/* spare */
-
-
-var spare = document.querySelector("#spare");
-var spareToggleOn = document.querySelector(".spareToggleOn");
-var spareToggleOff = document.querySelector(".spareToggleOff");
-
-
-spareToggleOn.addEventListener("mouseover", function(){
-	spareToggleOn.style.background = "white";
-});
-
-spareToggleOn.addEventListener("click", function(){
-	spare.style.display = "block";
-	spareToggleOn.style.display = "none";
-});
-
-spareToggleOff.addEventListener("click", function(){
-	spare.style.display = "none";
-	spareToggleOn.style.display = "block";
-});

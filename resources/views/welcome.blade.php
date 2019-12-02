@@ -12,98 +12,117 @@
 @endsection
 
 @section('content')
-<!-- One -->
-<section id="one" class="wrapper style1">
-    <div class="container 75%">
-        <div class="row 200%">
-            <div class="6u 12u$(medium)">
-                <header class="major">
-                    <h2>Maecenas luctus lectus</h2>
-                    <p>Perspiciatis doloremque recusandae dolor</p>
-                </header>
-            </div>
-            <div class="6u$ 12u$(medium)">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ea mollitia corporis id, distinctio sunt veritatis officiis dolore reprehenderit deleniti voluptatibus harum magna, doloremque alias quisquam minus, eaque. Feugiat quod, nesciunt! Iste quos ipsam, iusto sit esse.</p>
-                <p>Dolorum aspernatur maxime libero ratione quidem distinctio, placeat fugiat laborum voluptatum enim neque soluta vel sunt id ex veritatis. Labore rerum, odit sapiente, alias mollitia magnam exercitationem modi amet earum quia atque ipsum voluptas asperiores quas laboriosam.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- Two -->
-<section id="two" class="wrapper style2 special">
+
+<!-- One -->
+<section id="one" class="wrapper style1 special">
     <div class="container">
         <header class="major">
-            <h2>Fusce ultrices fringilla</h2>
-            <p>Maecenas vitae tellus feugiat eleifend</p>
+            <h2>People of Laguna give more than Manila</h2>
+            <p>IBIG statistics</p>
         </header>
         <div class="row 150%">
             <div class="6u 12u$(xsmall)">
                 <div class="image fit captioned">
-                    <img src="images/pic02.jpg" alt="" />
-                    <h3>Lorem ipsum dolor sit amet.</h3>
+                    <h3>58% of Donations are by the people of Laguna</h3>
                 </div>
             </div>
             <div class="6u$ 12u$(xsmall)">
                 <div class="image fit captioned">
-                    <img src="images/pic03.jpg" alt="" />
-                    <h3>Illum, maiores tempora cupid?</h3>
+                    <h3>42% of Donations are by the people of Manila</h3>
                 </div>
             </div>
         </div>
-        <ul class="actions">
-            <li><a href="#" class="button special big">Nulla luctus</a></li>
-            <li><a href="#" class="button big">Sed vulputate</a></li>
-        </ul>
-    </div>
-</section>
-
-<!-- Three -->
-<section id="three" class="wrapper style1">
-    <div class="container">
-        <header class="major special">
-            <h2>Mauris vulputate dolor</h2>
-            <p>Feugiat sed lorem ipsum magna</p>
-        </header>
         <div class="feature-grid">
-            <div class="feature">
-                <div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>
-                <div class="content">
-                    <header>
-                        <h4>Lorem ipsum</h4>
-                        <p>Lorem ipsum dolor sit</p>
-                    </header>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore esse tenetur accusantium porro omnis, unde mollitia totam sit nesciunt consectetur.</p>
-                </div>
-            </div>
-            <div class="feature">
-                <div class="image rounded"><img src="images/pic05.jpg" alt="" /></div>
-                <div class="content">
-                    <header>
-                        <h4>Recusandae nemo</h4>
-                        <p>Ratione maiores a, commodi</p>
-                    </header>
-                    <p>Animi mollitia optio culpa expedita. Dolorem alias minima culpa repellat. Dolores, fuga maiores ut obcaecati blanditiis, at aperiam doloremque.</p>
-                </div>
-            </div>
             <div class="feature">
                 <div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
                 <div class="content">
                     <header>
-                        <h4>Laudantium fugit</h4>
-                        <p>Possimus ex reprehenderit eaque</p>
+                        <h4>Fresh Air!</h4>
+                        <p>58% of Donations are by the people of Laguna</p>
                     </header>
-                    <p>Maiores iusto inventore fugit architecto est iste expedita commodi sed, quasi feugiat nam neque mollitia vitae omnis, ea natus facere.</p>
+                    <p>Maybe it's the fresh air of Laguna that gives it's people a fresh new perspective that makes them more generous.</p>
                 </div>
             </div>
             <div class="feature">
                 <div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
                 <div class="content">
                     <header>
-                        <h4>Porro aliquam</h4>
-                        <p>Quaerat, excepturi eveniet laboriosam</p>
+                        <h4>Stuck in traffic?</h4>
+                        <p>42% of Donations are by the people of Manila</p>
                     </header>
-                    <p>Vitae earum unde, autem labore voluptas ex, iste dolorum inventore natus consequatur iure similique obcaecati aut corporis hic in! Porro sed.</p>
+                    <p>Donations are a bit on a jam here in Manila. Maybe you'd want to change route. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Two -->
+<section id="two" class="wrapper style1">
+    <div class="container 75%">
+        <div class="row 200%">
+            <div class="6u 12u$(medium)">
+                <header class="major">
+                    <h2>A Big welcome to you Juan!</h2>
+                    <p>From I love Sta Rosa</p>
+                </header>
+            </div>
+            <div class="6u$ 12u$(medium)">
+                <p>On 11/1/2019 Juan donated a whopping 2,000 Pesos to our project Lay on Hands. Not only did Mr Juan donate but he also volunteered! We send you all our thanks for your generosity and your service.</p>
+            </div>
+        </div>
+        <div class="project">
+            <div class="image rounded left" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+            <div class="content">
+                <header>
+                    <h2>Php 2000</h2>
+                    <p><a href="/users/9099/owned">Juan Dela Cruz</a> 11/1/2019</p>
+                </header>
+                    <p>I'll also be going to your volunteering unit at MM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Three -->
+<section id="three" class="wrapper style2 special">
+    <div class="container">
+        <header class="major">
+            <h2>Women give more than Men</h2>
+            <p>IBIG statistics</p>
+        </header>
+        <div class="row 150%">
+            <div class="6u 12u$(xsmall)">
+                <div class="image fit captioned">
+                    <h3>62% of Donations are by women</h3>
+                </div>
+            </div>
+            <div class="6u$ 12u$(xsmall)">
+                <div class="image fit captioned">
+                    <h3>38% of Donations are by men</h3>
+                </div>
+            </div>
+        </div>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
+                <div class="content">
+                    <header>
+                        <h4>Girl Power</h4>
+                        <p>62% of Donations are by women</p>
+                    </header>
+                    <p>Good job ladies! Making the world a better and healthier place one donation at a time.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
+                <div class="content">
+                    <header>
+                        <h4>Hussle</h4>
+                        <p>38% of Donations are by men</p>
+                    </header>
+                    <p>Nothing to be ashamed about. What's given is still given and we should still be proud of that. </p>
                 </div>
             </div>
         </div>
@@ -111,7 +130,21 @@
 </section>
 
 <!-- Four -->
-<section id="four" class="wrapper style3 special">
+<section id="four" class="wrapper style1">
+    <div class="container">
+        <header class="major special">
+            <h2>Mauris vulputate dolor</h2>
+            <p>Feugiat sed lorem ipsum magna</p>
+        </header>
+        <ul class="actions">
+            <li><a href="#" class="button special big">Nulla luctus</a></li>
+            <li><a href="#" class="button big">Sed vulputate</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Five -->
+<section id="five" class="wrapper style3 special">
     <div class="container">
         <header class="major">
             <h2>Aenean elementum ligula</h2>

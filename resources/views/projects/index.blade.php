@@ -43,8 +43,8 @@
                                             <img class="image customIcon projProgToggleOn" src="\images\icons/add-512.png"
                                             style="display: none;" />
                                         </span>
-                                        <div class="projProgHide">
-                                            <!--<img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />-->
+                                        <div id="projProg" class="hide">
+                                            <img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />
                                             <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
                                         </div>
                                     </header>
@@ -77,4 +77,9 @@
 
 <!-- Footer -->
 @section('footer')
+@endsection
+
+<!-- Additional Scripts -->
+@section('script')
+    <script src="\assets\js\customization\project\index.js"></script>
 @endsection
