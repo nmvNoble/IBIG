@@ -32,6 +32,17 @@
         <!-- Header -->
         <header id="header" class="alt">
             <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/" > @IBIG</a></strong></h1>
+            <form action="{{ route('search') }}" method="POST">
+                @csrf
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input type="text" name="query" class="form-control" placeholder="Search" style="width: 350px;margin-left: 400px; display: inline; margin-top: 30px; font-color: white; background-color: rgb(255, 255, 255);">
+                    </div>
+                    <div class="col-md-6">
+                      <button class="btn btn-default" value="search" style="display: inline-block;margin-top: 30px;width: 10px;margin-right: 500px "></button>
+                    </div>
+                  </div>
+                </form>
             <nav id="nav" style="float: right;">
                 <ul>
                     <span title="User Donations Notification Tab">

@@ -33,6 +33,8 @@ Route::put('/projects/{project}', 'ProjectsController@update');
 =======
 >>>>>>> dev-Noble-baseCustomization
 
+Route::post('/search', 'ProjectsController@search')->name('search');
+Route::get('/projects/{project}', 'ProjectsController@show')->name('projects.show');
 
 Route::get('/organizations/{organization}/aboutUs', 'OrganizationsController@showAboutUs');
 Route::get('/organizations/{organization}/affiliates', 'OrganizationsController@showAffiliates');
