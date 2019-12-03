@@ -101,8 +101,11 @@
 <!-- Additional Scripts -->
 @section('script')
 	<script src="\assets\js\customization\project\donate.js"></script>
+<<<<<<< HEAD
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+=======
+>>>>>>> dev-Noble-baseCustomization
 @endsection

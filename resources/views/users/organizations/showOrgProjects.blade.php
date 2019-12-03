@@ -1,0 +1,74 @@
+@extends ('layout_main')
+
+<!-- Content -->
+@section('content')
+	<section id="main" class="wrapper">
+		<div class="container 75%">
+		    <div class="row 200%">
+		        <div class="6u 12u$(medium)">
+		            <div class="image rounded center" style="margin-left: -2%;"><img src="\images/organization.jpg" alt="" style=" max-width: 90%" /></div>
+		            <header class="major">
+		                <h2>I Love Sta Rosa</h2>
+		                <p>Organization #: 9099</p>
+		            </header>
+		        </div>
+		        <div class="6u$ 12u$(medium)">
+		            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ea mollitia corporis id, distinctio sunt veritatis officiis dolore reprehenderit deleniti voluptatibus harum magna, doloremque alias quisquam minus, eaque. Feugiat quod, nesciunt! Iste quos ipsam, iusto sit esse.</p>
+		            <p>Dolorum aspernatur maxime libero ratione quidem distinctio, placeat fugiat laborum voluptatum enim neque soluta vel sunt id ex veritatis. Labore rerum, odit sapiente, alias mollitia magnam exercitationem modi amet earum quia atque ipsum voluptas asperiores quas laboriosam.</p>
+		        </div>
+		    </div>
+		</div>
+
+		<header id="userTab" class="alt">
+		    <nav id="nav">
+		        <ul>
+		            <li class={{Request::is('organizations/*/aboutUs') ? 'current_page_item' : ''}}>
+		                <a href="\organizations/9099/aboutUs">About Us</a>
+		            </li>
+		            <li class={{Request::is('organizations/*/affiliates') ? 'current_page_item' : ''}}>
+		                <a href="\organizations/9099/affiliates">Affiliates</a>
+		            </li>
+		            <li class={{Request::is('organizations/*/owned') ? 'current_page_item' : ''}}>
+		            	<a href="\organizations/9099/owned">Projects Owned</a>
+		            </li>
+		            <li class={{Request::is('organizations/*/donatedTo') ? 'current_page_item' : ''}}>
+		                <a href="\organizations/9099/donatedTo">Projects Donated To</a>
+		            </li>
+		        </ul>
+		    </nav>
+		</header>
+		<div class="container" style="padding-top: 3em">
+			<div class="projects-grid">
+			    <ul style="list-style: none;">
+			        @foreach ($projects as $project)
+			            <li>
+			                <div class="project">
+			                    <div class="image rounded" style="margin-left: -2%;"><img src="\images/{{$project->image}}.jpg" alt="" /></div>
+			                    <div class="content">
+			                        <header>
+			                            <h2><a href="/projects/{{$project->id}}/description">{{$project->title}}</a></h2>
+			                            <p>Project by: User #{{$project->creatorID}}</p>
+			                        </header>
+			                        <p>{{$project->description}}</p>
+			                    </div>
+			                    <div class="fund">
+			                        <div>
+	                                    <header>
+	                                        <h3>Php {{$project->goal - $project->current}}</h3>
+	                                        <p>left to go!</p>
+	                                        <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+	                                    </header>
+			                            <ul class="actions">
+			                                <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
+			                            </ul>
+			                        </div>
+			                    </div>
+			                </div>
+			            </li>
+			        @endforeach
+			    </ul>
+			</div>
+		</div>
+	</section>
+			
+@stop

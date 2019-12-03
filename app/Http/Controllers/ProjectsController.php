@@ -1,7 +1,4 @@
 <?php
-
-
-
 namespace App\Http\Controllers;
 
 use App\Project;
@@ -16,8 +13,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        //primitive version of latest()
-        $projects = Project::orderBy('id', 'desc')->get();
+        //primitive version of latest()->get();
+        $projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 
         return view('projects.index', ['projects' => $projects]);
     }
@@ -39,26 +36,30 @@ class ProjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //dump(request()->all());
+        dump(request()->all());
 
         request()->validate([
             'title' => 'required',
-            'body' => 'required',
-            'excerpt' => 'required'
+            'goal' => 'required',
+            'description' => 'required'
         ]);
 
         $project = new Project();
 
+        //$project->creatorID = ;
         $project->title = request('title');
-        $project->body = request('body');
-        $project->excerpt = request('excerpt');
+        $project->goal = request('goal');
+        $project->description = request('description');
+        $project->image = request('image') === '' ? 'default' : request('image');
+
+        $project->save();
 
         //Primitive version of $project->save();
-        $project = \DB::table("projects")->insert(
+        /*$project = \DB::table("projects")->insert(
             ['title' => request('title'), 'excerpt' => request('excerpt'), 'body' => request('body')]
-        );
+        );*/
 
 
         return redirect('/projects');
@@ -70,12 +71,45 @@ class ProjectsController extends Controller
      * @param  \App\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show()//($id)
+    public function showDescription($id)
     {
-        return view('projects.show');
-        //$project = Project::find($id);
+        //return view('projects.show');
+        $project = Project::find($id);
 
-        //return view('projects.show', ['project' => $project]);
+        return view('projects.showDescription', ['project' => $project]);
+    }
+    public function showUpdates($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showUpdates', ['project' => $project]);
+    }
+    public function showComments($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showComments', ['project' => $project]);
+    }
+    public function showDonations($id)
+    {
+        //return view('projects.show');
+        $project = Project::find($id);
+
+        return view('projects.showDonations', ['project' => $project]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function donate($id)
+    {
+        $project = Project::find($id);
+        return view('projects.donate', ['project' => $project]);
     }
 
     /**
@@ -104,24 +138,31 @@ class ProjectsController extends Controller
         //
         request()->validate([
             'title' => 'required',
-            'body' => 'required',
-            'excerpt' => 'required'
+            'goal' => 'required',
+            'description' => 'required'
         ]);
 
         $project = Project::find($id);
 
+        //$project->creatorID = ;
         $project->title = request('title');
-        $project->body = request('body');
-        $project->excerpt = request('excerpt');
+        $project->goal = request('goal');
+        $project->description = request('description');
+        if(!empty(request('image'))) {
+            $project->image = request('image');
+        }
+
+        $project->save();
 
         //Primitive version of $project->save();
         /*$project = \DB::table("projects")->insert(
             ['title' => request('title'), 'excerpt' => request('excerpt'), 'body' => request('body')]
         );*/
+        /*not as primitive ver
         Project::updateOrInsert(
                 ['id' => $id],
                 ['title' => request('title'), 'excerpt' => request('excerpt'), 'body' => request('body')]
-            );
+            );*/
         //die($project);
         //die($id);
 

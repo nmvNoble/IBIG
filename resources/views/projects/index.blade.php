@@ -18,64 +18,45 @@
     <div class="container">
         <header class="major special">
             <h2>Projects</h2>
+            <a href="\projects\create" class="button special big" style="display: inline; float: right;">Create a Project</a>
             <p>Feugiat sed lorem ipsum magna</p>
         </header>
         <div class="projects-grid">
             <ul style="list-style: none;">
-                <li>
-                    <div class="project">
-                        <div class="image rounded" style="margin-left: -2%;"><img src="images/pic04.jpg" alt="" /></div>
-                        <div class="content">
-                            <header>
-                                <h2>&ltTitle&gt</h2>
-                                <p>Project by: &ltInsert Project Creator Here&gt</p>
-                            </header>
-                            <p>&ltDescription&gt</p>
-                        </div>
-                        <div class="fund">
-                            <div>
+                @foreach ($projects as $project)
+                    <li>
+                        <div class="project">
+                            <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$project->image}}.jpg" alt="" /></div>
+                            <div class="content">
                                 <header>
-                                    <h4 style="display: inline">$Current</h4>
-                                    <p>They need this much more!</p>
+                                    <h2><a href="/projects/{{$project->id}}/description">{{$project->title}}</a></h2>
+                                    <p>Project by: User #{{$project->creatorID}}</p>
                                 </header>
-                                <ul class="actions">
-                                    <li><a href="#" class="button special" >Get in Touch</a></li>
-                                </ul>
+                                <p>{{$project->description}}</p>
+                            </div>
+                            <div class="fund">
+                                <div>
+                                    <header>
+                                        <h3>Php {{$project->goal - $project->current}}</h3>
+                                        <p>left to go!</p>
+                                        <span title="Progress">
+                                            <img class="image customIcon projProgToggleOn" src="\images\icons/add-512.png"
+                                            style="display: none;" />
+                                        </span>
+                                        <div id="projProg" class="hide">
+                                            <img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  />
+                                            <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+                                        </div>
+                                    </header>
+                                    <ul class="actions">
+                                        <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
+                    </li>
+                @endforeach
             </ul>
-            <div class="project">
-                <div class="image rounded"><img src="images/pic05.jpg" alt="" /></div>
-                <div class="content">
-                    <header>
-                        <h4>Recusandae nemo</h4>
-                        <p>Ratione maiores a, commodi</p>
-                    </header>
-                    <p>Animi mollitia optio culpa expedita. Dolorem alias minima culpa repellat. Dolores, fuga maiores ut obcaecati blanditiis, at aperiam doloremque.</p>
-                </div>
-            </div>
-            <div class="project">
-                <div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
-                <div class="content">
-                    <header>
-                        <h4>Laudantium fugit</h4>
-                        <p>Possimus ex reprehenderit eaque</p>
-                    </header>
-                    <p>Maiores iusto inventore fugit architecto est iste expedita commodi sed, quasi feugiat nam neque mollitia vitae omnis, ea natus facere.</p>
-                </div>
-            </div>
-            <div class="project">
-                <div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
-                <div class="content">
-                    <header>
-                        <h4>Porro aliquam</h4>
-                        <p>Quaerat, excepturi eveniet laboriosam</p>
-                    </header>
-                    <p>Vitae earum unde, autem labore voluptas ex, iste dolorum inventore natus consequatur iure similique obcaecati aut corporis hic in! Porro sed.</p>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -96,4 +77,9 @@
 
 <!-- Footer -->
 @section('footer')
+@endsection
+
+<!-- Additional Scripts -->
+@section('script')
+    <script src="\assets\js\customization\project\index.js"></script>
 @endsection

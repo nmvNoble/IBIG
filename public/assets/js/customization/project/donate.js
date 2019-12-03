@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var donateComputed;
 var donateProgress;
 var donateAlternate;
@@ -98,6 +99,8 @@ curOverGoalToggleOff.addEventListener("click", function(){
 });
 
 
+=======
+>>>>>>> dev-Noble-baseCustomization
 
 /* Unordered */
 
@@ -177,3 +180,55 @@ orderedToggleOff.addEventListener("click", function(){
 });
 
 
+<<<<<<< HEAD
+=======
+/* phpLeft */
+
+
+var phpLeft = document.querySelector("#phpLeft");
+var phpLeftToggleOn = document.querySelector(".phpLeftToggleOn");
+var phpLeftToggleOff = document.querySelector(".phpLeftToggleOff");
+var phpLeftToggleValue = 1;
+
+
+phpLeftToggleOn.addEventListener("mouseover", function(){
+	phpLeftToggleOn.style.background = "white";
+});
+
+phpLeftToggleOn.addEventListener("click", function(){
+	phpLeft.style.display = "block";
+	phpLeftToggleOn.style.display = "none";
+	phpLeftToggleValue = 1;
+});
+
+phpLeftToggleOff.addEventListener("click", function(){
+	phpLeft.style.display = "none";
+	phpLeftToggleOn.style.display = "block";
+	phpLeftToggleValue = 0;
+});
+
+
+/* curOverGoal */
+
+
+var curOverGoal = document.querySelector("#curOverGoal");
+var curOverGoalToggleOn = document.querySelector(".curOverGoalToggleOn");
+var curOverGoalToggleOff = document.querySelector(".curOverGoalToggleOff");
+var curOverGoalToggleValue = 1;
+
+
+curOverGoalToggleOn.addEventListener("click", function(){
+	curOverGoal.style.display = "block";
+	curOverGoalToggleOn.style.display = "none";
+	curOverGoalToggleValue = 1;
+});
+
+curOverGoalToggleOff.addEventListener("click", function(){
+	curOverGoal.style.display = "none";
+	curOverGoalToggleOn.style.display = "block";
+	curOverGoalToggleValue = 0;
+});
+
+
+
+>>>>>>> dev-Noble-baseCustomization
