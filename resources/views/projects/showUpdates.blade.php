@@ -4,7 +4,6 @@
 @section('content')
 	<section id="main" class="wrapper">
 		<div class="container">
-
 			<header class="major special">
 				<h2>{{$project->title}}</h2>
 				<a href="\projects\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
