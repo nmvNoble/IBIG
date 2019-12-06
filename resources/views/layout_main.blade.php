@@ -37,13 +37,15 @@
                 </form>
             <nav id="nav" style="float: right;">
                 <ul>
-                    <span title="User Donations Notification Tab">
-                        <li style="display: none;" class="donateNotifToggleOn">
-                            <img class="image customIcon " src="\images\icons/add-512.png"/>
-                        </li>
-                    </span>
+                    
+                    <li style="display: none;" class="donateNotifToggleOn">
+                        <span title="User Donations Notification Tab">
+                            <img class="image customIcon " src="\images\icons/add-white-512.png"/>
+                        </span>
+                    </li>
+                    
                     <li id="donateNotif" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}} >
-                        <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-512.png"/>
+                        <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/>
                         <a href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a>
                     </li>
 
