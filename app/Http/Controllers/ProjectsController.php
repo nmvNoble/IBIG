@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Project;
+use App\Customize;
 use Illuminate\Http\Request;
 use Spatie\Searchable\Search;
 
@@ -111,7 +112,8 @@ class ProjectsController extends Controller
     public function donate($id)
     {
         $project = Project::find($id);
-        return view('projects.donate', ['project' => $project]);
+        $customize = Customize::getuserData(1);
+        return view('projects.donate', ['project' => $project , 'customize' => $customize]);
     }
 
     /**
@@ -201,4 +203,9 @@ class ProjectsController extends Controller
     {
         //
     }
+
+
+
+
+    
 }

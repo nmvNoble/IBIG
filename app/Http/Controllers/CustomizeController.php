@@ -11,7 +11,7 @@ class CustomizesController extends Controller {
   }
 
   // Fetch records
-  public function getUser($id = 0){
+  public function getUser($id=0){
     // Call getuserData() method of Page Model
     $userData['data'] = Customize::getuserData($id);
 

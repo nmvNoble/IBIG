@@ -1,21 +1,25 @@
-<<<<<<< HEAD
-var donateComputed;
+
+var donateComputed = <?php echo $donateComp ?>;
 var donateProgress;
 var donateAlternate;
 var donateOrdered;
 var donateUnordered;
-
-$.ajax({
-    url: 'getUser',
-    type :'get',
-    dataType: 'json',
-    success: function (response) {
-        donateComputed = response['data'].donateComputed;
-        alert("gud");
-    },
-    error: function (response) {
-        alert("ded " + response);
-        }
+var id =1;
+alert(donateComputed);
+$(document).ready(function () {
+	$.ajax({
+	    url: '/projects/{project}/getUser/'+id,
+	    type :'get',
+	    dataType: 'json',
+	    success: function (response) {
+	    	alert("start");
+	        donateComputed = response['data'].donateComputed;
+	        alert("gud");
+	    },
+	    error: function (response) {
+	        alert("ded " + response);
+	        },
+	});
 });
 
 function myCallback(response) {
@@ -24,12 +28,13 @@ function myCallback(response) {
   // Do whatever you need with result variable
   alert(result.donateComputed)
 }
-var id =1;
+
 $.ajax({
   type: "GET",
-  url: 'getUser',
+  url: 'getUser/'+id,
   datatype: "json",
   success: myCallback,
+  error: alert("ded2"),
 });
 /* phpLeft */
 
@@ -49,7 +54,7 @@ $(document).on("click",".phpLeftToggleOn", function(){
 	phpLeftToggleOn.style.display = "none";
 	phpLeftToggleValue = 1;
 	$.ajax({
-      url: 'updateUser',
+      url: '/projects/{project}/updateUser',
       type: 'post',
       data: {editid : id,type: 1, update: phpLeftToggleValue},
       success: function(response){
@@ -99,8 +104,7 @@ curOverGoalToggleOff.addEventListener("click", function(){
 });
 
 
-=======
->>>>>>> dev-Noble-baseCustomization
+
 
 /* Unordered */
 
@@ -180,55 +184,4 @@ orderedToggleOff.addEventListener("click", function(){
 });
 
 
-<<<<<<< HEAD
-=======
-/* phpLeft */
 
-
-var phpLeft = document.querySelector("#phpLeft");
-var phpLeftToggleOn = document.querySelector(".phpLeftToggleOn");
-var phpLeftToggleOff = document.querySelector(".phpLeftToggleOff");
-var phpLeftToggleValue = 1;
-
-
-phpLeftToggleOn.addEventListener("mouseover", function(){
-	phpLeftToggleOn.style.background = "white";
-});
-
-phpLeftToggleOn.addEventListener("click", function(){
-	phpLeft.style.display = "block";
-	phpLeftToggleOn.style.display = "none";
-	phpLeftToggleValue = 1;
-});
-
-phpLeftToggleOff.addEventListener("click", function(){
-	phpLeft.style.display = "none";
-	phpLeftToggleOn.style.display = "block";
-	phpLeftToggleValue = 0;
-});
-
-
-/* curOverGoal */
-
-
-var curOverGoal = document.querySelector("#curOverGoal");
-var curOverGoalToggleOn = document.querySelector(".curOverGoalToggleOn");
-var curOverGoalToggleOff = document.querySelector(".curOverGoalToggleOff");
-var curOverGoalToggleValue = 1;
-
-
-curOverGoalToggleOn.addEventListener("click", function(){
-	curOverGoal.style.display = "block";
-	curOverGoalToggleOn.style.display = "none";
-	curOverGoalToggleValue = 1;
-});
-
-curOverGoalToggleOff.addEventListener("click", function(){
-	curOverGoal.style.display = "none";
-	curOverGoalToggleOn.style.display = "block";
-	curOverGoalToggleValue = 0;
-});
-
-
-
->>>>>>> dev-Noble-baseCustomization

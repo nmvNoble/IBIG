@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "content-hash": "a5669dbb4e274f449d66914c9d62779a",
-=======
-    "content-hash": "c0d92ccb115e906a2a100a50147a241e",
->>>>>>> newGmz-branch
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",

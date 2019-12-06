@@ -8,7 +8,7 @@ class Customize extends Model {
 
    public static function getuserData($id=0){
 
-     $value=DB::table('customize')->where('id', 1)->first(); 
+     $value=DB::table('customizes')->where('id', 1)->first(); 
      return $value;
 
    }

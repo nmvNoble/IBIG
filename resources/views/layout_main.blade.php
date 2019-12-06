@@ -9,23 +9,15 @@
         <title>IBIG</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        <link rel="stylesheet" href="assets/css/main.css" />
-=======
+        <!-- <link rel="stylesheet" href="assets/css/main.css" /> -->
         <link rel="stylesheet" href="/assets/css/main.css" />
         <link rel="stylesheet" href="/assets/css/added.css" />
         <link rel="stylesheet" href="/assets/css/customization.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><!-- 
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
->>>>>>> Stashed changes
-=======
-        <link rel="stylesheet" href="/assets/css/main.css" />
-        <link rel="stylesheet" href="/assets/css/added.css" />
-        <link rel="stylesheet" href="/assets/css/customization.css" />
->>>>>>> dev-Noble-baseCustomization
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
     </head>
     <body class="landing">
 
@@ -39,7 +31,7 @@
                       <input type="text" name="query" class="form-control" placeholder="Search" style="width: 350px;margin-left: 400px; display: inline; margin-top: 30px; font-color: white; background-color: rgb(255, 255, 255);">
                     </div>
                     <div class="col-md-6">
-                      <button class="btn btn-default" value="search" style="display: inline-block;margin-top: 30px;width: 10px;margin-right: 500px "></button>
+                      <button class="btn btn-default" value="search" style="display: inline-block;margin-top: 30px;width: 10px;margin-right: 400px ">search</button>
                     </div>
                   </div>
                 </form>
@@ -89,11 +81,11 @@
             </div>
         </footer>
 
-        <!-- Scripts -->
+        <!-- Scripts --><!-- 
             <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/skel.min.js"></script>
             <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
+            <script src="assets/js/main.js"></script> -->
             <script src="\assets\js\customization\layout_main.js"></script>
             @yield('script')
 

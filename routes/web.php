@@ -27,11 +27,6 @@ Route::get('/projects/{project}/donations', 'ProjectsController@showDonations');
 Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 Route::get('/projects/{project}/donate', 'ProjectsController@donate');
 Route::put('/projects/{project}', 'ProjectsController@update');
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> dev-Noble-baseCustomization
 
 Route::post('/search', 'ProjectsController@search')->name('search');
 Route::get('/projects/{project}', 'ProjectsController@show')->name('projects.show');
@@ -43,6 +38,17 @@ Route::get('/organizations/{organization}/owned', 'OrganizationsController@showO
 
 Route::get('/users/{user}/donatedTo', 'UsersController@showDonatedTo');
 Route::get('/users/{user}/owned', 'UsersController@showOwned');
+
+
+Route::get('/projects/{project}/getUser/{id}', 'CustomizesController@getUser');
+Route::post('/projects/{project}/updateUser', 'CustomizesController@updateUser');
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -55,14 +61,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-<<<<<<< HEAD
-
-
-Route::get('/getUser', 'CustomizeController@getUser');
-Route::post('/updateUser', 'CustomizeController@updateUser');
->>>>>>> Stashed changes
-=======
->>>>>>> dev-Noble-baseCustomization
