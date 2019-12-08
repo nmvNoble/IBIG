@@ -41,7 +41,7 @@ Route::get('/users/{user}/owned', 'UsersController@showOwned');
 
 
 Route::get('/projects/{project}/getUser/{id}', 'CustomizesController@getUser');
-Route::post('/projects/{project}/updateUser', 'CustomizesController@updateUser');
+Route::post('/projects/{project}/updateUser', 'CustomizesController@updateUser')->name('updateUser');
 
 
 
