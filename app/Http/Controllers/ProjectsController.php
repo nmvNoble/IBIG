@@ -18,8 +18,9 @@ class ProjectsController extends Controller
     {
         //primitive version of latest()->get();
         $projects = Project::latest()->get();//orderBy('id', 'desc')->get();
+        $customize = Customize::getuserData(1);
 
-        return view('projects.index', ['projects' => $projects]);
+        return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
     }
 
     /**
@@ -30,7 +31,8 @@ class ProjectsController extends Controller
     public function create()
     {
         //
-        return view('projects.create');
+        $customize = Customize::getuserData(1);
+        return view('projects.create', ['customize' => $customize]);
     }
 
     /**
@@ -78,29 +80,33 @@ class ProjectsController extends Controller
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('projects.showDescription', ['project' => $project]);
+        return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
     }
     public function showUpdates($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('projects.showUpdates', ['project' => $project]);
+        return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
     }
     public function showComments($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('projects.showComments', ['project' => $project]);
+        return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
     }
     public function showDonations($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('projects.showDonations', ['project' => $project]);
+        return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
     }
 
     /**
@@ -126,8 +132,9 @@ class ProjectsController extends Controller
     {
         //
         $project = Project::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('projects.edit', compact('project')); //['project' => $project]);
+        return view('projects.edit', compact('project') , ['customize' => $customize]); //['project' => $project]);
     }
 
     /**
@@ -188,7 +195,7 @@ class ProjectsController extends Controller
 
         //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 
-        return view('search', compact('projects'));
+        return view('search', compact('projects'), ['customize' => $customize]);
     }
 
 

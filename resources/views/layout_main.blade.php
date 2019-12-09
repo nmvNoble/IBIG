@@ -20,6 +20,8 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
     </head>
+    
+   
     <body class="landing">
 
         <!-- Header -->
@@ -60,7 +62,38 @@
             </nav>
         </header>
 
-        <!-- DB update -->
+        
+
+        <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+        <!-- Banner -->
+            @yield('banner')
+
+        <!-- Content -->
+            @yield('content')
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <!--<ul class="icons">
+                    <li><a href="#" class="icon fa-facebook"></a></li>
+                    <li><a href="#" class="icon fa-twitter"></a></li>
+                    <li><a href="#" class="icon fa-instagram"></a></li>
+                </ul>-->
+                <ul class="copyright">
+                    <li>&copy; IBIG</li>
+                    <li>Base Design: <a href="http://templated.co">TEMPLATED</a></li>
+                    <!--<li>Images: <a href="http://unsplash.com">Unsplash</a></li>-->
+                </ul>
+            </div>
+        </footer>
+
+        <!-- Scripts --><!-- 
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script> -->
+            <!-- DB update -->
         <?php
         $link = mysqli_connect("localhost", "root", "", "ibig"); 
         if($link === false){ 
@@ -198,14 +231,14 @@
                 . mysqli_error($link); 
             }  
         }
-        if(isset($_COOKIE["spareTab"])){
-            $spareTab = ($_COOKIE["spareTab"]);
-            $sql = "UPDATE customizes SET spareTab='$spareTab' WHERE id=1"; 
+        if(isset($_COOKIE["donateNotif"])){
+            $donateNotif = ($_COOKIE["donateNotif"]);
+            $sql = "UPDATE customizes SET donateNotif='$donateNotif' WHERE id=1"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
                   echo '</script>';
-                  setcookie('spareTab', '', 1, '/');
+                  setcookie('donateNotif', '', 1, '/');
             } else { 
                 echo "ERROR: Could not able to execute $sql. "  
                 . mysqli_error($link); 
@@ -227,36 +260,6 @@
         mysqli_close($link); 
 
         ?>
-
-        <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-
-        <!-- Banner -->
-            @yield('banner')
-
-        <!-- Content -->
-            @yield('content')
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="container">
-                <!--<ul class="icons">
-                    <li><a href="#" class="icon fa-facebook"></a></li>
-                    <li><a href="#" class="icon fa-twitter"></a></li>
-                    <li><a href="#" class="icon fa-instagram"></a></li>
-                </ul>-->
-                <ul class="copyright">
-                    <li>&copy; IBIG</li>
-                    <li>Base Design: <a href="http://templated.co">TEMPLATED</a></li>
-                    <!--<li>Images: <a href="http://unsplash.com">Unsplash</a></li>-->
-                </ul>
-            </div>
-        </footer>
-
-        <!-- Scripts --><!-- 
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script> -->
             <script src="\assets\js\customization\layout_main.js"></script>
             @yield('script')
 

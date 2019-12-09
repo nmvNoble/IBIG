@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Project;
+use App\Customize;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -16,8 +17,9 @@ class UsersController extends Controller
     {
         //primitive version of latest()->get();
         $users = User::latest()->get();//orderBy('id', 'desc')->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.index', ['users' => $users]);
+        return view('users.index', ['users' => $users , 'customize' => $customize]);
     }
 
     /**
@@ -28,7 +30,7 @@ class UsersController extends Controller
     public function create()
     {
         //
-        return view('users.create');
+        return view('users.create' , ['customize' => $customize]);
     }
 
     /**
@@ -79,8 +81,9 @@ class UsersController extends Controller
         //return view('users.show', ['user' => $user]);
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.showProjects', ['projects' => $projects]);
+        return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
     }
 
     public function showDonatedTo()
@@ -89,8 +92,9 @@ class UsersController extends Controller
         //$user = User::find($id);
         //return view('users.show', ['user' => $user]);
         $projects = Project::where('current', '>', 0)->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.showProjects', ['projects' => $projects]);
+        return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
     }
 
 
@@ -102,7 +106,8 @@ class UsersController extends Controller
      */
     public function showAboutUs()
     {
-        return view('users.showAboutUs');
+        $customize = Customize::getuserData(1);
+        return view('users.showAboutUs' , ['customize' => $customize]);
     }
 
     /**
@@ -115,8 +120,9 @@ class UsersController extends Controller
     {
         //
         $user = User::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('users.edit', compact('user')); //['user' => $user]);
+        return view('users.edit', compact('user') , ['customize' => $customize]); //['user' => $user]);
     }
 
     /**

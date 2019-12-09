@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Organization;
 use App\User;
 use App\Project;
+use App\Customize;
 use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
@@ -17,8 +18,9 @@ class OrganizationsController extends Controller
     {
         //primitive version of latest()->get();
         $organizations = Organization::latest()->get();//orderBy('id', 'desc')->get();
+        $customize = Customize::getuserData(1);
 
-        return view('organizations.index', ['organizations' => $organizations]);
+        return view('organizations.index', ['organizations' => $organizations , 'customize' => $customize]);
     }
 
     /**
@@ -29,7 +31,8 @@ class OrganizationsController extends Controller
     public function create()
     {
         //
-        return view('organizations.create');
+        $customize = Customize::getuserData(1);
+        return view('organizations.create' , ['customize' => $customize]);
     }
 
     /**
@@ -75,7 +78,8 @@ class OrganizationsController extends Controller
      */
     public function showAboutUs()
     {
-        return view('users.organizations.showAboutUs');
+        $customize = Customize::getuserData(1);
+        return view('users.organizations.showAboutUs' , ['customize' => $customize]);
     }
 
     /**
@@ -87,8 +91,9 @@ class OrganizationsController extends Controller
     public function showAffiliates()
     {
         $users = User::latest()->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.organizations.showAffiliates', ['users' => $users]);
+        return view('users.organizations.showAffiliates', ['users' => $users , 'customize' => $customize]);
     }
 
     /**
@@ -104,8 +109,9 @@ class OrganizationsController extends Controller
         //return view('organizations.show', ['organization' => $organization]);
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.organizations.showOrgProjects', ['projects' => $projects]);
+        return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
     }
 
     public function showDonatedTo()
@@ -114,8 +120,9 @@ class OrganizationsController extends Controller
         //$organization = Organization::find($id);
         //return view('organizations.show', ['organization' => $organization]);
         $projects = Project::where('current', '>', 0)->get();
+        $customize = Customize::getuserData(1);
 
-        return view('users.organizations.showOrgProjects', ['projects' => $projects]);
+        return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
     }
 
     /**
@@ -128,8 +135,9 @@ class OrganizationsController extends Controller
     {
         //
         $organization = Organization::find($id);
+        $customize = Customize::getuserData(1);
 
-        return view('organizations.edit', compact('organization')); //['organization' => $organization]);
+        return view('organizations.edit', compact('organization') , ['customize' => $customize]); //['organization' => $organization]);
     }
 
     /**

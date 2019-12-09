@@ -6,6 +6,15 @@ var projDescTextToggleOn = document.querySelector(".projDescTextToggleOn");
 var projDescTextToggleOff = document.querySelector(".projDescTextToggleOff");
 var projDescTextValue = 1;
 
+if (projDescTextVal==0){
+	projDescText.style.display = "none";
+	projDescTextToggleOn.style.display = "inline-block";
+}else{
+	projDescText.style.display = "inline-block";
+	projDescTextToggleOn.style.display = "none";
+}
+
+
 projDescTextToggleOn.addEventListener("click", function(){
 	projDescText.style.display = "inline-block";
 	projDescTextToggleOn.style.display = "none";

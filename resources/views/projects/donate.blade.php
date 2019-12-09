@@ -27,39 +27,18 @@
 		<div class="container">
 			<header class="major special">
 				<a href="\projects\{{$project->id}}\description" class="button big" style="display: inline; float: right;">Back</a>
-				<?php 
+				
 
-				if($donateComp=1){
-					echo '<span title="Computed progress">';
-					echo '<img class="image customIcon phpLeftToggleOn" src="\images\icons/add-512.png"
-							style="display: none;" />';
-					echo '</span>';
-					echo '<div class="hide" id="phpLeft">';
-					echo '<img class="image customIcon phpLeftToggleOff" src="\images\icons/remove-512.png"  />';
-					echo '<h2 style="display: inline;">'. $project->goal .'-'. $project->current.' left to go!</h2>';
-					echo '</div>';
-				}else{
-					echo '<span title="Computed progress">';
-					echo '<img class="image customIcon phpLeftToggleOn" src="\images\icons/add-512.png"
-							style="display: inline;" />';
-					echo '</span>';
-					echo '<div class="hide" id="phpLeft">';
-					echo '<img class="image customIcon phpLeftToggleOff" src="\images\icons/remove-512.png"  />';
-					echo '<h2 style="display: none;">.'.$project->goal .'-'. $project->current.' left to go!</h2>';
-					echo '</div>';
-				}
-
-
-				?>
-
-				<!-- <span title="Computed progress">
+				<span title="Computed progress">
 					<img class="image customIcon phpLeftToggleOn" src="\images\icons/add-512.png"
 					style="display: none;" />
 				</span>
 				<div class="hide" id="phpLeft">
 					<img class="image customIcon phpLeftToggleOff" src="\images\icons/remove-512.png"  />
 					<h2 style="display: inline;">Php {{$project->goal - $project->current}} left to go!</h2>
-				</div> -->
+				</div>
+
+
 
 				<span title="Progress as is">
 					<img class="image customIcon curOverGoalToggleOn" src="\images\icons/add-512.png"
@@ -138,6 +117,13 @@
 
 <!-- Additional Scripts -->
 @section('script')
+	<script type="text/javascript">
+		var donateComputed = <?php echo $donateComp ?>;
+		var donateProgress= <?php echo $donateProg ?>;
+		var donateAlternate= <?php echo $donateAlt ?>;
+		var donateOrdered= <?php echo $donateOrd ?>;
+		var donateUnordered= <?php echo $donateUno ?>;
+	</script>
 	<script src="\assets\js\customization\project\donate.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

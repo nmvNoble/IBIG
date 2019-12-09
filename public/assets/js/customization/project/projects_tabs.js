@@ -6,6 +6,14 @@ var projDescTabToggleOn = document.querySelector(".projDescTabToggleOn");
 var projDescTabToggleOff = document.querySelector(".projDescTabToggleOff");
 var projDescTabValue = 1;
 
+
+if (projDescTabVal==0){
+	projDescTab.style.display = "none";
+	projDescTabToggleOn.style.display = "inline-block";
+}else{
+	projDescTab.style.display = "inline-block";
+	projDescTabToggleOn.style.display = "none";
+}
 projDescTabToggleOn.addEventListener("click", function(){
 	projDescTab.style.display = "inline-block";
 	projDescTabToggleOn.style.display = "none";
@@ -30,6 +38,14 @@ var projUpdateTabToggleOn = document.querySelector(".projUpdateTabToggleOn");
 var projUpdateTabToggleOff = document.querySelector(".projUpdateTabToggleOff");
 var projUpdateTabValue = 1;
 
+if (projectUpdateTabVal==0){
+	projectUpdateTab.style.display = "none";
+	projUpdateTabToggleOn.style.display = "inline-block";
+}else{
+	projectUpdateTab.style.display = "inline-block";
+	projUpdateTabToggleOn.style.display = "none";
+}
+
 projUpdateTabToggleOn.addEventListener("click", function(){
 	projUpdateTab.style.display = "inline-block";
 	projUpdateTabToggleOn.style.display = "none";
@@ -53,6 +69,14 @@ var projComntTabToggleOn = document.querySelector(".projComntTabToggleOn");
 var projComntTabToggleOff = document.querySelector(".projComntTabToggleOff");
 var projComntTabValue = 1;
 
+if (projComntTabVal==0){
+	projComntTab.style.display = "none";
+	projComntTabToggleOn.style.display = "inline-block";
+}else{
+	projComntTab.style.display = "inline-block";
+	projComntTabToggleOn.style.display = "none";
+}
+
 projComntTabToggleOn.addEventListener("click", function(){
 	projComntTab.style.display = "inline-block";
 	projComntTabToggleOn.style.display = "none";
@@ -75,6 +99,14 @@ var projDntnTab = document.querySelector("#projDntnTab");
 var projDntnTabToggleOn = document.querySelector(".projDntnTabToggleOn");
 var projDntnTabToggleOff = document.querySelector(".projDntnTabToggleOff");
 var projDntnTabValue = 1;
+
+if (projDntnTabVal==0){
+	projDntnTab.style.display = "none";
+	projDntnTabToggleOn.style.display = "inline-block";
+}else{
+	projDntnTab.style.display = "inline-block";
+	projDntnTabToggleOn.style.display = "none";
+}
 
 projDntnTabToggleOn.addEventListener("click", function(){
 	projDntnTab.style.display = "inline-block";

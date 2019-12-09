@@ -15,15 +15,17 @@ var phpLeftToggleOff = document.querySelector(".phpLeftToggleOff");
 //var phpLeftToggleValue = 1;
 
 
-// if (donateComputed=0){
-// 	phpLeft.style.display = "none";
-// 	phpLeftToggleOn.style.display = "block";
-// 	phpLeftToggleValue = 0;
-// }else{
-// 	phpLeft.style.display = "block";
-// 	phpLeftToggleOn.style.display = "none";
-// 	phpLeftToggleValue = 1;
-// }
+if (donateComputed==0){
+	phpLeft.style.display = "none";
+	phpLeftToggleOn.style.display = "block";
+	phpLeftToggleValue = 0;
+}else{
+	phpLeft.style.display = "block";
+	phpLeftToggleOn.style.display = "none";
+	phpLeftToggleValue = 1;
+}
+
+
 
 
 phpLeftToggleOn.addEventListener("mouseover", function(){
@@ -35,14 +37,12 @@ phpLeftToggleOn.addEventListener("mouseover", function(){
 phpLeftToggleOn.addEventListener("click", function(){
 	phpLeft.style.display = "block";
 	phpLeftToggleOn.style.display = "none";
-	phpLeftToggleValue = 1;
 	createCookie("donateComputed", "1", "1");
 });
 
 phpLeftToggleOff.addEventListener("click", function(){
 	phpLeft.style.display = "none";
 	phpLeftToggleOn.style.display = "block";
-	phpLeftToggleValue = 0;
 	createCookie("donateComputed", "0", "1");
 });
 
@@ -54,6 +54,17 @@ var curOverGoal = document.querySelector("#curOverGoal");
 var curOverGoalToggleOn = document.querySelector(".curOverGoalToggleOn");
 var curOverGoalToggleOff = document.querySelector(".curOverGoalToggleOff");
 var curOverGoalToggleValue = 1;
+
+
+
+if (donateProgress==0){
+	curOverGoal.style.display = "none";
+	curOverGoalToggleOn.style.display = "block";
+}else{
+	curOverGoal.style.display = "block";
+	curOverGoalToggleOn.style.display = "none";
+}
+
 
 
 curOverGoalToggleOn.addEventListener("click", function(){
@@ -84,6 +95,14 @@ var unorderedToggleValue = 1;
 unorderedToggleOn.addEventListener("mouseover", function(){
 	unorderedToggleOn.style.background = "white";
 });
+
+if (donateUnordered==0){
+	unordered.style.display = "none";
+	unorderedToggleOn.style.display = "block";
+}else{
+	unordered.style.display = "block";
+	unorderedToggleOn.style.display = "none";
+}
 		
 
 unorderedToggleOn.addEventListener("click", function(){
@@ -113,6 +132,14 @@ alternateToggleOn.addEventListener("mouseover", function(){
 	alternateToggleOn.style.background = "white";
 });
 
+if (donateAlternate==0){
+	alternate.style.display = "none";
+	alternateToggleOn.style.display = "block";
+}else{
+	alternate.style.display = "block";
+	alternateToggleOn.style.display = "none";
+}
+
 alternateToggleOn.addEventListener("click", function(){
 	alternate.style.display = "block";
 	alternateToggleOn.style.display = "none";
@@ -141,6 +168,15 @@ var orderedToggleValue = 1;
 orderedToggleOn.addEventListener("mouseover", function(){
 	orderedToggleOn.style.background = "white";
 });
+
+if (donateOrdered==0){
+	ordered.style.display = "none";
+	orderedToggleOn.style.display = "block";
+}else{
+	ordered.style.display = "block";
+	orderedToggleOn.style.display = "none";
+}
+
 
 orderedToggleOn.addEventListener("click", function(){
 	ordered.style.display = "block";
