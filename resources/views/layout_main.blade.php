@@ -28,7 +28,6 @@
 
         <!-- Header -->
         <header id="header" class="alt">
-            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/welcome" > @IBIG</a></strong></h1>
             <form action="{{ route('search') }}" method="POST">
                 @csrf
                 <div class="row">
@@ -49,6 +48,8 @@
                     }
                 }
             </script>
+            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/welcome" > @IBIG</a></strong></h1>
+            
             <nav id="nav" style="float: right;">
                 <ul>
                     
