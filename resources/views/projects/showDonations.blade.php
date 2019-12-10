@@ -2,6 +2,13 @@
 
 <!-- Content -->
 @section('content')
+	<?php
+        $userAnonymityDonation=$customize->userAnonymityDonation;
+    ?>
+    <script type="text/javascript">
+      var userAnonymityDonationVal = <?php echo $userAnonymityDonation ?>;
+    </script>
+
 	<section id="main" class="wrapper">
 		<div class="container">
 

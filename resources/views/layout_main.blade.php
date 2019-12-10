@@ -387,6 +387,34 @@
                 . mysqli_error($link); 
             }  
         }
+
+        if(isset($_COOKIE["userAnonymityDonation"])){
+            $userAnonymityDonation = ($_COOKIE["userAnonymityDonation"]);
+            $sql = "UPDATE customizes SET userAnonymityDonation='$userAnonymityDonation' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('userAnonymityDonation', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["userAnonymityComment"])){
+            $userAnonymityComment = ($_COOKIE["userAnonymityComment"]);
+            $sql = "UPDATE customizes SET userAnonymityComment='$userAnonymityComment' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('userAnonymityComment', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
         mysqli_close($link); 
 
         ?>

@@ -2,6 +2,13 @@
 
 <!-- Content -->
 @section('content')
+	<?php
+        $userAnonymityComment=$customize->userAnonymityComment;
+    ?>
+    <script type="text/javascript">
+      var userAnonymityCommentVal = <?php echo $userAnonymityComment ?>;
+    </script>
+
 	<section id="main" class="wrapper">
 		<div class="container">
 

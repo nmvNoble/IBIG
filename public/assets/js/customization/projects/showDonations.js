@@ -5,25 +5,25 @@ var userAnonymityOff = document.querySelector("#userAnonymityOff");
 var userAnonymityToggleOn = document.querySelector(".userAnonymityToggleOn");
 var userAnonymityToggleOff = document.querySelector(".userAnonymityToggleOff");
 
-// if (userAnonymityVal==0){
-// 	userAnonymityOff.style.display = "none";
-// 	userAnonymityOn.style.display = "inline-block";
-// }else{
-// 	userAnonymityOff.style.display = "inline-block";
-// 	userAnonymityOn.style.display = "none";
-// }
+if (userAnonymityDonationVal==0){
+	userAnonymityOff.style.display = "none";
+	userAnonymityOn.style.display = "inline-block";
+}else{
+	userAnonymityOff.style.display = "inline-block";
+	userAnonymityOn.style.display = "none";
+}
 
 
 userAnonymityToggleOn.addEventListener("click", function(){
 	userAnonymityOn.style.display = "inline-block";
 	userAnonymityOff.style.display = "none";
-	createCookie("userAnonymity", "1", "1");
+	createCookie("userAnonymityDonation", "1", "1");
 });
 
 userAnonymityToggleOff.addEventListener("click", function(){
 	userAnonymityOn.style.display = "none";
 	userAnonymityOff.style.display = "inline-block";
-	createCookie("userAnonymity", "0", "1");
+	createCookie("userAnonymityDonation", "0", "1");
 });
 
 function createCookie(name, value, days) {
