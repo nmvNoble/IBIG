@@ -44,10 +44,11 @@ Route::get('/projects/{project}/getUser/{id}', 'CustomizesController@getUser');
 Route::post('/projects/{project}/updateUser', 'CustomizesController@updateUser')->name('updateUser');
 
 
+Route::get('/welcome', 'ProjectsController@welcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/welcome', 'HomeController@index')->name('welcome');
 
 Auth::routes();
 

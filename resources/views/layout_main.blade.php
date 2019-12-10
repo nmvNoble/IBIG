@@ -57,12 +57,12 @@
                     </li>
                     
                     <li id="donateNotif" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}} >
-                        <!-- <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/> -->
+                        <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/> 
                         <a href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a>
                     </li>
 
                     <li class={{Request::path() === '/' ? 'current_page_item' : ''}}>
-                        <a href="/" accesskey="1" title="">Home</a>
+                        <a href="/welcome" accesskey="1" title="">Home</a>
                     </li>
 
                     <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
@@ -190,7 +190,7 @@
         }
         if(isset($_COOKIE["projDescTab"])){
             $projDescTab = ($_COOKIE["projDescTab"]);
-            $sql = "UPDATE customizes SET projDescTab='$projDescTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projectDescTab='$projDescTab' WHERE id=1"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';

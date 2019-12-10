@@ -9,6 +9,18 @@ use Spatie\Searchable\Search;
 
 class ProjectsController extends Controller
 {
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function welcome()
+    {
+        //
+        $customize = Customize::getuserData(1);
+        return view('welcome', ['customize' => $customize]);
+    }
     /**
      * Display a listing of the resource.
      *

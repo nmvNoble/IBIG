@@ -7,6 +7,19 @@ use App\Customize;
 
 class HomeController extends Controller
 {
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function welcome()
+    {
+        //
+        $customize = Customize::getuserData(1);
+        return view('welcome', ['customize' => $customize]);
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -25,6 +38,6 @@ class HomeController extends Controller
     public function index()
     {
         $customize = Customize::getuserData(1);
-        return view('home', ['customize' => $customize]);
+        return view('welcome', ['customize' => $customize]);
     }
 }

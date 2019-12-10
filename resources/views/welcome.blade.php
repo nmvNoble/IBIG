@@ -131,7 +131,7 @@
 </section>
 
 <!-- Four -->
-<section id="four" class="wrapper style1">
+<!-- <section id="four" class="wrapper style1">
     <div class="container">
         <header class="major special">
             <h2>Mauris vulputate dolor</h2>
@@ -143,9 +143,9 @@
         </ul>
     </div>
 </section>
-
+ -->
 <!-- Five -->
-<section id="five" class="wrapper style3 special">
+<!-- <section id="five" class="wrapper style3 special">
     <div class="container">
         <header class="major">
             <h2>Aenean elementum ligula</h2>
@@ -155,7 +155,7 @@
             <li><a href="#" class="button special big">Get in touch</a></li>
         </ul>
     </div>
-</section>
+</section> -->
 @endsection
 
 <!-- Footer -->
