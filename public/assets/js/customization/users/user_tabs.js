@@ -6,13 +6,13 @@ var userOwnedTabToggleOn = document.querySelector(".userOwnedTabToggleOn");
 var userOwnedTabToggleOff = document.querySelector(".userOwnedTabToggleOff");
 
 
-// if (userOwnedTabVal==0){
-// 	userOwnedTab.style.display = "none";
-// 	userOwnedTabToggleOn.style.display = "inline-block";
-// }else{
-// 	userOwnedTab.style.display = "inline-block";
-// 	userOwnedTabToggleOn.style.display = "none";
-// }
+if (userOwnedTabVal==0){
+	userOwnedTab.style.display = "none";
+	userOwnedTabToggleOn.style.display = "inline-block";
+}else{
+	userOwnedTab.style.display = "inline-block";
+	userOwnedTabToggleOn.style.display = "none";
+}
 userOwnedTabToggleOn.addEventListener("click", function(){
 	userOwnedTab.style.display = "inline-block";
 	userOwnedTabToggleOn.style.display = "none";
@@ -35,13 +35,13 @@ var userDonatedTabToggleOn = document.querySelector(".userDonatedTabToggleOn");
 var userDonatedTabToggleOff = document.querySelector(".userDonatedTabToggleOff");
 
 
-// if (userDonatedTabVal==0){
-// 	userDonatedTab.style.display = "none";
-// 	userDonatedTabToggleOn.style.display = "inline-block";
-// }else{
-// 	userDonatedTab.style.display = "inline-block";
-// 	userDonatedTabToggleOn.style.display = "none";
-// }
+if (userDonatedTabVal==0){
+	userDonatedTab.style.display = "none";
+	userDonatedTabToggleOn.style.display = "inline-block";
+}else{
+	userDonatedTab.style.display = "inline-block";
+	userDonatedTabToggleOn.style.display = "none";
+}
 userDonatedTabToggleOn.addEventListener("click", function(){
 	userDonatedTab.style.display = "inline-block";
 	userDonatedTabToggleOn.style.display = "none";

@@ -6,13 +6,13 @@ var orgOwnedTabToggleOn = document.querySelector(".orgOwnedTabToggleOn");
 var orgOwnedTabToggleOff = document.querySelector(".orgOwnedTabToggleOff");
 
 
-// if (orgOwnedTabVal==0){
-// 	orgOwnedTab.style.display = "none";
-// 	orgOwnedTabToggleOn.style.display = "inline-block";
-// }else{
-// 	orgOwnedTab.style.display = "inline-block";
-// 	orgOwnedTabToggleOn.style.display = "none";
-// }
+if (orgOwnedTabVal==0){
+	orgOwnedTab.style.display = "none";
+	orgOwnedTabToggleOn.style.display = "inline-block";
+}else{
+	orgOwnedTab.style.display = "inline-block";
+	orgOwnedTabToggleOn.style.display = "none";
+}
 orgOwnedTabToggleOn.addEventListener("click", function(){
 	orgOwnedTab.style.display = "inline-block";
 	orgOwnedTabToggleOn.style.display = "none";
@@ -35,13 +35,13 @@ var orgDonatedTabToggleOn = document.querySelector(".orgDonatedTabToggleOn");
 var orgDonatedTabToggleOff = document.querySelector(".orgDonatedTabToggleOff");
 
 
-// if (orgDonatedTabVal==0){
-// 	orgDonatedTab.style.display = "none";
-// 	orgDonatedTabToggleOn.style.display = "inline-block";
-// }else{
-// 	orgDonatedTab.style.display = "inline-block";
-// 	orgDonatedTabToggleOn.style.display = "none";
-// }
+if (orgDonatedTabVal==0){
+	orgDonatedTab.style.display = "none";
+	orgDonatedTabToggleOn.style.display = "inline-block";
+}else{
+	orgDonatedTab.style.display = "inline-block";
+	orgDonatedTabToggleOn.style.display = "none";
+}
 orgDonatedTabToggleOn.addEventListener("click", function(){
 	orgDonatedTab.style.display = "inline-block";
 	orgDonatedTabToggleOn.style.display = "none";
@@ -64,13 +64,13 @@ var orgAboutUsTabToggleOn = document.querySelector(".orgAboutUsTabToggleOn");
 var orgAboutUsTabToggleOff = document.querySelector(".orgAboutUsTabToggleOff");
 
 
-// if (orgAboutUsTabVal==0){
-// 	orgAboutUsTab.style.display = "none";
-// 	orgAboutUsTabToggleOn.style.display = "inline-block";
-// }else{
-// 	orgAboutUsTab.style.display = "inline-block";
-// 	orgAboutUsTabToggleOn.style.display = "none";
-// }
+if (orgAboutUsTabVal==0){
+	orgAboutUsTab.style.display = "none";
+	orgAboutUsTabToggleOn.style.display = "inline-block";
+}else{
+	orgAboutUsTab.style.display = "inline-block";
+	orgAboutUsTabToggleOn.style.display = "none";
+}
 orgAboutUsTabToggleOn.addEventListener("click", function(){
 	orgAboutUsTab.style.display = "inline-block";
 	orgAboutUsTabToggleOn.style.display = "none";
@@ -93,13 +93,13 @@ var orgAffiliatesTabToggleOn = document.querySelector(".orgAffiliatesTabToggleOn
 var orgAffiliatesTabToggleOff = document.querySelector(".orgAffiliatesTabToggleOff");
 
 
-// if (orgAffiliatesTabVal==0){
-// 	orgAffiliatesTab.style.display = "none";
-// 	orgAffiliatesTabToggleOn.style.display = "inline-block";
-// }else{
-// 	orgAffiliatesTab.style.display = "inline-block";
-// 	orgAffiliatesTabToggleOn.style.display = "none";
-// }
+if (orgAffiliatesTabVal==0){
+	orgAffiliatesTab.style.display = "none";
+	orgAffiliatesTabToggleOn.style.display = "inline-block";
+}else{
+	orgAffiliatesTab.style.display = "inline-block";
+	orgAffiliatesTabToggleOn.style.display = "none";
+}
 orgAffiliatesTabToggleOn.addEventListener("click", function(){
 	orgAffiliatesTab.style.display = "inline-block";
 	orgAffiliatesTabToggleOn.style.display = "none";

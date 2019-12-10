@@ -26,7 +26,7 @@
     <script type="text/javascript">
       var donateNotifVal = <?php echo $donateNotif ?>;
     </script>
-    
+
     
    
     <body class="landing">
@@ -305,6 +305,90 @@
                   echo 'console.log("Record was updated successfully.")';
                   echo '</script>';
                   setcookie('compareGender', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["userOwnedTab"])){
+            $userOwnedTab = ($_COOKIE["userOwnedTab"]);
+            $sql = "UPDATE customizes SET userOwnedTab='$userOwnedTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('userOwnedTab', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["userDonatedTab"])){
+            $userDonatedTab = ($_COOKIE["userDonatedTab"]);
+            $sql = "UPDATE customizes SET userDonatedTab='$userDonatedTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('userDonatedTab', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["orgOwnedTab"])){
+            $orgOwnedTab = ($_COOKIE["orgOwnedTab"]);
+            $sql = "UPDATE customizes SET orgOwnedTab='$orgOwnedTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('orgOwnedTab', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["orgDonatedTab"])){
+            $orgDonatedTab = ($_COOKIE["orgDonatedTab"]);
+            $sql = "UPDATE customizes SET orgDonatedTab='$orgDonatedTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('orgDonatedTab', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["orgAboutUsTab"])){
+            $orgAboutUsTab = ($_COOKIE["orgAboutUsTab"]);
+            $sql = "UPDATE customizes SET orgAboutUsTab='$orgAboutUsTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('orgAboutUsTab', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["orgAffiliatesTab"])){
+            $orgAffiliatesTab = ($_COOKIE["orgAffiliatesTab"]);
+            $sql = "UPDATE customizes SET orgAffiliatesTab='$orgAffiliatesTab' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('orgAffiliatesTab', '', 1, '/');
             } else { 
                 echo "ERROR: Could not able to execute $sql. "  
                 . mysqli_error($link); 

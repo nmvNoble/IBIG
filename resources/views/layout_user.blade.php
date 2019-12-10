@@ -2,6 +2,15 @@
 
 <!-- Content -->
 @section('content')
+<?php 
+	$userOwnedTab= $customize->userOwnedTab;
+	$userDonatedTab= $customize->userDonatedTab;
+?>
+<script type="text/javascript">
+    var userOwnedTabVal = <?php echo $userOwnedTab ?>;
+    var userDonatedTabVal = <?php echo $userDonatedTab ?>;
+</script>
+
 	<section id="main" class="wrapper">
 		<div class="container 75%">
 		    <div class="row 200%">

@@ -2,6 +2,18 @@
 
 <!-- Tab Content -->
 @section('content')
+<?php 
+	$orgOwnedTab= $customize->orgOwnedTab;
+	$orgDonatedTab= $customize->orgDonatedTab;
+	$orgAboutUsTab= $customize->orgAboutUsTab;
+	$orgAffiliatesTab= $customize->orgAffiliatesTab;
+?>
+<script type="text/javascript">
+    var orgOwnedTabVal = <?php echo $orgOwnedTab ?>;
+    var orgDonatedTabVal = <?php echo $orgDonatedTab ?>;
+    var orgAboutUsTabVal = <?php echo $orgAboutUsTab ?>;
+    var orgAffiliatesTabVal = <?php echo $orgAffiliatesTab ?>;
+</script>
 	<section id="main" class="wrapper">
 		<div class="container 75%">
 		    <div class="row 200%">
