@@ -31,13 +31,22 @@
                 @csrf
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="text" name="query" class="form-control" placeholder="Search" style="width: 350px;margin-left: 400px; display: inline; margin-top: 30px; font-color: white; background-color: rgb(255, 255, 255);">
+                      <input type="text" name="query" class="form-control" placeholder="Search" style="width: 350px;margin-left: 400px; display: inline; margin-top: 30px; font-color: white; background-color: rgb(255, 255, 255);" id= "searchtext" onkeyup="success()">
                     </div>
                     <div class="col-md-6">
-                      <button class="btn btn-default" value="search" style="display: inline-block;margin-top: 30px;width: 10px;margin-right: 400px ">search</button>
+                      <button class="button" value="search" style="display: inline-block;margin-top: 30px;" id="searchBtn" onclick="verify()" disabled>search</button>
                     </div>
                   </div>
                 </form>
+                <script type="text/javascript">
+                  function success() {
+                     if(document.getElementById("searchtext").value==="") { 
+                              document.getElementById('searchBtn').disabled = true; 
+                          } else { 
+                              document.getElementById('searchBtn').disabled = false;
+                          }
+                      }
+                </script>
             <nav id="nav" style="float: right;">
                 <ul>
                     
@@ -48,7 +57,7 @@
                     </li>
                     
                     <li id="donateNotif" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}} >
-                        <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/>
+                        <!-- <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/> -->
                         <a href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a>
                     </li>
 

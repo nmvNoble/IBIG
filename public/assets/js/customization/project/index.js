@@ -8,9 +8,9 @@ var projProgToggleValue = 1;
 //alert(projProg);
 
 
-projProgToggleOn.addEventListener("mouseover", function(){
-	projProgToggleOn.style.background = "white";
-});
+// projProgToggleOn.addEventListener("mouseover", function(){
+// 	projProgToggleOn.style.background = "white";
+// });
 
 projProgToggleOn.addEventListener("click", function(){
 	for(var i = 0; i < projProg.length; i++){
