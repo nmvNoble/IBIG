@@ -23,8 +23,6 @@
 			<header id="userTab" class="alt">
 			    <nav id="nav">
 			        <ul>
-
-			        	
 		        		<li style="display: none;" class="projDescTabToggleOn">
 		        			<span title="Project Description Tab">
 		        				<img class="image customIcon " src="\images\icons/add-white-512.png"/>
@@ -41,7 +39,7 @@
 		        				<img class="image customIcon " src="\images\icons/add-white-512.png"/>
 		        			</span>
 		        		</li>
-		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ''}}>
+		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ""}}>
 		            		<img class="image customIcon projUpdateTabToggleOff" src="\images\icons/remove-white-512.png"/>
 		            		<a href="\projects\{{$project->id}}\updates">Updates</a>
 		            	</li>

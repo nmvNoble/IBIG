@@ -4,7 +4,6 @@
 var projDescTab = document.querySelector("#projDescTab");
 var projDescTabToggleOn = document.querySelector(".projDescTabToggleOn");
 var projDescTabToggleOff = document.querySelector(".projDescTabToggleOff");
-var projDescTabValue = 1;
 
 
 if (projDescTabVal==0){
@@ -17,7 +16,6 @@ if (projDescTabVal==0){
 projDescTabToggleOn.addEventListener("click", function(){
 	projDescTab.style.display = "inline-block";
 	projDescTabToggleOn.style.display = "none";
-	projDescTabValue = 1;
 	createCookie("projDescTab", "1", "1");
 
 });
@@ -25,7 +23,6 @@ projDescTabToggleOn.addEventListener("click", function(){
 projDescTabToggleOff.addEventListener("click", function(){
 	projDescTab.style.display = "none";
 	projDescTabToggleOn.style.display = "inline-block";
-	projDescTabValue = 0;
 	createCookie("projDescTab", "0", "1");
 });
 
@@ -36,7 +33,6 @@ projDescTabToggleOff.addEventListener("click", function(){
 var projUpdateTab = document.querySelector("#projUpdateTab");
 var projUpdateTabToggleOn = document.querySelector(".projUpdateTabToggleOn");
 var projUpdateTabToggleOff = document.querySelector(".projUpdateTabToggleOff");
-var projUpdateTabValue = 1;
 
 if (projUpdateTabVal==0){
 	projUpdateTab.style.display = "none";
@@ -49,14 +45,12 @@ if (projUpdateTabVal==0){
 projUpdateTabToggleOn.addEventListener("click", function(){
 	projUpdateTab.style.display = "inline-block";
 	projUpdateTabToggleOn.style.display = "none";
-	projUpdateTabValue = 1;
 	createCookie("projectUpdateTab", "1", "1");
 });
 
 projUpdateTabToggleOff.addEventListener("click", function(){
 	projUpdateTab.style.display = "none";
 	projUpdateTabToggleOn.style.display = "inline-block";
-	projUpdateTabValue = 0;
 	createCookie("projectUpdateTab", "0", "1");
 });
 
@@ -67,7 +61,6 @@ projUpdateTabToggleOff.addEventListener("click", function(){
 var projComntTab = document.querySelector("#projComntTab");
 var projComntTabToggleOn = document.querySelector(".projComntTabToggleOn");
 var projComntTabToggleOff = document.querySelector(".projComntTabToggleOff");
-var projComntTabValue = 1;
 
 if (projComntTabVal==0){
 	projComntTab.style.display = "none";
@@ -80,14 +73,12 @@ if (projComntTabVal==0){
 projComntTabToggleOn.addEventListener("click", function(){
 	projComntTab.style.display = "inline-block";
 	projComntTabToggleOn.style.display = "none";
-	projComntTabValue = 1;
 	createCookie("projComntTab", "1", "1");
 });
 
 projComntTabToggleOff.addEventListener("click", function(){
 	projComntTab.style.display = "none";
 	projComntTabToggleOn.style.display = "inline-block";
-	projComntTabValue = 0;
 	createCookie("projComntTab", "0", "1");
 });
 
@@ -98,7 +89,6 @@ projComntTabToggleOff.addEventListener("click", function(){
 var projDntnTab = document.querySelector("#projDntnTab");
 var projDntnTabToggleOn = document.querySelector(".projDntnTabToggleOn");
 var projDntnTabToggleOff = document.querySelector(".projDntnTabToggleOff");
-var projDntnTabValue = 1;
 
 if (projDntnTabVal==0){
 	projDntnTab.style.display = "none";
@@ -111,14 +101,12 @@ if (projDntnTabVal==0){
 projDntnTabToggleOn.addEventListener("click", function(){
 	projDntnTab.style.display = "inline-block";
 	projDntnTabToggleOn.style.display = "none";
-	projDntnTabValue = 1;
 	createCookie("projDntnTab", "1", "1");
 });
 
 projDntnTabToggleOff.addEventListener("click", function(){
 	projDntnTab.style.display = "none";
 	projDntnTabToggleOn.style.display = "inline-block";
-	projDntnTabValue = 0;
 	createCookie("projDntnTab", "0", "1");
 });
 
@@ -133,19 +121,16 @@ projDntnTabToggleOff.addEventListener("click", function(){
 var spareTab = document.querySelector("#spareTab");
 var spareTabToggleOn = document.querySelector(".spareTabToggleOn");
 var spareTabToggleOff = document.querySelector(".spareTabToggleOff");
-var spareTabValue = 1;
 
 spareTabToggleOn.addEventListener("click", function(){
 	spareTab.style.display = "inline-block";
 	spareTabToggleOn.style.display = "none";
-	spareTabValue = 1;
 	createCookie("spareTab", "1", "1");
 });
 
 spareTabToggleOff.addEventListener("click", function(){
 	spareTab.style.display = "none";
 	spareTabToggleOn.style.display = "inline-block";
-	spareTabValue = 0;
 	createCookie("spareTab", "0", "1");
 });
 
