@@ -49,6 +49,7 @@
                 @endforeach
             </ul>
         </div>
+        {{ $projects->links() }}
     </div>
 </section>
 

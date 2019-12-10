@@ -29,7 +29,7 @@ class ProjectsController extends Controller
     public function index()
     {
         //primitive version of latest()->get();
-        $projects = Project::latest()->get();//orderBy('id', 'desc')->get();
+        $projects = Project::latest()->paginate(5);//orderBy('id', 'desc')->get();
         $customize = Customize::getuserData(1);
 
         return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
@@ -203,7 +203,8 @@ class ProjectsController extends Controller
         $query=$request->input('query');
 
 
-        $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->get();
+        $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->paginate(5);
+        $customize = Customize::getuserData(1);
 
         //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 
