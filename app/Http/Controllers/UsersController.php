@@ -94,7 +94,7 @@ class UsersController extends Controller
         $projects = Project::where('current', '>', 0)->get();
         $customize = Customize::getuserData(1);
 
-        return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
+        return view('users.showProjectsDonatedTo', ['projects' => $projects , 'customize' => $customize]);
     }
 
 

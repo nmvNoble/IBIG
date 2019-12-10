@@ -4,10 +4,12 @@
 @section('banner')
     <section id="banner">
         <h2>Welcome to IBIG</h2>
-        <p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
         <ul class="actions">
             <li><a href="\projects" class="button special big">View Projects</a></li>
         </ul>
+        <p> View the Projects of IBIG
+            <br/><br/> OR Take a look at some of our statistics and posts bellow!
+        </p>
     </section>
 @endsection
 

@@ -19,7 +19,7 @@
         <header class="major special">
             <h2>Projects</h2>
             <a href="\projects\create" class="button special big" style="display: inline; float: right;">Create a Project</a>
-            <p>Feugiat sed lorem ipsum magna</p>
+            <p>Viewing all Projects on IBIG</p>
         </header>
         <div class="projects-grid">
             <ul style="list-style: none;">
@@ -67,11 +67,11 @@
 <section id="four" class="wrapper style3 special">
     <div class="container">
         <header class="major">
-            <h2>Aenean elementum ligula</h2>
-            <p>Feugiat sed lorem ipsum magna</p>
+            <h2>Looking for something different?</h2>
+            <p>View some of IBIG statistics in the Home Page!</p>
         </header>
         <ul class="actions">
-            <li><a href="#" class="button special big">Get in touch</a></li>
+            <li><a href="/welcome" class="button special big">Visit Home</a></li>
         </ul>
     </div>
 </section>
