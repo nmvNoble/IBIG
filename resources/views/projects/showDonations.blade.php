@@ -114,5 +114,5 @@
 
 <!-- Additional Scripts -->
 @section('script')
-	<script src="\assets\js\customization\project\projects_tabs.js"></script>
+	<script src="\assets\js\customization\projects\projects_tabs.js"></script>
 @endsection

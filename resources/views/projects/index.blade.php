@@ -83,5 +83,5 @@
 
 <!-- Additional Scripts -->
 @section('script')
-    <script src="\assets\js\customization\project\index.js"></script>
+    <script src="\assets\js\customization\projects\index.js"></script>
 @endsection
