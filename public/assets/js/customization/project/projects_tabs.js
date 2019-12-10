@@ -38,11 +38,11 @@ var projUpdateTabToggleOn = document.querySelector(".projUpdateTabToggleOn");
 var projUpdateTabToggleOff = document.querySelector(".projUpdateTabToggleOff");
 var projUpdateTabValue = 1;
 
-if (projectUpdateTabVal==0){
-	projectUpdateTab.style.display = "none";
+if (projUpdateTabVal==0){
+	projUpdateTab.style.display = "none";
 	projUpdateTabToggleOn.style.display = "inline-block";
 }else{
-	projectUpdateTab.style.display = "inline-block";
+	projUpdateTab.style.display = "inline-block";
 	projUpdateTabToggleOn.style.display = "none";
 }
 

@@ -20,6 +20,12 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
     </head>
+        <?php
+      $donateNotif=$customize->donateNotif;
+    ?>
+    <script type="text/javascript">
+      var donateNotifVal = <?php echo $donateNotif ?>;
+    </script>
     
    
     <body class="landing">
@@ -97,12 +103,7 @@
             </div>
         </footer>
 
-        <!-- Scripts --><!-- 
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/skel.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script> -->
-            <!-- DB update -->
+      
         <?php
         $link = mysqli_connect("localhost", "root", "", "ibig"); 
         if($link === false){ 
@@ -269,6 +270,14 @@
         mysqli_close($link); 
 
         ?>
+
+        <!-- Scripts --><!-- 
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/skel.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script> -->
+            <!-- DB update -->
+
             <script src="\assets\js\customization\layout_main.js"></script>
             @yield('script')
 
