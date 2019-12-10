@@ -27,6 +27,7 @@
       var donateNotifVal = <?php echo $donateNotif ?>;
     </script>
     
+    
    
     <body class="landing">
 
@@ -262,6 +263,48 @@
                   echo 'console.log("Record was updated successfully.")';
                   echo '</script>';
                   setcookie('projDescText', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["compareLocation"])){
+            $compareLocation = ($_COOKIE["compareLocation"]);
+            $sql = "UPDATE customizes SET compareLocation='$compareLocation' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('compareLocation', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["benefactorSpotLight"])){
+            $benefactorSpotLight = ($_COOKIE["benefactorSpotLight"]);
+            $sql = "UPDATE customizes SET benefactorSpotLight='$benefactorSpotLight' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('benefactorSpotLight', '', 1, '/');
+            } else { 
+                echo "ERROR: Could not able to execute $sql. "  
+                . mysqli_error($link); 
+            }  
+        }
+
+        if(isset($_COOKIE["compareGender"])){
+            $compareGender = ($_COOKIE["compareGender"]);
+            $sql = "UPDATE customizes SET compareGender='$compareGender' WHERE id=1"; 
+            if(mysqli_query($link, $sql)){ 
+                  echo '<script>';
+                  echo 'console.log("Record was updated successfully.")';
+                  echo '</script>';
+                  setcookie('compareGender', '', 1, '/');
             } else { 
                 echo "ERROR: Could not able to execute $sql. "  
                 . mysqli_error($link); 
