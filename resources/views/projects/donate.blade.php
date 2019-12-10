@@ -124,7 +124,7 @@
 		var donateOrdered= <?php echo $donateOrd ?>;
 		var donateUnordered= <?php echo $donateUno ?>;
 	</script>
-	<script src="\assets\js\customization\project\donate.js"></script>
+	<script src="\assets\js\customization\projects\donate.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>

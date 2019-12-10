@@ -23,11 +23,24 @@
 		<header id="userTab" class="alt">
 		    <nav id="nav">
 		        <ul>
-		            <li class={{Request::is('users/*/owned') ? 'current_page_item' : ''}}>
+        			<li style="display: none;" class="userOwnedTabToggleOn">
+        				<span title="User's Owned Projects Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="userOwnedTab" class={{Request::is('users/*/owned') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon userOwnedTabToggleOff" src="\images\icons/remove-white-512.png"/>
 		            	<a href="\users/9099/owned">Projects Owned</a>
 		            </li>
-		            <li class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}}>
-		                <a href="\users/9099/donatedTo" accesskey="1">Projects Donated To</a>
+
+        			<li style="display: none;" class="userDonatedTabToggleOn">
+        				<span title="Project's User Donated to Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="userDonatedTab" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon userDonatedTabToggleOff" src="\images\icons/remove-white-512.png"/>
+		                <a href="\users/9099/donatedTo">Projects Donated To</a>
 		            </li>
 		        </ul>
 		    </nav>
@@ -65,5 +78,9 @@
 			</div>
 		</div>
 	</section>
-			
-@stop
+@endsection
+
+<!-- Additional Scripts -->
+@section('script')
+	<script src="\assets\js\customization\users\user_tabs.js"></script>
+@endsection

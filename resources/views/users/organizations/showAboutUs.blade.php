@@ -23,16 +23,43 @@
 		<header id="userTab" class="alt">
 		    <nav id="nav">
 		        <ul>
-		            <li class={{Request::is('organizations/*/aboutUs') ? 'current_page_item' : ''}}>
-		                <a href="\organizations/9099/aboutUs">About Us</a>
+		            <li style="display: none;" class="orgAboutUsTabToggleOn">
+        				<span title="Organization's Affiliates Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="orgAboutUsTab" class={{Request::is('organizations/*/aboutUs') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon orgAboutUsTabToggleOff" src="\images\icons/remove-white-512.png"/>
+		            	<a href="\organizations/9099/aboutUs">About Us</a>
 		            </li>
-		            <li class={{Request::is('organizations/*/affiliates') ? 'current_page_item' : ''}}>
-		                <a href="\organizations/9099/affiliates">Affiliates</a>
+		            
+        			<li style="display: none;" class="orgAffiliatesTabToggleOn">
+        				<span title="Organization's Affiliates Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="orgAffiliatesTab" class={{Request::is('organizations/*/affiliates') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon orgAffiliatesTabToggleOff" src="\images\icons/remove-white-512.png"/>
+		            	<a href="\organizations/9099/affiliates">Affiliates</a>
 		            </li>
-		            <li class={{Request::is('organizations/*/owned') ? 'current_page_item' : ''}}>
+
+        			<li style="display: none;" class="orgOwnedTabToggleOn">
+        				<span title="Organization's Owned Projects Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="orgOwnedTab" class={{Request::is('organizations/*/owned') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon orgOwnedTabToggleOff" src="\images\icons/remove-white-512.png"/>
 		            	<a href="\organizations/9099/owned">Projects Owned</a>
 		            </li>
-		            <li class={{Request::is('organizations/*/donatedTo') ? 'current_page_item' : ''}}>
+
+        			<li style="display: none;" class="orgDonatedTabToggleOn">
+        				<span title="Project's Organization Donated to Tab">
+        					<img class="image customIcon " src="\images\icons/add-white-512.png"/>
+        				</span>
+        			</li>
+        	    	<li id="orgDonatedTab" class={{Request::is('organizations/*/donatedto') ? 'current_page_item' : ''}}>
+        	    		<img class="image customIcon orgDonatedTabToggleOff" src="\images\icons/remove-white-512.png"/>
 		                <a href="\organizations/9099/donatedTo">Projects Donated To</a>
 		            </li>
 		        </ul>
@@ -54,5 +81,9 @@
 			</section>
 		</div>
 	</section>
-			
+@endsection
+
+<!-- Additional Scripts -->
+@section('script')
+	<script src="\assets\js\customization\users\organizations\org_tabs.js"></script>
 @endsection

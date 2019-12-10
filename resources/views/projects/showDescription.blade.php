@@ -99,6 +99,6 @@
 		var projDntnTabVal= <?php echo $projDntnTab ?>;
 		var projDescTextVal= <?php echo $projDescText ?>;
 	</script>
-	<script src="\assets\js\customization\project\projects_tabs.js"></script>
-	<script src="\assets\js\customization\project\showDescription.js"></script>
+	<script src="\assets\js\customization\projects\projects_tabs.js"></script>
+	<script src="\assets\js\customization\projects\showDescription.js"></script>
 @endsection
