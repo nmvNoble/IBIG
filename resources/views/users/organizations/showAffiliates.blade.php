@@ -46,6 +46,7 @@
 			                    <div class="content">
 			                        <header>
 			                            <h2><a href="/users/9099/owned">Juan Dela Cruz</a></h2>
+			                            <p>CEO</p>
 			                        </header>
 			                    </div>
 			                </div>
@@ -54,6 +55,7 @@
 			                    <div class="content">
 			                        <header>
 			                            <h2><a href="/users/9099/owned">Jane Doe</a></h2>
+			                            <p>Member</p>
 			                        </header>
 			                    </div>
 			                </div>
@@ -62,6 +64,7 @@
 			                    <div class="content">
 			                        <header>
 			                            <h2><a href="/users/9099/owned">John Doe</a></h2>
+			                            <p>Member</p>
 			                        </header>
 			                    </div>
 			                </div>
