@@ -13,6 +13,17 @@
 
 @section('content')
 
+<?php
+    $compareLocation=$customize->compareLocation;
+    $benefactorSpotLight=$customize->benefactorSpotLight;
+    $compareGender=$customize->compareGender;
+?>
+<script type="text/javascript">
+    var compareLocationVal = <?php echo $compareLocation ?>;
+    var benefactorSpotLightVal = <?php echo $benefactorSpotLight ?>;
+    var compareGenderVal = <?php echo $compareGender ?>;
+</script>
+
 
 
 <!-- One -->
