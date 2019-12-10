@@ -125,10 +125,25 @@
 			</div>
 		</div>
 	</section>
+	<?php 
+	$projDescTab = $customize->projectDescTab;
+	$projUpdateTab= $customize->projectUpdateTab;
+	$projComntTab= $customize->projComntTab;
+	$projDntnTab= $customize->projDntnTab;
+	$projDescText= $customize->projDescText;
+	?>
 @endsection
 
 <!-- Additional Scripts -->
 @section('script')
+	
+	<script type="text/javascript">
+		var projDescTabVal = <?php echo $projDescTab ?>;
+		var projUpdateTabVal= <?php echo $projUpdateTab ?>;
+		var projComntTabVal= <?php echo $projComntTab ?>;
+		var projDntnTabVal= <?php echo $projDntnTab ?>;
+		var projDescTextVal= <?php echo $projDescText ?>;
+	</script>
 	<script src="\assets\js\customization\projects\projects_tabs.js"></script>
 	<script src="\assets\js\customization\projects\showComments.js"></script>
 @endsection
