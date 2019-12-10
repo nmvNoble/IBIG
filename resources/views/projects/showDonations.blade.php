@@ -87,10 +87,27 @@
 					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
 					                    <div class="content">
 					                        <header>
-					                            <h2>Php 200</h2>
-					                            <p><a href="/users/9099/owned">John Doe</a> 11/1/2019</p>
+					                            
+												<span title="User Anonymity Turned ON" id="userAnonymityOn" style="display: none;" >
+													<img class="image customIcon userAnonymityToggleOff" src="\images\icons/add-512.png"
+													/>
+													<h2 style="display: inline-block;">Php 2000</h2><p>Anonymus 11/1/2019</p>
+												</span>
+												<span title="User Anonymity Turned OFF" id="userAnonymityOff">
+													<img class="image customIcon userAnonymityToggleOn" src="\images\icons/remove-512.png"  />
+													<h2 style="display: inline-block;">Php 2000</h2><p><a href="/users/9099/owned">Juan Dela Cruz</a> 11/1/2019</p>
+												</span>
 					                        </header>
-					                            <p>I'll also be going to your volunteering unit at MM</p>
+
+											<span title="User Donation Note Text">
+												<img class="image customIcon donationNoteToggleOn" src="\images\icons/add-512.png"
+												style="display: none;" />
+											</span>
+											<div class="hide" id="donationNote">
+												<img class="image customIcon donationNoteToggleOff" src="\images\icons/remove-512.png"  />
+												<p>I'll also be going to your volunteering unit at MM</p>
+											</div>
+					                            
 					                    </div>
 					                </div>
 					                <div class="project">
@@ -115,4 +132,5 @@
 <!-- Additional Scripts -->
 @section('script')
 	<script src="\assets\js\customization\projects\projects_tabs.js"></script>
+	<script src="\assets\js\customization\projects\showDonations.js"></script>
 @endsection

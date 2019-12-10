@@ -77,20 +77,28 @@
 					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
 					                    <div class="content">
 					                        <header>
-					                            <h2><a href="/users/9099/owned">Anonymus</a></h2>
+					                            <h2>Anonymus</h2>
 					                            <p>4/22/2020</p>
 					                        </header>
-					                            <p>Keep up the good work You've haelp those people and now</p>
+					                            <p>WOoooooooooooo YEah Hype for this. But besides the fun I love this project keep it up!</p>
 					                    </div>
 					                </div>
 					                <div class="project">
 					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
 					                    <div class="content">
 					                        <header>
-					                            <h2><a href="/users/9099/owned">John Doe</a></h2>
+												<span title="User Anonymity Turned ON" id="userAnonymityOn" style="display: none;" >
+													<img class="image customIcon userAnonymityToggleOff" src="\images\icons/add-512.png"
+													/>
+													<h2>Anonymus</h2>
+												</span>
+												<span title="User Anonymity Turned OFF" id="userAnonymityOff">
+													<img class="image customIcon userAnonymityToggleOn" src="\images\icons/remove-512.png"  />
+													<h2><a href="/users/9099/owned">Juan Dela Cruz</a></h2>
+												</span>
 					                            <p>4/21/2020</p>
 					                        </header>
-					                            <p>WOoooooooooooo YEah Hype for this. But besides the fun I love this project keep it up!</p>
+					                            <p>Keep up the good work! You've helped those people then and now again. Thank you!</p>
 					                    </div>
 					                </div>
 					                <div class="project">
@@ -115,4 +123,5 @@
 <!-- Additional Scripts -->
 @section('script')
 	<script src="\assets\js\customization\projects\projects_tabs.js"></script>
+	<script src="\assets\js\customization\projects\showComments.js"></script>
 @endsection
