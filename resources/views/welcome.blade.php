@@ -56,7 +56,7 @@
             </div>
             <div class="feature-grid">
                 <div class="feature">
-                    <div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
+                    <div class="image rounded"><img src="images/laguna.jpg" alt="" /></div>
                     <div class="content">
                         <header>
                             <h4>Fresh Air!</h4>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
+                    <div class="image rounded"><img src="images/manila.jpg" alt="" /></div>
                     <div class="content">
                         <header>
                             <h4>Stuck in traffic?</h4>
@@ -143,7 +143,7 @@
             </div>
             <div class="feature-grid">
                 <div class="feature">
-                    <div class="image rounded"><img src="images/pic06.jpg" alt="" /></div>
+                    <div class="image rounded"><img src="images/women.jpg" alt="" /></div>
                     <div class="content">
                         <header>
                             <h4>Girl Power</h4>
@@ -153,7 +153,7 @@
                     </div>
                 </div>
                 <div class="feature">
-                    <div class="image rounded"><img src="images/pic07.jpg" alt="" /></div>
+                    <div class="image rounded"><img src="images/men.jpg" alt="" /></div>
                     <div class="content">
                         <header>
                             <h4>Hussle</h4>
