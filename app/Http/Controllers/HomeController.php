@@ -8,6 +8,7 @@ use App\Customize;
 class HomeController extends Controller
 {
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -20,6 +21,7 @@ class HomeController extends Controller
         return view('welcome', ['customize' => $customize]);
     }
 
+    
     /**
      * Create a new controller instance.
      *

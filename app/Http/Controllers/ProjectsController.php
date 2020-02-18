@@ -15,6 +15,18 @@ class ProjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function evacuationCenters()
+    {
+        //
+        $customize = Customize::getuserData(1);
+        return view('evac_centers', ['customize' => $customize]);
+    }
+    
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function welcome()
     {
         //
