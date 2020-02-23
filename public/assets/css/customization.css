@@ -10,6 +10,13 @@
 		display: inline;
 	}
 
+	.calamityIcon {
+		max-height: 30px; 
+		max-width: 30px; 
+		cursor: pointer;
+		display: inline;
+	}
+
 /* Tooltips */
 
 	.tooltip {

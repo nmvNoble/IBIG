@@ -49,7 +49,8 @@
                 }
             </script>
 
-            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/welcome" > @IBIG</a></strong></h1>
+            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/welcome" > @IBIG</a></strong>
+                <!-- <img class="image calamityIcon " src="\images\icons/home-512.png"/> --></h1>
             <nav id="nav" style="float: right;">
                 <ul>
                     

@@ -12,15 +12,35 @@
         <p>Due to the recent events of the Taal volcano we have found it to be relevant and possibly helpful to spread awarenes to the possible projects regarding the efforts to help those affected by the recent calamity and the nearby Evacuation Centers.</p>
         <p>Projects that are part of the Calamity Victims Support efforts will be marked with the icon [
             <span title="Project for Calamity Victim Support">
-                <img class="image customIcon" src="\images\icons/AlertCalamity-512.png"/>
+                <img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png"/>
             </span>
         ].</p><br>
 
         <h4>Official list of Evacuation Centers in Batangas.</h4>
-        <img src="images/EvacuationCenters/EC1.jpg"/>
-        <img src="images/EvacuationCenters/EC2.jpg"/>
-        <img src="images/EvacuationCenters/EC3.jpg"/>
-        <img src="images/EvacuationCenters/EC4.jpg"/>
+	        <div class="row 150%">
+				<div class="6u 12u$(xsmall)">
+					<div class="image fit captioned">
+						<img src="images/EvacuationCenters/EC1.jpg"/>
+					</div>
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<div class="image fit captioned">
+	        			<img src="images/EvacuationCenters/EC2.jpg"/>
+					</div>
+				</div>
+			</div>
+	        <div class="row 150%">
+				<div class="6u 12u$(xsmall)">
+					<div class="image fit captioned">
+						<img src="images/EvacuationCenters/EC3.jpg"/>
+					</div>
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<div class="image fit captioned">
+	        			<img src="images/EvacuationCenters/EC4.jpg"/>
+					</div>
+				</div>
+			</div>
 
         <br><h4>Links related to Evacuation Centers</h4>
         <ul class="alt">

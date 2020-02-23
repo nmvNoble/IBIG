@@ -12,6 +12,11 @@ var projProgToggleValue = 1;
 // 	projProgToggleOn.style.background = "white";
 // });
 
+var styleElem = document.head.appendChild(document.createElement("style"));
+
+styleElem.innerHTML = "progress:after {content: 'Php ' attr(value) '';}";
+
+
 projProgToggleOn.addEventListener("click", function(){
 	for(var i = 0; i < projProg.length; i++){
 	  projProg[i].style.display = "block";

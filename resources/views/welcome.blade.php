@@ -4,11 +4,32 @@
 @section('banner')
     <section id="banner">
         <h2>Welcome to IBIG</h2>
-        <ul class="actions">
-            <li><a href="\projects" class="button special big">View Projects</a></li>
-        </ul>
-        <p> View the Projects of IBIG
-            <br/><br/> OR Take a look at some of our statistics and posts bellow!
+        <p>We've added support to calamity victims.<br>
+        View details in our first post bellow.</p>
+
+        <div class="row 150%">
+            <div class="6u 12u$(xsmall)">
+                <div class="image fit captioned" style="float: right">
+                    <ul class="actions">
+                        <li><a href="\projects" class="button special big">View 
+                            <span title="Project for Calamity Victim Support" style="display: inline-block;">
+                                <img class="image customIcon" src="\images\icons/AlertCalamity-512.png"/>
+                            </span>Projects</a></li>
+                    </ul>
+                    <p>Support Calamity Victims</p>
+                </div>
+            </div>
+            <div class="6u$ 12u$(xsmall)">
+                <div class="image fit captioned" style="float: left">
+                    <ul class="actions">
+                        <li><a href="\projects" class="button special big">View Projects</a></li>
+                    </ul>
+                    <p>View the Projects of IBIG</p>
+                </div>
+            </div>
+        </div>
+        <p>
+            OR Take a look at some of our statistics and posts bellow!<br>
         </p>
     </section>
 @endsection
@@ -37,13 +58,19 @@
         <p>Due to the recent events of the Taal volcano we have found it to be relevant and possibly helpful to spread awarenes to the possible projects regarding the efforts to help those affected by the recent calamity and the nearby Evacuation Centers.</p>
         <p>Projects that are part of the Calamity Victims Support efforts will be marked with the icon [
             <span title="Project for Calamity Victim Support">
-                <img class="image customIcon" src="\images\icons/AlertCalamity-512.png"/>
+                <img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png"/>
             </span>
         ].</p>
 
-        To view the official list of Evacuation Centers in Batangas <h5>click the title of this notice or check out the links bellow.</h5><br>
+        To view the official list of Evacuation Centers in Batangas <h5>click the title of this notice, the images bellow, or check out the links bellow.</h5>
+        <span class="image"><a href="\evacuationCenters">
+            <img src="/images/EvacuationCenters/EC1.jpg" style="max-height: 300px; float: left;" />
+            <img src="/images/EvacuationCenters/EC2.jpg" style="max-height: 300px; float: left;" />
+            <img src="/images/EvacuationCenters/EC3.jpg" style="max-height: 300px; float: left;" />
+            <img src="/images/EvacuationCenters/EC4.jpg" style="max-height: 300px; float: left;" />
+        </a></span>
 
-        <h4>Links related to Evacuation Centers</h4>
+        <br><h4>Links related to Evacuation Centers</h4>
         <ul class="alt">
             <li><a href="http://www.batangas.gov.ph/portal/evacuation-centers/">Official list from batangas.gov.ph</a></li>
             <li><a href="https://www.untvweb.com/news/list-evacuation-centers-in-batangas/">Short article from untvweb</a></li>
