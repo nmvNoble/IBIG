@@ -147,7 +147,7 @@
 		padding:0;
 		display:inline-block;
 		float:left;
-		content: 'Php ' attr(value) '';
+		content: attr(value);
 	}
 
 	.projectProgress {

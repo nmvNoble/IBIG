@@ -4,10 +4,8 @@
 @section('banner')
     <section id="banner" style="padding: 10em 0 3em 0;">
         <h2>Projects</h2>
-        <!--<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
-        <ul class="actions">
-            <li><a href="#" class="button special big">Get Started</a></li>
-        </ul>-->
+        <p>Consider Viewing Calamity Projects</p>
+        <a href="\projects\create" class="button special big"><img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" />Calamity Projects</a>
     </section>
 @endsection
 
@@ -18,8 +16,9 @@
     <div class="container">
         <header class="major special">
             <h2>Projects</h2>
-            <a href="\projects\create" class="button special big" style="display: inline; float: right;">Create a Project</a>
-            <p>Viewing all Projects on IBIG</p>
+                
+            <p>Viewing Projects on IBIG</p>
+                
         </header>
         <div class="projects-grid">
             <ul style="list-style: none;">
