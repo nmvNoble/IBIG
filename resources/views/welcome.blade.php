@@ -11,7 +11,7 @@
             <div class="6u 12u$(xsmall)">
                 <div class="image fit captioned" style="float: right">
                     <ul class="actions">
-                        <li><a href="\projects" class="button special big">View 
+                        <li><a href="\projects\calamities" class="button special big">View 
                             <span title="Project for Calamity Victim Support" style="display: inline-block;">
                                 <img class="image customIcon" src="\images\icons/AlertCalamity-512.png"/>
                             </span>Projects</a></li>

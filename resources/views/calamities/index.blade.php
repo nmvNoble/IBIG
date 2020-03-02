@@ -3,9 +3,9 @@
 <!-- Banner -->
 @section('banner')
     <section id="banner" style="padding: 10em 0 3em 0;">
-        <h2>Projects</h2>
-        <p>Consider Viewing Calamity Projects</p>
-        <a href="/projects/calamities" class="button special big"><img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" />Calamity Projects</a>
+        <h2>Calamity Projects</h2>
+        <p>Return to IBIG Projects</p>
+        <a href="\calamities\create" class="button special big">IBIG Projects</a>
     </section>
 @endsection
 
@@ -15,41 +15,41 @@
 <section id="three" class="wrapper style1">
     <div class="container">
         <header class="major special">
-            <h2>Projects</h2>
+            <h2><img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" />Calamity Projects</h2>
                 
-            <p>Viewing Projects on IBIG</p>
+            <p>Viewing Calamity Projects on IBIG</p>
                 
         </header>
         <div class="projects-grid">
             <ul style="list-style: none;">
-                @foreach ($projects as $project)
+                @foreach ($calamities as $calamity)
                         <li>
                             <div class="project">
-                                <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$project->image}}.jpg" alt="" /></div>
+                                <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$calamity->image}}.jpg" alt="" /></div>
                                 <div class="content">
                                     <header>
                                         <h2>
                                             <span title="Project for Calamity Victim Support">
-                                                <img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" style= @if ($project->calamity === 0)
+                                                <img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" style= @if ($calamity->calamity === 0)
                                                     display:none;
-                                                @elseif ($project->calamity === 1)
+                                                @elseif ($calamity->calamity === 1)
                                                     display:block;
                                                 @endif
                                                 />
                                             </span>
-                                            <a href="/projects/{{$project->id}}/description">{{$project->title}}</a>
+                                            <a href="/projects/calamities/{{$calamity->id}}/description">{{$calamity->title}}</a>
                                         </h2>
-                                        <p>Project by: User #{{$project->creatorID}}</p>
+                                        <p>Project by: User #{{$calamity->creatorID}}</p>
                                     </header>
-                                    <p>{{$project->description}}</p>
+                                    <p>{{$calamity->description}}</p>
                                 </div>
                                 <div class="fund">
                                     <div>
                                         <header>
-                                            @if($project->type === "Php")
-                                                <h3>{{$project->type}} {{$project->goal - $project->current}}</h3>
+                                            @if($calamity->type === "Php")
+                                                <h3>{{$calamity->type}} {{$calamity->goal - $calamity->current}}</h3>
                                             @else
-                                                <h3>{{$project->goal - $project->current}} {{$project->type}}</h3>
+                                                <h3>{{$calamity->goal - $calamity->current}} {{$calamity->type}}</h3>
                                             @endif
                                             <p>left to go!</p>
                                             <span title="Progress">
@@ -58,11 +58,11 @@
                                             </span>
                                             <div id="projProg" class="hide">
                                                 <!-- <img class="image customIcon projProgToggleOff" src="\images\icons/remove-512.png"  /> -->
-                                                <progress id="progressBar" max={{$project->goal}} value={{$project->current}}></progress>
+                                                <progress id="progressBar" max={{$calamity->goal}} value={{$calamity->current}}></progress>
                                             </div>
                                         </header>
                                         <ul class="actions">
-                                            <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
+                                            <li><a href="/projects/calamities/{{$calamity->id}}/donate" class="button special" >Get in Touch</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
 
             </ul>
         </div>
-        {{ $projects->links() }}
+        {{ $calamities->links() }}
     </div>
 </section>
 

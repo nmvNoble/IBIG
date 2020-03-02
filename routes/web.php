@@ -19,17 +19,24 @@ Route::get('/welcome', 'ProjectsController@welcome');
 Route::get('/evacuationCenters', 'ProjectsController@evacuationCenters');
 
 Route::get('/projects', 'ProjectsController@index');
-Route::post('/projects', 'ProjectsController@store');
-Route::get('/projects/create', 'ProjectsController@create');
-
 Route::get('/projects/{project}/description', 'ProjectsController@showDescription');
 Route::get('/projects/{project}/updates', 'ProjectsController@showUpdates');
 Route::get('/projects/{project}/comments', 'ProjectsController@showComments');
 Route::get('/projects/{project}/donations', 'ProjectsController@showDonations');
-
-Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 Route::get('/projects/{project}/donate', 'ProjectsController@donate');
+
+Route::get('/projects/calamities', 'CalamitiesController@index');
+Route::get('/projects/calamities/{project}/description', 'CalamitiesController@showDescription');
+Route::get('/projects/calamities/{project}/updates', 'CalamitiesController@showUpdates');
+Route::get('/projects/calamities/{project}/comments', 'CalamitiesController@showComments');
+Route::get('/projects/calamities/{project}/donations', 'CalamitiesController@showDonations');
+Route::get('/projects/calamities/{project}/donate', 'CalamitiesController@donate');
+
+
+Route::get('/projects/create', 'ProjectsController@create');
+Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 Route::put('/projects/{project}', 'ProjectsController@update');
+Route::post('/projects', 'ProjectsController@store');
 
 Route::post('/search', 'ProjectsController@search')->name('search');
 Route::get('/projects/{project}', 'ProjectsController@show')->name('projects.show');
@@ -48,9 +55,6 @@ Route::post('/projects/{project}/updateUser', 'CustomizesController@updateUser')
 
 
 
-Auth::routes();
-
-// Route::get('/welcome', 'HomeController@index')->name('welcome');
 
 Auth::routes();
 
