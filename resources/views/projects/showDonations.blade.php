@@ -14,7 +14,7 @@
 
 			<header class="major special">
 				<h2>{{$project->title}}</h2>
-				<a href="\projects\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
+				<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
 				<p>Php {{$project->goal - $project->current}} left to go!</p>
 	            <a href="\projects\{{$project->id}}\edit" class="button big" style="display: inline;">Edit</a>
 			</header>
@@ -37,7 +37,7 @@
 		        		</li>
 		            	<li id="projDescTab" class={{Request::is('projects/*/description') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projDescTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\description">Description</a>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\description">Description</a>
 		            	</li>
 
 			            
@@ -48,7 +48,7 @@
 		        		</li>
 		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ""}}>
 		            		<img class="image customIcon projUpdateTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\updates">Updates</a>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\updates">Updates</a>
 		            	</li>
 
 			            
@@ -59,7 +59,7 @@
 		        		</li>
 		            	<li id="projComntTab" class={{Request::is('projects/*/comments') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projComntTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\comments">Comments</a>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\comments">Comments</a>
 		            	</li>
 		            	
 			            
@@ -70,66 +70,64 @@
 		        		</li>
 		            	<li id="projDntnTab" class={{Request::is('projects/*/donations') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projDntnTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\donations">Donations</a>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
 		            	</li>
 			        </ul>
 			    </nav>
 			</header>
 			<div class="container" style="padding-top: 3em">
-				<div class="container" style="padding-top: 3em">
-					<div class="projects-grid">
-					    <ul style="list-style: none;">
-					            <li>
-					                <div class="project">
-					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
-					                    <div class="content">
-					                        <header>
-					                            <h2>Php 500</h2>
-					                            <p>Anonymus 12/3/2019</p>
-					                        </header>
-					                            <p>I hope you guys continue. I've seen you guys at work and I support.</p>
-					                    </div>
-					                </div>
-					                <div class="project">
-					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
-					                    <div class="content">
-					                        <header>
-					                            
-												<span title="User Anonymity Turned ON" id="userAnonymityOn" style="display: none;" >
-													<img class="image customIcon userAnonymityToggleOff" src="\images\icons/add-512.png"
-													/>
-													<h2 style="display: inline-block;">Php 2000</h2><p>Anonymus 11/1/2019</p>
-												</span>
-												<span title="User Anonymity Turned OFF" id="userAnonymityOff">
-													<img class="image customIcon userAnonymityToggleOn" src="\images\icons/remove-512.png"  />
-													<h2 style="display: inline-block;">Php 2000</h2><p><a href="/users/9099/owned">Juan Dela Cruz</a> 11/1/2019</p>
-												</span>
-					                        </header>
+				<div class="projects-grid">
+				    <ul style="list-style: none;">
+			            <li>
+			                <div class="project wrapper style2">
+			                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+			                    <div class="content">
+			                    	<blockquote>This is your donation. Thank you!</blockquote>
+			                        <header>
+										<span title="User Anonymity Turned ON" id="userAnonymityOn" style="display: none;" >
+											<img class="image customIcon userAnonymityToggleOff" src="\images\icons/add-512.png"
+											/>
+											<h2 style="display: inline-block;">Php 2000</h2><p>Anonymus 11/1/2019</p>
+										</span>
+										<span title="User Anonymity Turned OFF" id="userAnonymityOff">
+											<img class="image customIcon userAnonymityToggleOn" src="\images\icons/remove-512.png"  />
+											<h2 style="display: inline-block;">Php 2000</h2><p><a href="/users/9099/owned">Juan Dela Cruz</a> 11/1/2019</p>
+										</span>
+			                        </header>
 
-											<span title="User Donation Note Text">
-												<img class="image customIcon donationNoteToggleOn" src="\images\icons/add-512.png"
-												style="display: none;" />
-											</span>
-											<div class="hide" id="donationNote">
-												<img class="image customIcon donationNoteToggleOff" src="\images\icons/remove-512.png"  />
-												<p>I'll also be going to your volunteering unit at MM</p>
-											</div>
-					                            
-					                    </div>
-					                </div>
-					                <div class="project">
-					                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
-					                    <div class="content">
-					                        <header>
-					                            <h2>Php 1300</h2>
-					                            <p><a href="/users/9099/owned">Jane Doe</a> 9/9/1998</p>
-					                        </header>
-					                            <p>I love you. So much. Forever.</p>
-					                    </div>
-					                </div>
-					            </li>
-					    </ul>
-					</div>
+									<span title="User Donation Note Text">
+										<img class="image customIcon donationNoteToggleOn" src="\images\icons/add-512.png"
+										style="display: none;" />
+									</span>
+									<div class="hide" id="donationNote">
+										<img class="image customIcon donationNoteToggleOff" src="\images\icons/remove-512.png"  />
+										<p>I'll also be going to your volunteering unit at MM</p>
+									</div>
+			                            
+			                    </div>
+			                </div>
+			                <div class="project">
+			                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+			                    <div class="content">
+			                        <header>
+			                            <h2>Php 500</h2>
+			                            <p>Anonymus 12/3/2019</p>
+			                        </header>
+			                            <p>I hope you guys continue. I've seen you guys at work and I support.</p>
+			                    </div>
+			                </div>
+			                <div class="project">
+			                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+			                    <div class="content">
+			                        <header>
+			                            <h2>Php 1300</h2>
+			                            <p><a href="/users/9099/owned">Jane Doe</a> 9/9/1998</p>
+			                        </header>
+			                            <p>I love you. So much. Forever.</p>
+			                    </div>
+			                </div>
+			            </li>
+				    </ul>
 				</div>
 			</div>
 		</div>

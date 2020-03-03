@@ -47,12 +47,14 @@
 	  margin-top: -5px;
 	  border-width: 5px;
 	  border-style: solid;
-	  border-color: tranalternatent #3D663D tranalternatent tranalternatent;
+	  border-color: transparent #3D663D transparent transparent;
 	}
 
 	.tooltip:hover .tooltiptext {
 	  visibility: visible;
 	}
+
+
 
 /* Hidden */
 

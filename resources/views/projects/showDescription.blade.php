@@ -7,7 +7,7 @@
 		<div class="container">
 			<header class="major special">
 				<h2>{{$project->title}}</h2>
-				<a href="\projects\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
+				<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
 				<p>Php {{$project->goal - $project->current}} left to go!</p>
 	            <a href="\projects\{{$project->id}}\edit" class="button big" style="display: inline;">Edit</a>
 			</header>
@@ -22,7 +22,7 @@
 
 			<header id="userTab" class="alt">
 			    <nav id="nav">
-			        <ul>
+			        <ul>        
 		        		<li style="display: none;" class="projDescTabToggleOn">
 		        			<span title="Project Description Tab">
 		        				<img class="image customIcon " src="\images\icons/add-white-512.png"/>
@@ -30,7 +30,7 @@
 		        		</li>
 		            	<li id="projDescTab" class={{Request::is('projects/*/description') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projDescTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\description">Description</a>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\description">Description</a>
 		            	</li>
 
 			            
@@ -41,7 +41,7 @@
 		        		</li>
 		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ""}}>
 		            		<img class="image customIcon projUpdateTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\updates">Updates</a>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\updates">Updates</a>
 		            	</li>
 
 			            
@@ -52,7 +52,7 @@
 		        		</li>
 		            	<li id="projComntTab" class={{Request::is('projects/*/comments') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projComntTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\comments">Comments</a>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\comments">Comments</a>
 		            	</li>
 		            	
 			            
@@ -63,7 +63,7 @@
 		        		</li>
 		            	<li id="projDntnTab" class={{Request::is('projects/*/donations') ? 'current_page_item' : ''}}>
 		            		<img class="image customIcon projDntnTabToggleOff" src="\images\icons/remove-white-512.png"/>
-		            		<a href="\projects\{{$project->id}}\donations">Donations</a>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
 		            	</li>
 			        </ul>
 			    </nav>
