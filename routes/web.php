@@ -17,6 +17,7 @@
 Route::get('/', 'ProjectsController@welcome');
 Route::get('/welcome', 'ProjectsController@welcome');
 Route::get('/evacuationCenters', 'ProjectsController@evacuationCenters');
+Route::get('/login', 'HomeController@signIn');
 
 Route::get('/projects', 'ProjectsController@index');
 Route::post('/projects', 'ProjectsController@store');

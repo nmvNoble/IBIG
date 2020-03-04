@@ -21,6 +21,12 @@ class HomeController extends Controller
         return view('welcome', ['customize' => $customize]);
     }
 
+    public function signIn()
+    {
+        $customize = Customize::getuserData(1);
+        return view('auth.login', ['customize' => $customize]);
+    }
+
     
     /**
      * Create a new controller instance.

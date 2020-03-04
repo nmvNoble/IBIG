@@ -16,10 +16,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </head>
     <?php
-        $donateNotif=$customize->donateNotif;
+        //$donateNotif=$customize->donateNotif;
     ?>
     <script type="text/javascript">
-      var donateNotifVal = <?php echo $donateNotif ?>;
+     // var donateNotifVal = <?php //echo $donateNotif ?>;
     </script>
 
     
@@ -70,6 +70,7 @@
 
                     <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
                     <!--<li class="inactive_page_item"><a href="\elements.html">Elements</a></li>-->
+                    <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\login">Sign-In</a></li>
                 </ul>
             </nav>
         </header>
@@ -105,19 +106,19 @@
             die("ERROR: Could not connect. "  
                 . mysqli_connect_error()); 
                 } 
-        if(isset($_COOKIE["donateNotif"])){
-            $donateNotif = ($_COOKIE["donateNotif"]);
-            $sql = "UPDATE customizes SET donateNotif='$donateNotif' WHERE id=1"; 
-            if(mysqli_query($link, $sql)){ 
-                  echo '<script>';
-                  echo 'console.log("Record was updated successfully.")';
-                  echo '</script>';
-                  setcookie('donateNotif', '', 1, '/');
-            } else { 
-                echo "ERROR: Could not able to execute $sql. "  
-                . mysqli_error($link); 
-            }  
-        }
+        // if(isset($_COOKIE["donateNotif"])){
+        //     $donateNotif = ($_COOKIE["donateNotif"]);
+        //     $sql = "UPDATE customizes SET donateNotif='$donateNotif' WHERE id=1"; 
+        //     if(mysqli_query($link, $sql)){ 
+        //           echo '<script>';
+        //           echo 'console.log("Record was updated successfully.")';
+        //           echo '</script>';
+        //           setcookie('donateNotif', '', 1, '/');
+        //     } else { 
+        //         echo "ERROR: Could not able to execute $sql. "  
+        //         . mysqli_error($link); 
+        //     }  
+        // }
         if(isset($_COOKIE["donateComputed"])){
             $donateComputed = ($_COOKIE["donateComputed"]);
             $sql = "UPDATE customizes SET donateComputed='$donateComputed' WHERE id=1"; 
