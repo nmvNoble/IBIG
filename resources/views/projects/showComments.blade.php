@@ -101,7 +101,7 @@
 			            </li>
 			            <li>
 			                <div class="project">
-			                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+			                    <div class="image rounded right" style="margin-left: -2%;"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
 			                    <div class="content">
 			                        <header>
 			                            <h2>Anonymus</h2>
@@ -123,6 +123,30 @@
 			                    </div>
 			                </div>
 			            </li>
+			            @foreach ($comments as $comment)
+				            <li>
+				                <div class="project">
+					                <div class="image rounded right" style="margin-left: -2%;">
+					                	@if($users->where('id', $comment->userID)->first()->anonimity === 0)
+					                		<a href="/users/{{$comment->userID}}/owned">
+					                	@else
+					                	@endif
+					                		<img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a>
+					                </div>
+				                    <div class="content">
+				                        <header>
+							                	@if($users->where('id', $comment->userID)->first()->anonimity === 0)
+				                            		<h2><a href="/users/{{$comment->userID}}/owned">{{$users->where('id', $comment->userID)->first()->name}}</a></h2>
+							                	@else
+							                		<h2>Anonymus</h2>
+							                	@endif 
+				                            <p>{{$comment->updated_at}}</p>
+				                        </header>
+				                            <p>{{$comment->cont}}</p>
+				                    </div>
+				                </div>
+				            </li>
+	                	@endforeach 
 				    </ul>
 				</div>
 			</div>

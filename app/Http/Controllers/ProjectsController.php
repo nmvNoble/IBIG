@@ -3,7 +3,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Project;
-use App\Calamity;
+use App\Update;
+use App\Comment;
+use App\Donation;
+use App\User;
 use App\Customize;
 use Illuminate\Http\Request;
 use Spatie\Searchable\Search;
@@ -107,25 +110,30 @@ class ProjectsController extends Controller
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $updates = Update::latest()->where('projectid', $id)->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showUpdates', ['project' => $project , 'updates' => $updates , 'customize' => $customize]);
     }
     public function showCommentsCalamity($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $comments = Comment::latest()->where('projID', $id)->paginate(5);
+        $users = User::latest()->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showComments', ['project' => $project , 'comments' => $comments , 'users' => $users, 'customize' => $customize]);
     }
     public function showDonationsCalamity($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
+        $donations = Donation::latest()->where('projectid', $id)->paginate(5);
+        $users = User::latest()->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showDonations', ['project' => $project, 'donations' => $donations , 'users' => $users, 'customize' => $customize]);
     }
 
     /**

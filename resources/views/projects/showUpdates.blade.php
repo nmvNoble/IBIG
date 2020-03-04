@@ -69,20 +69,26 @@
 			</header>
 			<div class="container" style="padding-top: 3em">
 				<div class="projects-grid">
-			    <ul style="list-style: none;">
-			        <!-- for each updates as update-->
-			            <li>
-			                <div class="project">
-			                    <p><span class="image left"><img src="/images/pic04.jpg" alt="" /></span><h1>10/23/2020 - Thank you for all the Summer Volunteers!</h1>Thank you. Thank you. Thank you. we have no other words to say about just how it means to us that you all helped us in our project and mission as an organization. We hope this is not the last of our meeting and we hope to see more new faces. Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-			                </div>
-			            </li>
-			            <li>
-			                <div class="project">
-			                    <p><span class="image left"><img src="/images/pic05.jpg" alt="" /></span><h1>8/11/2020 - Emergency evacuation during floods in MM</h1> Oh no disaster strikes in MM! However we stay ever vigilant in the face of adversity. We held strong while we responded to the emergency calls of MM and we hope we did a good job. Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-			                </div>
-			            </li>
-			    </ul>
-			</div>
+				    <ul style="list-style: none;">
+				            <li>
+				                <div class="project">
+				                    <p><span class="image left"><img src="/images/pic04.jpg" alt="" /></span><h1>Thank you for all the Summer Volunteers!<br>10/23/2020</h1>Thank you. Thank you. Thank you. we have no other words to say about just how it means to us that you all helped us in our project and mission as an organization. We hope this is not the last of our meeting and we hope to see more new faces. Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+				                </div>
+				            </li>
+				            <li>
+				                <div class="project">
+				                    <p><span class="image left"><img src="/images/pic05.jpg" alt="" /></span><h1>Emergency evacuation during floods in MM<br>8/11/2020</h1> Oh no disaster strikes in MM! However we stay ever vigilant in the face of adversity. We held strong while we responded to the emergency calls of MM and we hope we did a good job. Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
+				                </div>
+				            </li>
+				        @foreach ($updates as $update)
+				            <li>
+				                <div class="project">
+				                    <p><span class="image left"><img src="/images/updates/{{$update->updateImage}}.jpg" alt="" /></span><h1>{{$update->updateTitle}}<br>{{$update->updated_at}}</h1> {{$update->updateText}}</p>
+				                </div>
+				            </li>
+	                	@endforeach 
+				    </ul>
+				</div>
 			</div>
 
 		</div>
