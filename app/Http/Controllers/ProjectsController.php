@@ -34,7 +34,6 @@ class ProjectsController extends Controller
      */
     public function showDescription($id)
     {
-        //return view('projects.show');
         $project = Project::find($id);
         $customize = Customize::getuserData(1);
 
@@ -42,27 +41,29 @@ class ProjectsController extends Controller
     }
     public function showUpdates($id)
     {
-        //return view('projects.show');
         $project = Project::find($id);
+        $updates = Update::latest()->where('projectid', $id)->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showUpdates', ['project' => $project , 'updates' => $updates , 'customize' => $customize]);
     }
     public function showComments($id)
     {
-        //return view('projects.show');
         $project = Project::find($id);
+        $comments = Comment::latest()->where('projID', $id)->paginate(5);
+        $users = User::latest()->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showComments', ['project' => $project , 'comments' => $comments , 'users' => $users, 'customize' => $customize]);
     }
     public function showDonations($id)
     {
-        //return view('projects.show');
         $project = Project::find($id);
+        $donations = Donation::latest()->where('projectid', $id)->paginate(5);
+        $users = User::latest()->paginate(5);
         $customize = Customize::getuserData(1);
 
-        return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        return view('projects.showDonations', ['project' => $project, 'donations' => $donations , 'users' => $users, 'customize' => $customize]);
     }
 
     /**
@@ -77,81 +78,6 @@ class ProjectsController extends Controller
         $customize = Customize::getuserData(1);
         return view('projects.donate', ['project' => $project , 'customize' => $customize]);
     }
-
-
-    /**=====================CALAMITY============================================================================
-     * Display a listing of Calamity projects.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function indexCalamities()
-    {
-        //primitive version of latest()->get();
-        $projects = Project::latest()->where('calamity', 1)->paginate(5);//orderBy('id', 'desc')->get();
-        $customize = Customize::getuserData(1);
-
-        return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
-    }
-    /**
-     * Display the specified Calamity project.
-     *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function showDescriptionCalamity($id)
-    {
-        //return view('projects.show');
-        $project = Project::find($id);
-        $customize = Customize::getuserData(1);
-
-        return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
-    }
-    public function showUpdatesCalamity($id)
-    {
-        //return view('projects.show');
-        $project = Project::find($id);
-        $updates = Update::latest()->where('projectid', $id)->paginate(5);
-        $customize = Customize::getuserData(1);
-
-        return view('projects.showUpdates', ['project' => $project , 'updates' => $updates , 'customize' => $customize]);
-    }
-    public function showCommentsCalamity($id)
-    {
-        //return view('projects.show');
-        $project = Project::find($id);
-        $comments = Comment::latest()->where('projID', $id)->paginate(5);
-        $users = User::latest()->paginate(5);
-        $customize = Customize::getuserData(1);
-
-        return view('projects.showComments', ['project' => $project , 'comments' => $comments , 'users' => $users, 'customize' => $customize]);
-    }
-    public function showDonationsCalamity($id)
-    {
-        //return view('projects.show');
-        $project = Project::find($id);
-        $donations = Donation::latest()->where('projectid', $id)->paginate(5);
-        $users = User::latest()->paginate(5);
-        $customize = Customize::getuserData(1);
-
-        return view('projects.showDonations', ['project' => $project, 'donations' => $donations , 'users' => $users, 'customize' => $customize]);
-    }
-
-    /**
-     * Display the specified Calamity project's donation page.
-     *
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
-     */
-    public function donateCalamity($id)
-    {
-        $project = Project::find($id);
-        $customize = Customize::getuserData(1);
-        return view('projects.donate', ['project' => $project , 'customize' => $customize]);
-    }
-
-    /*================================================================================================*/
-
-
 
     public function search(Request $request)
     {
@@ -276,6 +202,7 @@ class ProjectsController extends Controller
 
         return redirect('/projects/' . $id);
     }
+
     /**
      * Remove the specified resource from storage.
      *

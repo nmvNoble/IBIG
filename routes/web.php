@@ -26,12 +26,12 @@ Route::get('/projects/{project}/comments', 'ProjectsController@showComments');
 Route::get('/projects/{project}/donations', 'ProjectsController@showDonations');
 Route::get('/projects/{project}/donate', 'ProjectsController@donate');
 
-Route::get('/projects/calamities', 'ProjectsController@indexCalamities');
-Route::get('/projects/calamities/{project}/description', 'ProjectsController@showDescriptionCalamity');
-Route::get('/projects/calamities/{project}/updates', 'ProjectsController@showUpdatesCalamity');
-Route::get('/projects/calamities/{project}/comments', 'ProjectsController@showCommentsCalamity');
-Route::get('/projects/calamities/{project}/donations', 'ProjectsController@showDonationsCalamity');
-Route::get('/projects/calamities/{project}/donate', 'ProjectsController@donateCalamity');
+Route::get('/projects/calamities', 'ProjectsController@index');
+Route::get('/projects/calamities/{project}/description', 'ProjectsController@showDescription');
+Route::get('/projects/calamities/{project}/updates', 'ProjectsController@showUpdates');
+Route::get('/projects/calamities/{project}/comments', 'ProjectsController@showComments');
+Route::get('/projects/calamities/{project}/donations', 'ProjectsController@showDonations');
+Route::get('/projects/calamities/{project}/donate', 'ProjectsController@donate');
 
 
 Route::get('/projects/create', 'ProjectsController@create');
