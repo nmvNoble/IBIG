@@ -12,9 +12,9 @@ var projProgToggleValue = 1;
 // 	projProgToggleOn.style.background = "white";
 // });
 
-var styleElem = document.head.appendChild(document.createElement("style"));
+// var styleElem = document.head.appendChild(document.createElement("style"));
 
-styleElem.innerHTML = "progress:after {content: 'Php ' attr(value) '';}";
+// styleElem.innerHTML = "progress:after {content: 'Php ' attr(value) '';}";
 
 
 projProgToggleOn.addEventListener("click", function(){

@@ -26,7 +26,7 @@
 	<section id="main" class="wrapper">
 		<div class="container">
 			<header class="major special">
-				<a href="\projects\{{$project->id}}\description" class="button big" style="display: inline; float: right;">Back</a>
+				<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\description" class="button big" style="display: inline; float: right;">Back</a>
 				
 
 				<span title="Computed progress">

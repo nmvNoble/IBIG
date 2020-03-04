@@ -2,13 +2,19 @@
 
 <!-- Banner -->
 @section('banner')
-    <section id="banner" style="padding: 10em 0 3em 0;">
-        <h2>Projects</h2>
-        <!--<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
-        <ul class="actions">
-            <li><a href="#" class="button special big">Get Started</a></li>
-        </ul>-->
-    </section>
+    {!!Request::is('projects/calamities') ? '
+        <section id="banner" style="padding: 10em 0 3em 0;">
+            <h2>Calamity Projects</h2>
+            <p>Return to IBIG Projects</p>
+            <a href="\projects" class="button special big">IBIG Projects</a>
+        </section>
+        ' : '
+        <section id="banner" style="padding: 10em 0 3em 0;">
+            <h2>Projects</h2>
+            <p>Consider Viewing Calamity Projects</p>
+            <a href="/projects/calamities" class="button special big"><img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" />Calamity Projects</a>
+        </section>
+        '!!}
 @endsection
 
 @section('content')
@@ -18,14 +24,13 @@
     <div class="container">
         <header class="major special">
             <h2>Projects</h2>
-            <a href="\projects\create" class="button special big" style="display: inline; float: right;">Create a Project</a>
-            <p>Viewing all Projects on IBIG</p>
+                
+            <p>Viewing Projects on IBIG</p>
+                
         </header>
         <div class="projects-grid">
             <ul style="list-style: none;">
                 @foreach ($projects as $project)
-                     <!-- @if ($project->calamity === 0)
-                        <p>calamity === 1</p> -->
                         <li>
                             <div class="project">
                                 <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$project->image}}.jpg" alt="" /></div>
@@ -40,7 +45,11 @@
                                                 @endif
                                                 />
                                             </span>
-                                            <a href="/projects/{{$project->id}}/description">{{$project->title}}</a>
+                                            <a href= "@if ($project->calamity === 0)
+                                                    /projects/{{$project->id}}/description
+                                                @elseif ($project->calamity === 1)
+                                                    /projects/calamities/{{$project->id}}/description
+                                                @endif">{{$project->title}}</a>
                                         </h2>
                                         <p>Project by: User #{{$project->creatorID}}</p>
                                     </header>
@@ -65,16 +74,13 @@
                                             </div>
                                         </header>
                                         <ul class="actions">
-                                            <li><a href="/projects/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
+                                            <li><a href="/projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}/{{$project->id}}/donate" class="button special" >Get in Touch</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                    <!-- @else
-                        <p>calamity === 0</p>
-                    @endif
-                @endforeach -->
+                @endforeach 
 
             </ul>
         </div>
