@@ -131,7 +131,7 @@
 				            <li>
 				                <div class="project">
 					                <div class="image rounded right" style="margin-left: -2%;">
-					                	@if($users->where('id', $donation->benefactorID)->first()->anonimity === 0)
+					                	@if($users->where('id', $donation->benefactorID)->first()->anonymity === 0)
 					                		<a href="/users/{{$donation->benefactorID}}/owned">
 					                	@else
 					                	@endif
@@ -139,12 +139,17 @@
 					                </div>
 				                    <div class="content">
 				                        <header>
-				                            <h2>Php {{$donation->donation}}</h2>
+
+                                            @if($project->type === "Php")
+                                                <h2>{{$project->type}} {{$donation->donation}}</h2>
+                                            @else
+                                                <h2>{{$donation->donation}} {{$project->type}}/s</h2>
+                                            @endif
 				                            <p>
-							                	@if($users->where('id', $donation->benefactorID)->first()->anonimity === 0)
-				                            		<a href="/users/{{$donation->benefactorID}}/owned">{{$users->where('id', $donation->benefactorID)->first()->name}}</a>
-							                	@else
+							                	@if($users->where('id', $donation->benefactorID)->first()->anonymity === 1)
 							                		Anonymus
+							                	@else
+				                            		<a href="/users/{{$donation->benefactorID}}/owned">{{$users->where('id', $donation->benefactorID)->first()->name}}</a>
 							                	@endif 
 				                            	{{$donation->updated_at}}
 				                            </p>
