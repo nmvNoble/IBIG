@@ -112,6 +112,79 @@
                             </div>
                         </div>
 
+                       <!--  <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="age" type="number" class="form-control @error('email') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age">
+
+                                @error('age')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
+
+                            <div class="col-md-6">
+                                <select id="gender" value="{{ old('gender') }}" >
+                                  <option value="NA">Prefer not to say</option>
+                                  <option value="Male">Male</option>
+                                  <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="residence" class="col-md-4 col-form-label text-md-right">{{ __('City of Residence') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="residence" type="text" class="form-control @error('residence') is-invalid @enderror" name="residence" value="{{ old('residence') }}" required autocomplete="residence">
+
+                                @error('residence')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="educationLevel" class="col-md-4 col-form-label text-md-right">{{ __('Education/Professional Level') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                <select id="educationLevel" value="{{ old('educationLevel') }}" >
+                                  <option value="HS">HighSchool</option>
+                                  <option value="undergrad">College Undergraduate</option>
+                                  <option value="employed">Employed</option>
+                                  <option value="Masters">College Masters</option>
+                                  <option value="doctorate">Doctorate</option>
+                                  <option value="unemployed">Unemployed</option>
+                                </select>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="maritalStatus" class="col-md-4 col-form-label text-md-right">{{ __('Marital Status') }}</label>
+
+                            <div class="col-md-6">
+                                <div class="col-md-6">
+                                <select id="maritalStatus" value="{{ old('maritalStatus') }}" >
+                                  <option value="Single">Single</option>
+                                  <option value="Married">Married</option>
+                                  <option value="Divorced">Divorced</option>
+                                  <option value="Separated">Separated</option>
+                                  <option value="Widowed">Widowed</option>
+                                </select>
+                            </div>
+                            </div>
+                        </div> -->
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 

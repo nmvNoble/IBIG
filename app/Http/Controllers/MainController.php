@@ -18,7 +18,9 @@ class MainController extends Controller
     public function evacuationCenters()
     {
         //
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('evac_centers', ['customize' => $customize]);
     }
     
@@ -30,7 +32,9 @@ class MainController extends Controller
     public function welcome()
     {
         //
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('welcome', ['customize' => $customize]);
     }
 
@@ -45,7 +49,9 @@ class MainController extends Controller
 
 
         $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->paginate(5);
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
 
         //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 

@@ -17,7 +17,9 @@ class UsersController extends Controller
     {
         //primitive version of latest()->get();
         $users = User::latest()->get();//orderBy('id', 'desc')->get();
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
 
         return view('users.index', ['users' => $users , 'customize' => $customize]);
     }
@@ -81,7 +83,9 @@ class UsersController extends Controller
         //return view('users.show', ['user' => $user]);
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
 
         return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
     }
@@ -92,7 +96,9 @@ class UsersController extends Controller
         //$user = User::find($id);
         //return view('users.show', ['user' => $user]);
         $projects = Project::where('current', '>', 0)->get();
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
 
         return view('users.showProjectsDonatedTo', ['projects' => $projects , 'customize' => $customize]);
     }
@@ -106,7 +112,9 @@ class UsersController extends Controller
      */
     public function showAboutUs()
     {
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('users.showAboutUs' , ['customize' => $customize]);
     }
 
@@ -120,7 +128,9 @@ class UsersController extends Controller
     {
         //
         $user = User::find($id);
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
 
         return view('users.edit', compact('user') , ['customize' => $customize]); //['user' => $user]);
     }

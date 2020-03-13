@@ -16,8 +16,8 @@
 		        <div class="6u 12u$(medium)">
 		            <div class="image rounded center" style="margin-left: -2%;"><img src="\images/user.jpg" alt="" style=" max-width: 90%" /></div>
 		            <header class="major">
-		                <h2>Juan Dela Cruz</h2>
-		                <p>User #: 9099</p>
+		                <h2>{{ Auth::user()->name }}</h2>
+		                <p>User #: {{ Auth::user()->id}}</p>
 		                <p>Affiliated with: <a href="/organizations/9099/owned" class="button fit small" >I Love Sta. Rosa</a></p>
 		            </header>
 		        </div>

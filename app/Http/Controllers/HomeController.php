@@ -17,13 +17,17 @@ class HomeController extends Controller
     public function welcome()
     {
         //
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('welcome', ['customize' => $customize]);
     }
 
     public function signIn()
     {
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('auth.login', ['customize' => $customize]);
     }
 
@@ -45,7 +49,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $customize = Customize::getuserData(1);
+        $user=Auth::user();
+        $userID= $user->id;
+        $customize = Customize::getuserData($userID);
         return view('welcome', ['customize' => $customize]);
     }
 }

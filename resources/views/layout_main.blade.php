@@ -49,7 +49,11 @@
                 }
             </script>
 
-            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>J.DC</a><strong><a href="/welcome" > @IBIG</a></strong>
+            @guest
+            <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}></a><strong><a href="/welcome" > @IBIG</a></strong>
+              @else
+              <h1><a href="/users/9099/owned" class={{Request::is('users*') ? 'current_page_item' : ''}}>{{ Auth::user()->name }}</a><strong><a href="/welcome" > @IBIG</a></strong>
+            @endguest
                 <!-- <img class="image calamityIcon " src="\images\icons/home-512.png"/> --></h1>
             <nav id="nav" style="float: right;">
                 <ul>
@@ -59,18 +63,43 @@
                             <img class="image customIcon " src="\images\icons/add-white-512.png"/>
                         </span>
                     </li>
-                    <li id="donateNotif" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}} >
+                    <!-- <li id="donateNotif" class={{Request::is('users/*/donatedTo') ? 'current_page_item' : ''}} >
                         <img class="image customIcon donateNotifToggleOff" src="\images\icons/remove-white-512.png"/> 
                         <a href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a>
                     </li>
-
+ -->
                     <li class={{Request::path() === 'welcome' ? 'current_page_item' : ''}}>
                         <a href="/welcome" accesskey="1" title="">Home</a>
                     </li>
 
                     <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\projects">Projects</a></li>
                     <!--<li class="inactive_page_item"><a href="\elements.html">Elements</a></li>-->
-                    <li class={{Request::is('projects*') ? 'current_page_item' : ''}}><a href="\login">Sign-In</a></li>
+                    @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Sign-up') }}</a>
+                            </li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <div><a class="dropdown-item" href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a></div>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                      
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+
+                        @endguest
                 </ul>
             </nav>
         </header>
@@ -101,6 +130,8 @@
 
       
         <?php
+        $user=Auth::user();
+        $userID= $user->id;
         $link = mysqli_connect("localhost", "root", "", "ibig"); 
         if($link === false){ 
             die("ERROR: Could not connect. "  
@@ -116,12 +147,12 @@
         //           setcookie('donateNotif', '', 1, '/');
         //     } else { 
         //         echo "ERROR: Could not able to execute $sql. "  
-        //         . mysqli_error($link); 
+        //         . mysqli_error($link);
         //     }  
         // }
         if(isset($_COOKIE["donateComputed"])){
             $donateComputed = ($_COOKIE["donateComputed"]);
-            $sql = "UPDATE customizes SET donateComputed='$donateComputed' WHERE id=1"; 
+            $sql = "UPDATE customizes   SET donateComputed='$donateComputed' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -134,7 +165,7 @@
         }
         if(isset($_COOKIE["donateProgress"])){
             $donateProgress = ($_COOKIE["donateProgress"]);
-            $sql = "UPDATE customizes SET donateProgress='$donateProgress' WHERE id=1"; 
+            $sql = "UPDATE customizes SET donateProgress='$donateProgress' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -148,7 +179,7 @@
 
         if(isset($_COOKIE["donateUnordered"])){
             $donateUnordered = ($_COOKIE["donateUnordered"]);
-            $sql = "UPDATE customizes SET donateUnordered='$donateUnordered' WHERE id=1"; 
+            $sql = "UPDATE customizes SET donateUnordered='$donateUnordered' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -161,7 +192,7 @@
         }
         if(isset($_COOKIE["donateAlternate"])){
             $donateAlternate = ($_COOKIE["donateAlternate"]);
-            $sql = "UPDATE customizes SET donateAlternate='$donateAlternate' WHERE id=1"; 
+            $sql = "UPDATE customizes SET donateAlternate='$donateAlternate' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -174,7 +205,7 @@
         }
         if(isset($_COOKIE["donateOrdered"])){
             $donateOrdered = ($_COOKIE["donateOrdered"]);
-            $sql = "UPDATE customizes SET donateOrdered='$donateOrdered' WHERE id=1"; 
+            $sql = "UPDATE customizes SET donateOrdered='$donateOrdered' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -187,7 +218,7 @@
         }
         if(isset($_COOKIE["projectProgess"])){
             $projectProgess = ($_COOKIE["projectProgess"]);
-            $sql = "UPDATE customizes SET projectProgess='$projectProgess' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projectProgess='$projectProgess' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -200,7 +231,7 @@
         }
         if(isset($_COOKIE["projDescTab"])){
             $projDescTab = ($_COOKIE["projDescTab"]);
-            $sql = "UPDATE customizes SET projectDescTab='$projDescTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projectDescTab='$projDescTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -213,7 +244,7 @@
         }
         if(isset($_COOKIE["projectUpdateTab"])){
             $projectUpdateTab = ($_COOKIE["projectUpdateTab"]);
-            $sql = "UPDATE customizes SET projectUpdateTab='$projectUpdateTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projectUpdateTab='$projectUpdateTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -226,7 +257,7 @@
         }
         if(isset($_COOKIE["projComntTab"])){
             $projComntTab = ($_COOKIE["projComntTab"]);
-            $sql = "UPDATE customizes SET projComntTab='$projComntTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projComntTab='$projComntTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -239,7 +270,7 @@
         }
         if(isset($_COOKIE["projDntnTab"])){
             $projDntnTab = ($_COOKIE["projDntnTab"]);
-            $sql = "UPDATE customizes SET projDntnTab='$projDntnTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projDntnTab='$projDntnTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -252,7 +283,7 @@
         }
         if(isset($_COOKIE["projDescText"])){
             $projDescText = ($_COOKIE["projDescText"]);
-            $sql = "UPDATE customizes SET projDescText='$projDescText' WHERE id=1"; 
+            $sql = "UPDATE customizes SET projDescText='$projDescText' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -266,7 +297,7 @@
 
         if(isset($_COOKIE["compareLocation"])){
             $compareLocation = ($_COOKIE["compareLocation"]);
-            $sql = "UPDATE customizes SET compareLocation='$compareLocation' WHERE id=1"; 
+            $sql = "UPDATE customizes SET compareLocation='$compareLocation' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -280,7 +311,7 @@
 
         if(isset($_COOKIE["benefactorSpotLight"])){
             $benefactorSpotLight = ($_COOKIE["benefactorSpotLight"]);
-            $sql = "UPDATE customizes SET benefactorSpotLight='$benefactorSpotLight' WHERE id=1"; 
+            $sql = "UPDATE customizes SET benefactorSpotLight='$benefactorSpotLight' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -294,7 +325,7 @@
 
         if(isset($_COOKIE["compareGender"])){
             $compareGender = ($_COOKIE["compareGender"]);
-            $sql = "UPDATE customizes SET compareGender='$compareGender' WHERE id=1"; 
+            $sql = "UPDATE customizes SET compareGender='$compareGender' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -308,7 +339,7 @@
 
         if(isset($_COOKIE["userOwnedTab"])){
             $userOwnedTab = ($_COOKIE["userOwnedTab"]);
-            $sql = "UPDATE customizes SET userOwnedTab='$userOwnedTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET userOwnedTab='$userOwnedTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -322,7 +353,7 @@
 
         if(isset($_COOKIE["userDonatedTab"])){
             $userDonatedTab = ($_COOKIE["userDonatedTab"]);
-            $sql = "UPDATE customizes SET userDonatedTab='$userDonatedTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET userDonatedTab='$userDonatedTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -336,7 +367,7 @@
 
         if(isset($_COOKIE["orgOwnedTab"])){
             $orgOwnedTab = ($_COOKIE["orgOwnedTab"]);
-            $sql = "UPDATE customizes SET orgOwnedTab='$orgOwnedTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET orgOwnedTab='$orgOwnedTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -350,7 +381,7 @@
 
         if(isset($_COOKIE["orgDonatedTab"])){
             $orgDonatedTab = ($_COOKIE["orgDonatedTab"]);
-            $sql = "UPDATE customizes SET orgDonatedTab='$orgDonatedTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET orgDonatedTab='$orgDonatedTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -364,7 +395,7 @@
 
         if(isset($_COOKIE["orgAboutUsTab"])){
             $orgAboutUsTab = ($_COOKIE["orgAboutUsTab"]);
-            $sql = "UPDATE customizes SET orgAboutUsTab='$orgAboutUsTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET orgAboutUsTab='$orgAboutUsTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -378,7 +409,7 @@
 
         if(isset($_COOKIE["orgAffiliatesTab"])){
             $orgAffiliatesTab = ($_COOKIE["orgAffiliatesTab"]);
-            $sql = "UPDATE customizes SET orgAffiliatesTab='$orgAffiliatesTab' WHERE id=1"; 
+            $sql = "UPDATE customizes SET orgAffiliatesTab='$orgAffiliatesTab' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -392,7 +423,7 @@
 
         if(isset($_COOKIE["userAnonymityDonation"])){
             $userAnonymityDonation = ($_COOKIE["userAnonymityDonation"]);
-            $sql = "UPDATE customizes SET userAnonymityDonation='$userAnonymityDonation' WHERE id=1"; 
+            $sql = "UPDATE customizes SET userAnonymityDonation='$userAnonymityDonation' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
@@ -406,7 +437,7 @@
 
         if(isset($_COOKIE["userAnonymityComment"])){
             $userAnonymityComment = ($_COOKIE["userAnonymityComment"]);
-            $sql = "UPDATE customizes SET userAnonymityComment='$userAnonymityComment' WHERE id=1"; 
+            $sql = "UPDATE customizes SET userAnonymityComment='$userAnonymityComment' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';
