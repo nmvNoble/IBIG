@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Project;
 use App\Customize;
@@ -83,11 +84,17 @@ class UsersController extends Controller
         //return view('users.show', ['user' => $user]);
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.showProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
 
     public function showDonatedTo()
@@ -96,11 +103,18 @@ class UsersController extends Controller
         //$user = User::find($id);
         //return view('users.show', ['user' => $user]);
         $projects = Project::where('current', '>', 0)->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('users.showProjectsDonatedTo', ['projects' => $projects , 'customize' => $customize]);
+       
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.showProjectsDonatedTo', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.showProjectsDonatedTo', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
 
 
@@ -127,12 +141,21 @@ class UsersController extends Controller
     public function edit($id)
     {
         //
-        $user = User::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.edit', compact('user') , ['customize' => $customize]); //['user' => $user]);
 
-        return view('users.edit', compact('user') , ['customize' => $customize]); //['user' => $user]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.edit', compact('user') , ['customize' => $customize]); //['user' => $user]);
+
+        }
+
     }
 
     /**

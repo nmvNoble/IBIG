@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Project;
 use App\Customize;
 use Illuminate\Http\Request;
@@ -18,10 +19,18 @@ class MainController extends Controller
     public function evacuationCenters()
     {
         //
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('evac_centers', ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('evac_centers', ['customize' => $customize]);
+        }
+        else{
+            $customize = Customize::getuserData(1);
+            return view('evac_centers', ['customize' => $customize]);
+        }
+        
     }
     
     /**
@@ -32,10 +41,17 @@ class MainController extends Controller
     public function welcome()
     {
         //
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('welcome', ['customize' => $customize]);
+        $user=Auth::id();
+        if( $user!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('welcome', ['customize' => $customize]);
+        }
+        else{
+            $customize = Customize::getuserData(1);
+            return view('welcome', ['customize' => $customize]);
+        }
     }
 
     public function search(Request $request)
@@ -49,13 +65,21 @@ class MainController extends Controller
 
 
         $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->paginate(5);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        
 
         //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 
-        return view('search', compact('projects'), ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('search', compact('projects'), ['customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('search', compact('projects'), ['customize' => $customize]);
+        }
     }
 
     

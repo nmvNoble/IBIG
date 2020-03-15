@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Project;
 use App\Calamity;
 use App\Customize;
@@ -19,11 +20,22 @@ class ProjectsController extends Controller
     {
         //primitive version of latest()->get();
         $projects = Project::latest()->paginate(5);//orderBy('id', 'desc')->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        // return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
     /**
      * Display the specified resource.
@@ -35,41 +47,85 @@ class ProjectsController extends Controller
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showUpdates($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showComments($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showDonations($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        }
     }
 
     /**
@@ -81,10 +137,21 @@ class ProjectsController extends Controller
     public function donate($id)
     {
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
+        // return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        }
     }
 
 
@@ -97,11 +164,23 @@ class ProjectsController extends Controller
     {
         //primitive version of latest()->get();
         $projects = Project::latest()->where('calamity', 1)->paginate(5);//orderBy('id', 'desc')->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        // return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        $user=Auth::id();
+
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
     /**
      * Display the specified Calamity project.
@@ -113,41 +192,85 @@ class ProjectsController extends Controller
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showDescription', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showUpdatesCalamity($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showUpdates', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showCommentsCalamity($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
+        }
     }
     public function showDonationsCalamity($id)
     {
         //return view('projects.show');
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        // return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
+        }
     }
 
     /**
@@ -159,10 +282,21 @@ class ProjectsController extends Controller
     public function donateCalamity($id)
     {
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
+        // return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.donate', ['project' => $project , 'customize' => $customize]);
+        }
     }
 
     /*================================================================================================*/
@@ -180,13 +314,24 @@ class ProjectsController extends Controller
 
 
         $projects = DB::table('projects')->where('title', 'LIKE','%'.$query.'%')->paginate(5);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
+        // //$projects = Project::latest()->get();//orderBy('id', 'desc')->get();
 
-        return view('search', compact('projects'), ['customize' => $customize]);
+        // return view('search', compact('projects'), ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('search',compact('projects'), [ 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('search',compact('projects'), [ 'customize' => $customize]);
+        }
     }
 
     /**
@@ -197,10 +342,21 @@ class ProjectsController extends Controller
     public function create()
     {
         //
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('projects.create', ['customize' => $customize]);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
+        // return view('projects.create', ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.create', [ 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.create', [ 'customize' => $customize]);
+        }
     }
 
     /**
@@ -248,11 +404,22 @@ class ProjectsController extends Controller
     {
         //
         $project = Project::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
+        // $user=Auth::user();
+        // $userID= $user->id;
+        // $customize = Customize::getuserData($userID);
 
-        return view('projects.edit', compact('project') , ['customize' => $customize]); //['project' => $project]);
+        // return view('projects.edit', compact('project') , ['customize' => $customize]); //['project' => $project]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.create',compact('project'), [ 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.create',compact('project'), [ 'customize' => $customize]);
+        }
     }
 
     /**

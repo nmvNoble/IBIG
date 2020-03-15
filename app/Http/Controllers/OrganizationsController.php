@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Organization;
 use App\User;
 use App\Project;
@@ -33,10 +34,17 @@ class OrganizationsController extends Controller
     public function create()
     {
         //
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('organizations.create' , ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('organizations.create',  ['customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('organizations.create', ['customize' => $customize]);
+        }
     }
 
     /**
@@ -82,10 +90,17 @@ class OrganizationsController extends Controller
      */
     public function showAboutUs()
     {
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-        return view('users.organizations.showAboutUs' , ['customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.organizations.showAboutUs',  ['customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.organizations.showAboutUs', ['customize' => $customize]);
+        }
     }
 
     /**
@@ -96,12 +111,18 @@ class OrganizationsController extends Controller
      */
     public function showAffiliates()
     {
-        $users = User::latest()->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('users.organizations.showAffiliates', ['users' => $users , 'customize' => $customize]);
+        
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.organizations.showAffiliates',  ['customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.organizations.showAffiliates', ['customize' => $customize]);
+        }
     }
 
     /**
@@ -117,11 +138,18 @@ class OrganizationsController extends Controller
         //return view('organizations.show', ['organization' => $organization]);
 
         $projects = Project::latest()->get();//to be changed to orderBy('id', 'desc')->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
 
     public function showDonatedTo()
@@ -130,11 +158,17 @@ class OrganizationsController extends Controller
         //$organization = Organization::find($id);
         //return view('organizations.show', ['organization' => $organization]);
         $projects = Project::where('current', '>', 0)->get();
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('users.organizations.showOrgProjects', ['projects' => $projects , 'customize' => $customize]);
+        }
     }
 
     /**
@@ -147,11 +181,18 @@ class OrganizationsController extends Controller
     {
         //
         $organization = Organization::find($id);
-        $user=Auth::user();
-        $userID= $user->id;
-        $customize = Customize::getuserData($userID);
-
-        return view('organizations.edit', compact('organization') , ['customize' => $customize]); //['organization' => $organization]);
+        
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('organizations.edit', compact('organization') , ['projects' => $projects , 'customize' => $customize]);//['organization' => $organization]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('organizations.edit', compact('organization') , ['projects' => $projects , 'customize' => $customize]);//['organization' => $organization]);
+        }
     }
 
     /**

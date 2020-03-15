@@ -131,7 +131,7 @@
       
         <?php
         $user=Auth::user();
-        $userID= $user->id;
+        $userID= Auth::id();
         $link = mysqli_connect("localhost", "root", "", "ibig"); 
         if($link === false){ 
             die("ERROR: Could not connect. "  
