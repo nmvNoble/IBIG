@@ -107,7 +107,7 @@
 			                    </div>
 			                </div>
 			                <div class="project">
-			                    <div class="image rounded right" style="margin-left: -2%;"><a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
+			                    <div class="image rounded right" style="margin-left: -2%;"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a></div>
 			                    <div class="content">
 			                        <header>
 			                            <h2>Php 500</h2>
@@ -127,6 +127,38 @@
 			                    </div>
 			                </div>
 			            </li>
+				        @foreach ($donations as $donation)
+				            <li>
+				                <div class="project">
+					                <div class="image rounded right" style="margin-left: -2%;">
+					                	@if($users->where('id', $donation->benefactorID)->first()->anonymity === 0)
+					                		<a href="/users/{{$donation->benefactorID}}/owned">
+					                	@else
+					                	@endif
+					                		<img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a>
+					                </div>
+				                    <div class="content">
+				                        <header>
+
+                                            @if($project->type === "Php")
+                                                <h2>{{$project->type}} {{$donation->donation}}</h2>
+                                            @else
+                                                <h2>{{$donation->donation}} {{$project->type}}/s</h2>
+                                            @endif
+				                            <p>
+							                	@if($users->where('id', $donation->benefactorID)->first()->anonymity === 1)
+							                		Anonymus
+							                	@else
+				                            		<a href="/users/{{$donation->benefactorID}}/owned">{{$users->where('id', $donation->benefactorID)->first()->name}}</a>
+							                	@endif 
+				                            	{{$donation->updated_at}}
+				                            </p>
+				                        </header>
+				                            <p>{{$donation->note}}</p>
+				                    </div>
+				                </div>
+				            </li>
+	                	@endforeach 
 				    </ul>
 				</div>
 			</div>

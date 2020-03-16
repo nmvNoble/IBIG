@@ -85,7 +85,21 @@
 			                    <div class="image rounded" style="margin-left: -2%;"><img src="\images/{{$project->image}}.jpg" alt="" /></div>
 			                    <div class="content">
 			                        <header>
-			                            <h2><a href="/projects/{{$project->id}}/description">{{$project->title}}</a></h2>
+			                            <h2>
+			                            	<span title="Project for Calamity Victim Support">
+                                                <img class="image calamityIcon" src="\images\icons/AlertCalamity-512.png" style= @if ($project->calamity === 0)
+                                                    display:none;
+                                                @elseif ($project->calamity === 1)
+                                                    display:block;
+                                                @endif
+                                                />
+                                            </span>
+                                            <a href= "@if ($project->calamity === 0)
+                                                    /projects/{{$project->id}}/description
+                                                @elseif ($project->calamity === 1)
+                                                    /projects/calamities/{{$project->id}}/description
+                                                @endif">{{$project->title}}</a>
+                                        </h2>
 			                            <p>Project by: User #{{$project->creatorID}}</p>
 			                        </header>
 			                        <p>{{$project->description}}</p>
