@@ -57,11 +57,11 @@
 <section id="four" class="wrapper style3 special">
     <div class="container">
         <header class="major">
-            <h2>Aenean elementum ligula</h2>
-            <p>Feugiat sed lorem ipsum magna</p>
+            <h2>Looking for something different?</h2>
+            <p>View some of IBIG statistics in the Home Page!</p>
         </header>
         <ul class="actions">
-            <li><a href="#" class="button special big">Get in touch</a></li>
+            <li><a href="/welcome" class="button special big">Visit Home</a></li>
         </ul>
     </div>
 </section>
