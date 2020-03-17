@@ -33,7 +33,7 @@
                 @foreach ($projects as $project)
                         <li>
                             <div class="project">
-                                <div class="image rounded" style="margin-left: -2%;"><img src="images/{{$project->image}}.jpg" alt="" /></div>
+                                <div class="image rounded" style="margin-left: -2%;"><img src="/images/{{$project->image}}.jpg" alt="" /></div>
                                 <div class="content">
                                     <header>
                                         <h2>
