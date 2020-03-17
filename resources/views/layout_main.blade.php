@@ -34,9 +34,9 @@
                     <div class="col-md-6">
                       <input type="text" name="query" class="form-control" placeholder="Search" style="width: 350px;margin-left: 400px; display: inline; margin-top: 30px; font-color: white; background-color: rgb(255, 255, 255);" id= "searchtext" onkeyup="success()">
                     </div>
-                    <!-- <div class="col-md-6">
-                      <button class="button" value="search" style="display: inline-block;margin-top: 30px; height: 45px; width :20px; text-align: left;" id="searchBtn" onclick="verify()" disabled>search</button>
-                    </div> -->
+                    <div class="col-md-6">
+                        <!-- <button class="button" value="search" style="display: inline-block;margin-top: 30px; height: 45px; width :20px; text-align: left;" id="searchBtn" onclick="verify()" disabled>search</button> -->
+                    </div> 
                 </div>
             </form>
             <script type="text/javascript">

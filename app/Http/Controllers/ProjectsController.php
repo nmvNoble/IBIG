@@ -40,6 +40,22 @@ class ProjectsController extends Controller
             return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
         }
     }
+
+    public function calamityIndex()
+    {
+        $projects = Project::latest()->where('calamity', 1)->paginate(5);
+        $user=Auth::id();
+        if( Auth::id()!=null){
+            
+            $userID=  Auth::id() ;
+            $customize = Customize::getuserData($userID);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
+        else {
+            $customize = Customize::getuserData(1);
+            return view('projects.index', ['projects' => $projects , 'customize' => $customize]);
+        }
+    }
     /**
      * Display the specified resource.
      *
