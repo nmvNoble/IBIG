@@ -9,7 +9,7 @@
 				<h2>{{$project->title}}</h2>
 				<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donate" class="button special big" style=" float: right;">Donate</a>
 				<p>Php {{$project->goal - $project->current}} left to go!</p>
-	            <a href="\projects\{{$project->id}}\edit" class="button big" style="display: inline;">Edit</a>
+	            <!-- <a href="\projects\{{$project->id}}\edit" class="button big" style="display: inline;">Edit</a> -->
 			</header>
 
 
