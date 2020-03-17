@@ -63,62 +63,13 @@
 			<div class="row">
 				<div class="6u 12u$(xsmall)">
 					@guest
-						<h4 class="tooltoptext" style="display: inline;">What happens to the Money</h4>
-						<ul>
-							<li>Dolor pulvinar etiam magna etiam.</li>
-							<li>Sagittis adipiscing lorem eleifend.</li>
-							<li>Felis enim feugiat dolore viverra.</li>
-						</ul>
-					@else
-						<span title="What happens to the Money">
-							<img class="image customIcon unorderedToggleOn" src="\images\icons/add-512.png"
-							style="display: none;" />
-						</span>
-						<div class="hide" id="unordered">
-							<img class="image customIcon unorderedToggleOff" src="\images\icons/remove-512.png"  />
-							<h4 class="tooltoptext" style="display: inline;">What happens to the Money</h4>
-							<ul>
-								<li>Dolor pulvinar etiam magna etiam.</li>
-								<li>Sagittis adipiscing lorem eleifend.</li>
-								<li>Felis enim feugiat dolore viverra.</li>
-							</ul>
-						</div>	
-					@endguest				
-					
-					@guest
-						<h4 class="tooltoptext" style="display: inline;">Contact Persons</h4>
-						<ul class="alt">
-							<li>Dolor pulvinar etiam magna etiam.</li>
-							<li>Sagittis adipiscing lorem eleifend.</li>
-							<li>Felis enim feugiat dolore viverra.</li>
-						</ul>
-					@else
-						<span title="Contact Persons">
-							<img class="image customIcon alternateToggleOn" src="\images\icons/add-512.png"
-							style="display: none;" />
-						</span>
-						<div class="hide" id="alternate">
-							<img class="image customIcon alternateToggleOff" src="\images\icons/remove-512.png"  />
-							<h4 class="tooltoptext" style="display: inline;">Contact Persons</h4>
-							<ul class="alt">
-								<li>Dolor pulvinar etiam magna etiam.</li>
-								<li>Sagittis adipiscing lorem eleifend.</li>
-								<li>Felis enim feugiat dolore viverra.</li>
-							</ul>
-						</div>
-					@endguest
-
-				</div>
-				<div class="6u$ 12u$(xsmall)"><!-- sidebar -->
-					@guest
 						<h4 class="tooltoptext" style="display: inline;">How to Donate</h4>
 						<ol>
-							<li>Dolor pulvinar etiam magna etiam.</li>
-							<li>Etiam vel felis at lorem sed viverra.</li>
-							<li>Felis enim feugiat dolore viverra.</li>
-							<li>Dolor pulvinar etiam magna etiam.</li>
-							<li>Etiam vel felis at lorem sed viverra.</li>
-							<li>Felis enim feugiat dolore viverra.</li>
+							<li>Visit our center at Sta Rosa bayan.</li>
+							<li>Voice your support in any of the Sta Rosa Villages' town hall meetings.</li>
+							<li>Contact our FB page.</li>
+							<li>Fr Francis will always be present at the Don Bosco Church.</li>
+							<li>Mrs. David is stationed and the barangay hall.</li>
 						</ol>
 					@else
 						<span title="How to Donate">
@@ -129,14 +80,62 @@
 							<img class="image customIcon orderedToggleOff" src="\images\icons/remove-512.png"  />
 							<h4 class="tooltoptext" style="display: inline;">How to Donate</h4>
 							<ol>
-								<li>Dolor pulvinar etiam magna etiam.</li>
-								<li>Etiam vel felis at lorem sed viverra.</li>
-								<li>Felis enim feugiat dolore viverra.</li>
-								<li>Dolor pulvinar etiam magna etiam.</li>
-								<li>Etiam vel felis at lorem sed viverra.</li>
-								<li>Felis enim feugiat dolore viverra.</li>
+								<li>Visit our center at Sta Rosa bayan.</li>
+								<li>Voice your support in any of the Sta Rosa Villages' town hall meetings.</li>
+								<li>Contact our FB page.</li>
+								<li>Fr Francis will always be present at the Don Bosco Church.</li>
+								<li>Mrs. David is stationed and the barangay hall.</li>
 							</ol>
 						</div>
+					@endguest
+									
+					
+					@guest
+						<h4 class="tooltoptext" style="display: inline;">Contact Persons</h4>
+						<ul class="alt">
+							<li>Arnel Gomez, 0945 123 1234, AG@email.com</li>
+							<li>Sally G. David, 0905 321 3214</li>
+							<li>Fr. Fancis Tolen, fr.tolen@email.com</li>
+						</ul>
+					@else
+						<span title="Contact Persons">
+							<img class="image customIcon alternateToggleOn" src="\images\icons/add-512.png"
+							style="display: none;" />
+						</span>
+						<div class="hide" id="alternate">
+							<img class="image customIcon alternateToggleOff" src="\images\icons/remove-512.png"  />
+							<h4 class="tooltoptext" style="display: inline;">Contact Persons</h4>
+							<ul class="alt">
+								<li>Arnel Gomez, 0945 123 1234, AG@email.com</li>
+								<li>Sally G. David, 0905 321 3214</li>
+								<li>Fr. Fancis Tolen, fr.tolen@email.com</li>
+							</ul>
+						</div>
+					@endguest
+
+				</div>
+				<div class="6u$ 12u$(xsmall)"><!-- sidebar -->
+					@guest
+						<h4 class="tooltoptext" style="display: inline;">What happens to the Money</h4>
+						<ul>
+							<li>All donations go straight to our Centers Finance team.</li>
+							<li>On our organization's FB page we list our weekly to monthly breakdown of expenses.</li>
+							<li>We partition the fund such that each beneficiary is given eqal to their needs.</li>
+						</ul>
+					@else
+						<span title="What happens to the Money">
+							<img class="image customIcon unorderedToggleOn" src="\images\icons/add-512.png"
+							style="display: none;" />
+						</span>
+						<div class="hide" id="unordered">
+							<img class="image customIcon unorderedToggleOff" src="\images\icons/remove-512.png"  />
+							<h4 class="tooltoptext" style="display: inline;">What happens to the Money</h4>
+							<ul>
+								<li>All donations go straight to our Centers Finance team.</li>
+								<li>On our organization's FB page we list our weekly to monthly breakdown of expenses.</li>
+								<li>We partition the fund such that each beneficiary is given eqal to their needs.</li>
+							</ul>
+						</div>	
 					@endguest
 				</div>
 			</div>
