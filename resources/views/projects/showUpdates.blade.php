@@ -22,7 +22,25 @@
 			<header id="userTab" class="alt">
 			    <nav id="nav">
 			        <ul>
-		        		<li style="display: none;" class="projDescTabToggleOn">
+			        	@guest
+		            	<li id="projDescTab" class={{Request::is('projects/*/description') ? 'current_page_item' : ''}}>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\description">Description</a>
+		            	</li>
+
+		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ""}}>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\updates">Updates</a>
+		            	</li>
+
+		            	<li id="projComntTab" class={{Request::is('projects/*/comments') ? 'current_page_item' : ''}}>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\comments">Comments</a>
+		            	</li>
+		            	
+			            
+		            	<li id="projDntnTab" class={{Request::is('projects/*/donations') ? 'current_page_item' : ''}}>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
+		            	</li>
+		            	@else
+		            	<li style="display: none;" class="projDescTabToggleOn">
 		        			<span title="Project Description Tab">
 		        				<img class="image customIcon " src="\images\icons/add-white-512.png"/>
 		        			</span>
@@ -64,6 +82,7 @@
 		            		<img class="image customIcon projDntnTabToggleOff" src="\images\icons/remove-white-512.png"/>
 			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
 		            	</li>
+		            	@endguest
 			        </ul>
 			    </nav>
 			</header>

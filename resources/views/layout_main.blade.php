@@ -152,7 +152,7 @@
         // }
         if(isset($_COOKIE["donateComputed"])){
             $donateComputed = ($_COOKIE["donateComputed"]);
-            $sql = "UPDATE customizes   SET donateComputed='$donateComputed' WHERE id='$userID'"; 
+            $sql = "UPDATE customizes SET donateComputed='$donateComputed' WHERE id='$userID'"; 
             if(mysqli_query($link, $sql)){ 
                   echo '<script>';
                   echo 'console.log("Record was updated successfully.")';

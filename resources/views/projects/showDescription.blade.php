@@ -22,8 +22,28 @@
 
 			<header id="userTab" class="alt">
 			    <nav id="nav">
-			        <ul>        
-		        		<li style="display: none;" class="projDescTabToggleOn">
+			        <ul>
+			        	@guest   
+		            	<li id="projDescTab" class={{Request::is('projects/*/description') ? 'current_page_item' : ''}}>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\description">Description</a>
+		            	</li>
+
+			            
+		            	<li id="projUpdateTab" class={{Request::is('projects/*/updates') ? 'current_page_item' : ""}}>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\updates">Updates</a>
+		            	</li>
+
+			            
+		            	<li id="projComntTab" class={{Request::is('projects/*/comments') ? 'current_page_item' : ''}}>
+		            		<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\comments">Comments</a>
+		            	</li>
+		            	
+			            
+		            	<li id="projDntnTab" class={{Request::is('projects/*/donations') ? 'current_page_item' : ''}}>
+			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
+		            	</li>
+		            	@else
+		            	<li style="display: none;" class="projDescTabToggleOn">
 		        			<span title="Project Description Tab">
 		        				<img class="image customIcon " src="\images\icons/add-white-512.png"/>
 		        			</span>
@@ -65,9 +85,15 @@
 		            		<img class="image customIcon projDntnTabToggleOff" src="\images\icons/remove-white-512.png"/>
 			            	<a href="\projects{!!Request::is('projects/calamities*') ? '\calamities' : ''!!}\{{$project->id}}\donations">Donations</a>
 		            	</li>
+		            	@endguest
 			        </ul>
 			    </nav>
 			</header>
+			@guest
+			<div class="container" style="padding-top: 3em">
+					<p>{{$project->description}}</p>
+			</div>
+			@else
 			<div class="container" style="padding-top: 3em">
 				<span title="Project Description Text Body">
 					<img class="image customIcon projDescTextToggleOn" src="\images\icons/add-512.png"
@@ -78,6 +104,7 @@
 					<p>{{$project->description}}</p>
 				</div>
 			</div>
+			@endguest
 		</div>
 	</section>
 	<?php 
