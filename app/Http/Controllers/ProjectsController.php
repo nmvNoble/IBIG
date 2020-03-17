@@ -7,7 +7,7 @@ use App\Project;
 use App\Update;
 use App\Comment;
 use App\Donation;
-use App\User;
+use App\Users;
 use App\Customize;
 use Illuminate\Http\Request;
 use Spatie\Searchable\Search;
@@ -116,7 +116,7 @@ class ProjectsController extends Controller
 
         // return view('projects.showComments', ['project' => $project , 'customize' => $customize]);
         $comments = Comment::latest()->where('projID', $id)->paginate(5);
-        $users = User::latest()->paginate(5);
+        $users = Users::all();
         $user=Auth::id();
         if( Auth::id()!=null){
             
@@ -129,7 +129,7 @@ class ProjectsController extends Controller
             return view('projects.showComments', ['project' => $project , 'comments' => $comments , 'users' => $users, 'customize' => $customize]);
         }
         // $comments = Comment::latest()->where('projID', $id)->paginate(5);
-        // $users = User::latest()->paginate(5);
+        // $users = Users::latest()->paginate(5);
         // $customize = Customize::getuserData(1);
 
         // return view('projects.showComments', ['project' => $project , 'comments' => $comments , 'users' => $users, 'customize' => $customize]);
@@ -143,7 +143,7 @@ class ProjectsController extends Controller
 
         // return view('projects.showDonations', ['project' => $project , 'customize' => $customize]);
         $donations = Donation::latest()->where('projectid', $id)->paginate(5);
-        $users = User::latest()->paginate(5);
+        $users = Users::all();
         $user=Auth::id();
         if( Auth::id()!=null){
             
@@ -156,7 +156,7 @@ class ProjectsController extends Controller
             return view('projects.showDonations', ['project' => $project, 'donations' => $donations , 'users' => $users, 'customize' => $customize]);
         }
         // $donations = Donation::latest()->where('projectid', $id)->paginate(5);
-        // $users = User::latest()->paginate(5);
+        // $users = Users::latest()->paginate(5);
         // $customize = Customize::getuserData(1);
 
         // return view('projects.showDonations', ['project' => $project, 'donations' => $donations , 'users' => $users, 'customize' => $customize]);

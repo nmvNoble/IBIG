@@ -145,7 +145,7 @@
 				            <li>
 				                <div class="project">
 					                <div class="image rounded right" style="margin-left: -2%;">
-					                	@if($users->where('id', $comment->userID)->first()->anonymity === 0)
+					                	@if($users->where('id', $comment->commenterID)->first()->anonymity === 0)
 					                		<a href="/users/{{$comment->userID}}/owned">
 					                	@else
 					                	@endif
@@ -153,14 +153,14 @@
 					                </div>
 				                    <div class="content">
 				                        <header>
-							                	@if($users->where('id', $comment->userID)->first()->anonymity === 0)
-				                            		<h2><a href="/users/{{$comment->userID}}/owned">{{$users->where('id', $comment->userID)->first()->name}}</a></h2>
+							                	@if($users->where('id', $comment->commenterID)->first()->anonymity === 0)
+				                            		<h2><a href="/users/{{$comment->userID}}/owned">{{$users->where('id', $comment->commenterID)->first()->name}}</a></h2>
 							                	@else
 							                		<h2>Anonymus</h2>
 							                	@endif 
 				                            <p>{{$comment->updated_at}}</p>
 				                        </header>
-				                            <p>{{$comment->cont}}</p>
+				                            <p>{{$comment->comment}}</p>
 				                    </div>
 				                </div>
 				            </li>
