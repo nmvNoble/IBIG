@@ -89,8 +89,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <div><a class="dropdown-item" href="/users/9099/donatedTo" accesskey="0" title="">Your Donations</a></div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <div><a class="dropdown-item" href="/users/9099/donatedTo" accesskey="0" title="" style="color: black">Your Donations</a></div>
+                                    <a style="color: black" class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

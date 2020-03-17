@@ -16,6 +16,7 @@
 // });
 Route::get('/login', 'HomeController@signIn');
 Route::get('/', 'MainController@welcome');
+Route::get('/home', 'MainController@welcome');
 Route::get('/welcome', 'MainController@welcome');
 Route::get('/evacuationCenters', 'MainController@evacuationCenters');
 Route::post('/search', 'MainController@search')->name('search');

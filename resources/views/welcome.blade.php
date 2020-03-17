@@ -14,7 +14,7 @@
                         <li><a href="\projects\calamities" class="button special big">View 
                             <span title="Project for Calamity Victim Support" style="display: inline-block;">
                                 <img class="image customIcon" src="\images\icons/AlertCalamity-512.png"/>
-                            </span>Projects</a></li>
+                            </span>Calamity Projects</a></li>
                     </ul>
                     <p>Support Calamity Victims</p>
                 </div>
@@ -176,6 +176,7 @@
 
 <!-- Two -->
 <section id="two" class="wrapper style2">
+
     @guest
         <div class="container 75%">
             <div class="row 200%">
@@ -203,6 +204,10 @@
             </div>
         </div>
     @else
+        <?php
+            $name=explode(" ",Auth::user()->name);
+            $usern=$name[0];
+        ?>
         <span title="Benefactor Spot Light"class="wrapper style2">
         <img class="image customIcon benefactorSpotLightToggleOn" src="\images\icons/add-512.png"
         style="display: none; " />
@@ -213,22 +218,22 @@
                 <div class="row 200%">
                     <div class="6u 12u$(medium)">
                         <header class="major">
-                            <h2>A Big welcome to you Juan!</h2>
+                            <h2>A Big welcome to you <?php echo $usern ?>!</h2>
                             <p>From I love Sta Rosa</p>
                         </header>
                     </div>
                     <div class="6u$ 12u$(medium)">
-                        <p>On 11/1/2019 Juan donated a whopping 2,000 Pesos to our project Lay on Hands. Not only did Mr Juan donate but he also volunteered! We send you all our thanks for your generosity and your service.</p>
+                        <p>On 11/1/2019 <?php echo $usern ?> donated a whopping 2,000 Pesos to our project Lay on Hands. Not only did <?php echo $usern ?> donate but he also volunteered! We send you all our thanks for your generosity and your service.</p>
                     </div>
                 </div>
                 <div class="project">
                     <div class="image rounded left" style="margin-left: -2%;">
-                        <a href="/users/9099/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a>
+                        <a href="/users/{{Auth::user()->id}}/owned"><img src="\images/user.jpg" alt="" style="max-height: 10em; width: auto;" /></a>
                     </div>
                     <div class="content">
                         <header>
                             <h2>Php 2000</h2>
-                            <p><a href="/users/9099/owned">Juan Dela Cruz</a> 11/1/2019</p>
+                            <p><a href="/users/{{Auth::user()->id}}/owned">{{Auth::user()->name}}</a> 11/1/2019</p>
                         </header>
                         <p>I'll also be going to your volunteering unit at MM</p>
                     </div>
